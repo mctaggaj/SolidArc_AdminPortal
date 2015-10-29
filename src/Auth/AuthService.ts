@@ -212,7 +212,15 @@ module App.Auth {
         .service(AuthService.serviceId, AuthService)
         .run(function($httpBackend:angular.IHttpBackendService) {
             // do not bother server, respond with given content
-            $httpBackend.whenPOST('/api/authentication').respond(200, {"X-Token": "abc123"}, {header: 'one'});
+            $httpBackend.whenPOST('/api/authentication').respond(function (method:string, url:string, data:any, headers:any, params:any) {
+                data = JSON.parse(JSON.stringify(eval("(" +data+ ")")));
+                if (data["username"] === "superadmin1@mx.com" && data["password"] === "pass1234") {
+                    return [200, {"X-Token": "abc123", "userId": "1", "username": data.username}];
+                }
+                else {
+                    return [403, {msg: "Invalid Username/Password"}, {header: 'one'}];
+                }
+            });
         });
 
 
