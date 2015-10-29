@@ -1,0 +1,34 @@
+{
+  "name": "SolidArc_AdminPortal",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "echo If not already installed please install bower ang gulp globally. To do so use command: 'sudo npm i -g bower gulp'",
+    "postinstall": "bower install && npm run-script build",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mctaggaj/SolidArc_AdminPortal.git"
+  },
+  "author": "SolidArc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mctaggaj/SolidArc_AdminPortal/issues"
+  },
+  "devDependencies": {
+    "gulp": "3.8.10",
+    "gulp-config": "0.2.4",
+    "gulp-typescript": "2.3.0",
+    "bower": "1.3.12",
+    "tsd": "0.5.7",
+    "gulp-sourcemaps": "1.3.0",
+    "gulp-ng-html2js": "0.1.8",
+    "gulp-watch": "4.1.0",
+    "gulp-concat": "2.4.3",
+    "gulp-less": "~3",
+    "run-sequence": "1.0.2"
+  },
+  "homepage": "https://github.com/mctaggaj/SolidArc_AdminPortal"
+}

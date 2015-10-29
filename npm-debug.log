@@ -1,0 +1,75 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'i' ]
+2 info using npm@1.4.3
+3 info using node@v0.10.26
+4 warn package.json SolidArc_AdminPortal@0.0.0 No description
+5 verbose readDependencies using package.json deps
+6 verbose install where, deps [ '/Users/jasonmctaggart/Dropbox/UOGuelph/CIS 3750/SolidArc_AdminPortal',
+6 verbose install   [ 'gulp',
+6 verbose install     'gulp-config',
+6 verbose install     'gulp-typescript',
+6 verbose install     'bower',
+6 verbose install     'tsd',
+6 verbose install     'gulp-sourcemaps',
+6 verbose install     'gulp-ng-html2js',
+6 verbose install     'gulp-watch',
+6 verbose install     'gulp-concat',
+6 verbose install     'gulp-less',
+6 verbose install     'run-sequence' ] ]
+7 info preinstall SolidArc_AdminPortal@0.0.0
+8 verbose unsafe-perm in lifecycle true
+9 verbose readDependencies using package.json deps
+10 verbose already installed skipping gulp-typescript@2.3.0 /Users/jasonmctaggart/Dropbox/UOGuelph/CIS 3750/SolidArc_AdminPortal
+11 verbose already installed skipping gulp@3.8.10 /Users/jasonmctaggart/Dropbox/UOGuelph/CIS 3750/SolidArc_AdminPortal
+12 verbose already installed skipping gulp-config@0.2.4 /Users/jasonmctaggart/Dropbox/UOGuelph/CIS 3750/SolidArc_AdminPortal
+13 verbose already installed skipping bower@1.3.12 /Users/jasonmctaggart/Dropbox/UOGuelph/CIS 3750/SolidArc_AdminPortal
+14 verbose already installed skipping tsd@0.5.7 /Users/jasonmctaggart/Dropbox/UOGuelph/CIS 3750/SolidArc_AdminPortal
+15 verbose already installed skipping gulp-sourcemaps@1.3.0 /Users/jasonmctaggart/Dropbox/UOGuelph/CIS 3750/SolidArc_AdminPortal
+16 verbose already installed skipping gulp-ng-html2js@0.1.8 /Users/jasonmctaggart/Dropbox/UOGuelph/CIS 3750/SolidArc_AdminPortal
+17 verbose already installed skipping gulp-watch@4.1.0 /Users/jasonmctaggart/Dropbox/UOGuelph/CIS 3750/SolidArc_AdminPortal
+18 verbose already installed skipping gulp-less@~3 /Users/jasonmctaggart/Dropbox/UOGuelph/CIS 3750/SolidArc_AdminPortal
+19 verbose already installed skipping gulp-concat@2.4.3 /Users/jasonmctaggart/Dropbox/UOGuelph/CIS 3750/SolidArc_AdminPortal
+20 verbose already installed skipping run-sequence@1.0.2 /Users/jasonmctaggart/Dropbox/UOGuelph/CIS 3750/SolidArc_AdminPortal
+21 silly resolved []
+22 info build /Users/jasonmctaggart/Dropbox/UOGuelph/CIS 3750/SolidArc_AdminPortal
+23 verbose linkStuff [ false,
+23 verbose linkStuff   false,
+23 verbose linkStuff   false,
+23 verbose linkStuff   '/Users/jasonmctaggart/Dropbox/UOGuelph/CIS 3750' ]
+24 info linkStuff SolidArc_AdminPortal@0.0.0
+25 verbose linkBins SolidArc_AdminPortal@0.0.0
+26 verbose linkMans SolidArc_AdminPortal@0.0.0
+27 verbose rebuildBundles SolidArc_AdminPortal@0.0.0
+28 verbose rebuildBundles [ '.bin',
+28 verbose rebuildBundles   'bower',
+28 verbose rebuildBundles   'gulp',
+28 verbose rebuildBundles   'gulp-concat',
+28 verbose rebuildBundles   'gulp-config',
+28 verbose rebuildBundles   'gulp-less',
+28 verbose rebuildBundles   'gulp-ng-html2js',
+28 verbose rebuildBundles   'gulp-sourcemaps',
+28 verbose rebuildBundles   'gulp-typescript',
+28 verbose rebuildBundles   'gulp-watch',
+28 verbose rebuildBundles   'run-sequence',
+28 verbose rebuildBundles   'tsd' ]
+29 info install SolidArc_AdminPortal@0.0.0
+30 info postinstall SolidArc_AdminPortal@0.0.0
+31 verbose unsafe-perm in lifecycle true
+32 info SolidArc_AdminPortal@0.0.0 Failed to exec postinstall script
+33 error SolidArc_AdminPortal@0.0.0 postinstall: `bower install && npm run-script build`
+33 error Exit status 1
+34 error Failed at the SolidArc_AdminPortal@0.0.0 postinstall script.
+34 error This is most likely a problem with the SolidArc_AdminPortal package,
+34 error not with npm itself.
+34 error Tell the author that this fails on your system:
+34 error     bower install && npm run-script build
+34 error You can get their info via:
+34 error     npm owner ls SolidArc_AdminPortal
+34 error There is likely additional logging output above.
+35 error System Darwin 15.0.0
+36 error command "node" "/usr/local/bin/npm" "i"
+37 error cwd /Users/jasonmctaggart/Dropbox/UOGuelph/CIS 3750/SolidArc_AdminPortal
+38 error node -v v0.10.26
+39 error npm -v 1.4.3
+40 error code ELIFECYCLE
+41 verbose exit [ 1, true ]
