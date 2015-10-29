@@ -44,6 +44,7 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
@@ -52,7 +53,7 @@
     <script src="bower_components/angular-base64-upload/dist/angular-base64-upload.min.js"></script>
 </head>
 <body ng-app="App" ng-controller="ShellController">
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" ng-show="authService.isLoggedIn()">
 
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
