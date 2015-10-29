@@ -210,9 +210,6 @@ module App.Auth {
      */
     angular.module(AuthService.moduleId, ["LocalStorageModule", "http-auth-interceptor", "ngMockE2E"])
         .service(AuthService.serviceId, AuthService)
-        .config(function($provide) {
-            //$provide.decorator('b', angular.mock.IRequestHandler);
-        })
         .run(function($httpBackend:angular.IHttpBackendService) {
             // do not bother server, respond with given content
             $httpBackend.whenPOST('/api/authentication').respond(200, {"X-Token": "abc123"}, {header: 'one'});
