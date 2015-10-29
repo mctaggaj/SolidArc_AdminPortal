@@ -95,7 +95,7 @@ module App.Login {
     }
 
 
-
+    // Angular module and controller registration
     angular.module(LoginController.moduleId, [Data.DataService.moduleId]).
         controller(LoginController.controllerId, LoginController)
         .config(["$stateProvider", ($routeProvider: ng.ui.IStateProvider) => {
@@ -103,10 +103,9 @@ module App.Login {
                 templateUrl: Login.baseUrl+'login.html',
                 controller: LoginController.controllerId,
                 url: "/login"
-            }).state("register", {
-                templateUrl: Login.baseUrl+'login.html',
-                controller: LoginController.controllerId,
-                url: "/register"
             })
-        }]);
+        }])
+        .config(["$urlRouterProvider", ($urlRouterProvider: ng.ui.IUrlRouterProvider) => {
+            $urlRouterProvider.otherwise("/login")
+        }]);;
 }

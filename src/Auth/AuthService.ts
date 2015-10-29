@@ -206,7 +206,7 @@ module App.Auth {
     }
 
     /**
-     * Angular and service registration
+     * Angular module and service registration
      */
     angular.module(AuthService.moduleId, ["LocalStorageModule", "http-auth-interceptor"])
         .service(AuthService.serviceId, AuthService)

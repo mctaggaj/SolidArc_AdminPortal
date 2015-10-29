@@ -16,7 +16,7 @@ module App.Shell {
             $scope.authService=authService;
         }
     }
-
+    // Angular module and controller registration
     angular.module(ShellController.moduleId, [Auth.AuthService.moduleId, Data.DataService.moduleId]).
         controller(ShellController.controllerName, ShellController);
 }

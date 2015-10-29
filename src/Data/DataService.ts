@@ -52,7 +52,7 @@ module App.Data {
     }
 
     /**
-     * Angular and service registration
+     * Angular module and service registration
      */
     angular.module(DataService.moduleId, [])
         .service(DataService.serviceId, DataService)

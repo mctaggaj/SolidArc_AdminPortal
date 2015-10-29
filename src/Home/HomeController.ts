@@ -14,7 +14,7 @@ module App.Home {
 
         }
     }
-
+    // Angular module and controller registration
     angular.module(HomeController.moduleId, []).
         controller(HomeController.controllerId, HomeController)
         .config(["$stateProvider", ($routeProvider: ng.ui.IStateProvider) => {
@@ -24,7 +24,4 @@ module App.Home {
                 url: "/home"
             })
         }])
-        .config(["$urlRouterProvider", ($urlRouterProvider: ng.ui.IUrlRouterProvider) => {
-            $urlRouterProvider.otherwise("/home")
-        }]);
 }
