@@ -18,7 +18,7 @@
     "url": "https://github.com/mctaggaj/SolidArc_AdminPortal/issues"
   },
   "devDependencies": {
-    "gulp": "3.8.10",
+    "gulp": "3.9.0",
     "gulp-config": "0.2.4",
     "gulp-typescript": "2.3.0",
     "bower": "1.3.12",

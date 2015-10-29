@@ -86,8 +86,7 @@ module App.Login {
                 }, (response : SolidArc.IResponse) => {
                     this.error.title = 'Error!'
 
-                    this.error.html = 'Invalid username or password. If you do not have an account, \
-                        make sure you <a class="alert-link" ng-click="msg.handler(msg);">register</a>'
+                    this.error.html = 'Invalid username and or password.'
                     this.error.state = "BAD_LOGIN";
                     this.error.enabled = true
                 });
