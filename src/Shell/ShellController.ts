@@ -2,7 +2,6 @@
 module App.Shell {
 
     interface IShellControllerShell extends ng.IScope{
-        dataService: Data.DataService;
         authService: Auth.AuthService;
     }
 
@@ -11,8 +10,7 @@ module App.Shell {
         public static moduleId = Shell.moduleId + "." + ShellController.controllerName;
         public static $inject = ["$scope", Data.DataService.serviceId, Auth.AuthService.serviceId];
 
-        constructor ($scope: IShellControllerShell, dataService: Data.DataService, authService: Auth.AuthService) {
-            $scope.dataService=dataService;
+        constructor ($scope: IShellControllerShell, authService: Auth.AuthService) {
             $scope.authService=authService;
         }
     }
