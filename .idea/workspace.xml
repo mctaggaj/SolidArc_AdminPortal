@@ -2,46 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e26894e-56a0-4193-8433-ceba95e4c6d9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/bg.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/android-icon-144x144.png" afterPath="$PROJECT_DIR$/assets/images/android-icon-144x144.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/android-icon-192x192.png" afterPath="$PROJECT_DIR$/assets/images/android-icon-192x192.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/android-icon-36x36.png" afterPath="$PROJECT_DIR$/assets/images/android-icon-36x36.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/android-icon-48x48.png" afterPath="$PROJECT_DIR$/assets/images/android-icon-48x48.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/android-icon-72x72.png" afterPath="$PROJECT_DIR$/assets/images/android-icon-72x72.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/android-icon-96x96.png" afterPath="$PROJECT_DIR$/assets/images/android-icon-96x96.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/apple-icon-114x114.png" afterPath="$PROJECT_DIR$/assets/images/apple-icon-114x114.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/apple-icon-120x120.png" afterPath="$PROJECT_DIR$/assets/images/apple-icon-120x120.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/apple-icon-144x144.png" afterPath="$PROJECT_DIR$/assets/images/apple-icon-144x144.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/apple-icon-152x152.png" afterPath="$PROJECT_DIR$/assets/images/apple-icon-152x152.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/apple-icon-180x180.png" afterPath="$PROJECT_DIR$/assets/images/apple-icon-180x180.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/apple-icon-57x57.png" afterPath="$PROJECT_DIR$/assets/images/apple-icon-57x57.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/apple-icon-60x60.png" afterPath="$PROJECT_DIR$/assets/images/apple-icon-60x60.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/apple-icon-72x72.png" afterPath="$PROJECT_DIR$/assets/images/apple-icon-72x72.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/apple-icon-76x76.png" afterPath="$PROJECT_DIR$/assets/images/apple-icon-76x76.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/apple-icon-precomposed.png" afterPath="$PROJECT_DIR$/assets/images/apple-icon-precomposed.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/apple-icon.png" afterPath="$PROJECT_DIR$/assets/images/apple-icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/favicon-16x16.png" afterPath="$PROJECT_DIR$/assets/images/favicon-16x16.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/favicon-32x32.png" afterPath="$PROJECT_DIR$/assets/images/favicon-32x32.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/favicon-96x96.png" afterPath="$PROJECT_DIR$/assets/images/favicon-96x96.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/favicon.ico" afterPath="$PROJECT_DIR$/assets/images/favicon.ico" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/ms-icon-144x144.png" afterPath="$PROJECT_DIR$/assets/images/ms-icon-144x144.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/ms-icon-150x150.png" afterPath="$PROJECT_DIR$/assets/images/ms-icon-150x150.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/ms-icon-310x310.png" afterPath="$PROJECT_DIR$/assets/images/ms-icon-310x310.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/ms-icon-70x70.png" afterPath="$PROJECT_DIR$/assets/images/ms-icon-70x70.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppModule.ts" afterPath="$PROJECT_DIR$/src/AppModule.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Auth/AuthService.ts" afterPath="$PROJECT_DIR$/src/Auth/AuthService.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Data/DataGlobals.ts" afterPath="$PROJECT_DIR$/src/Data/DataGlobals.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Data/DataModule.ts" afterPath="$PROJECT_DIR$/src/Data/DataModule.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Data/DataService.ts" afterPath="$PROJECT_DIR$/src/Data/DataService.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Home/HomeController.ts" afterPath="$PROJECT_DIR$/src/Home/HomeController.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Login/LoginController.ts" afterPath="$PROJECT_DIR$/src/Login/LoginController.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Login/LoginGlobals.ts" afterPath="$PROJECT_DIR$/src/Login/LoginGlobals.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Login/LoginModule.ts" afterPath="$PROJECT_DIR$/src/Login/LoginModule.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Shell/ShellController.ts" afterPath="$PROJECT_DIR$/src/Shell/ShellController.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/app.less" afterPath="$PROJECT_DIR$/styles/app.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/browserconfig.xml" afterPath="$PROJECT_DIR$/assets/images/browserconfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/manifest.json" afterPath="$PROJECT_DIR$/assets/images/manifest.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="SolidArc_AdminPortal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,6 +26,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="600">
+              <caret line="6" column="136" selection-start-line="6" selection-start-column="132" selection-end-line="6" selection-end-column="136" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.20408164" vertical-offset="0" max-vertical-offset="441">
+              <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gulpfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1425">
+              <caret line="76" column="15" selection-start-line="76" selection-start-column="15" selection-end-line="76" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="HomeController.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Home/HomeController.ts">
           <provider selected="true" editor-type-id="text-editor">
@@ -75,24 +66,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.036199" vertical-offset="0" max-vertical-offset="1455">
+            <state vertical-scroll-proportion="-12.791667" vertical-offset="593" max-vertical-offset="1455">
               <caret line="60" column="109" selection-start-line="60" selection-start-column="109" selection-end-line="60" selection-end-column="109" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShellController.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Shell/ShellController.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -152,28 +133,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeModule.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Home/HomeModule.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthService.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Auth/AuthService.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2770" max-vertical-offset="3315">
-              <caret line="208" column="46" selection-start-line="208" selection-start-column="7" selection-end-line="208" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -210,6 +169,7 @@
         <option value="$PROJECT_DIR$/src/AppModule.ts" />
         <option value="$PROJECT_DIR$/styles/app.less" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -273,110 +233,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="styles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SolidArc_AdminPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SolidArc_AdminPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SolidArc_AdminPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SolidArc_AdminPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Shell" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SolidArc_AdminPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SolidArc_AdminPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Login" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SolidArc_AdminPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SolidArc_AdminPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SolidArc_AdminPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SolidArc_AdminPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SolidArc_AdminPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SolidArc_AdminPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Auth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -569,22 +425,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
           <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.9166665" vertical-offset="134" max-vertical-offset="600">
-          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="840" max-vertical-offset="1425">
-          <caret line="76" column="15" selection-start-line="76" selection-start-column="15" selection-end-line="76" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -794,13 +634,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="840" max-vertical-offset="1425">
+          <caret line="76" column="15" selection-start-line="76" selection-start-column="15" selection-end-line="76" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.036199" vertical-offset="0" max-vertical-offset="1455">
+        <state vertical-scroll-proportion="-12.791667" vertical-offset="593" max-vertical-offset="1455">
           <caret line="60" column="109" selection-start-line="60" selection-start-column="109" selection-end-line="60" selection-end-column="109" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="600">
+          <caret line="6" column="136" selection-start-line="6" selection-start-column="132" selection-end-line="6" selection-end-column="136" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20408164" vertical-offset="0" max-vertical-offset="441">
+          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
