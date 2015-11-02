@@ -7,7 +7,7 @@
     "preinstall": "echo If not already installed please install bower ang gulp globally. To do so use command: 'sudo npm i -g bower gulp'",
     "postinstall": "bower install && npm run-script build",
     "build": "gulp",
-    "server": "node run-server.js"
+    "server": "gulp run-server"
   },
   "repository": {
     "type": "git",

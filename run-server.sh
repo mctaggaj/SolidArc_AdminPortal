@@ -1,4 +1,4 @@
 #/bin/bash
 
-pushd dist/package
+cd dist/package
 python -m SimpleHTTPServer

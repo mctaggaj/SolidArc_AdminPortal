@@ -11,6 +11,9 @@ var ngHtml2Js = require("gulp-ng-html2js");
 var watch = require('gulp-watch');
 var less = require('gulp-less');
 var runSequence = require('run-sequence');
+var util = require('util'),
+    spawn = require('child_process').spawn,
+    server;
 
 
 gulp.task('copy-index-html', function() {
@@ -87,4 +90,14 @@ gulp.task("build", function () {
     return runSequence(["build-ts", "copy-index-html", "html2js", "copy-images", "copy-fonts","copy-bower-components", "copy-styles"]);
 });
 
-gulp.task('default', ["deploy", "watch"]);
+gulp.task("run-server", function() {
+  server = spawn('./run-server.sh');
+  function echo(msg) { console.log("" + msg); }
+  server.stdout.on('data', echo);
+  server.stderr.on('data', echo);
+  server.on('exit', function(code) {
+    echo("Server exited with code " + code);
+  });
+})
+
+gulp.task('default', ["deploy", "watch", "run-server"]);
