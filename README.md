@@ -9,7 +9,18 @@ To download, package, and serve the application, run the following commands. The
 ```bash
   git clone https://github.com/mctaggaj/SolidArc_AdminPortal.git
   cd SolidArc_AdminPortal
-  npm install #get dependencies, package, watch, then run the server
+  cp serverConfig.json{.default,} # Edit serverConfig.json to specify
+  # a custom host/port
+  npm install # Get dependencies, package, watch, then run the server
+```
+
+## Troubleshooting
+
+If you run into problems when `npm install` complains about a deprecated node version or something, try the following commands:
+
+```bash
+  which node # If there is no output following this command, execute the next command
+  sudo ln -s /usr/bin/nodejs /usr/bin/node
 ```
 
 # Running the Server

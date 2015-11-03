@@ -4,6 +4,7 @@
 
 var gulp = require('gulp');
 var config = require('./buildConfig.json');
+var serverConfig = require('./serverConfig.json');
 var concat = require('gulp-concat');
 var ts = require('gulp-typescript');
 var sourcemaps = require('gulp-sourcemaps');
@@ -91,7 +92,8 @@ gulp.task("build", function () {
 });
 
 gulp.task("run-server", function() {
-  server = spawn('./run-server.sh');
+  console.log("Going to start the server at address " + serverConfig.host + ":" + serverConfig.port);
+  server = spawn('./run-server.sh', [serverConfig["host"], serverConfig["port"]]);
   function echo(msg) { console.log("" + msg); }
   server.stdout.on('data', echo);
   server.stderr.on('data', echo);
