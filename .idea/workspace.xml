@@ -2,17 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e26894e-56a0-4193-8433-ceba95e4c6d9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SelectEvent/SelectEventController.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SelectEvent/SelectEventGlobals.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SelectEvent/SelectEventModule.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SelectEvent/select_event.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SelectEvent/select_event.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppModule.ts" afterPath="$PROJECT_DIR$/src/AppModule.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Auth/AuthService.ts" afterPath="$PROJECT_DIR$/src/Auth/AuthService.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Data/DataService.ts" afterPath="$PROJECT_DIR$/src/Data/DataService.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Home/HomeController.ts" afterPath="$PROJECT_DIR$/src/Home/HomeController.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Login/LoginController.ts" afterPath="$PROJECT_DIR$/src/Login/LoginController.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SolidArc_AdminPortal.iws" />
@@ -80,8 +69,8 @@
       <file leaf-file-name="HomeController.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Home/HomeController.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44247788" vertical-offset="0" max-vertical-offset="678">
-              <caret line="20" column="26" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.28761062" vertical-offset="0" max-vertical-offset="678">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -811,7 +800,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="477" max-vertical-offset="1170">
           <caret line="49" column="1" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
           <folding>
-            <marker date="1446576902000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1446577132000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -952,8 +941,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Home/HomeController.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44247788" vertical-offset="0" max-vertical-offset="678">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.28761062" vertical-offset="0" max-vertical-offset="678">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
