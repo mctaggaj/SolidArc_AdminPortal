@@ -4,6 +4,7 @@
 /// <reference path="Shell/ShellModule.ts"/>
 /// <reference path="Home/HomeModule.ts"/>
 /// <reference path="Login/LoginModule.ts"/>
+/// <reference path="SelectEvent/SelectEventModule.ts"/>
 /**
  * The App module.
  * Contains all sub-modules and implementation required for the app

@@ -2,8 +2,8 @@
 module App.Data {
 
 
-    interface IEventsResponse extends SolidArc.IResponse {
-        data?: any[]
+    export interface IEventsResponse extends SolidArc.IResponse {
+        data?: {events: any[]}
     }
 
     /**
@@ -41,7 +41,7 @@ module App.Data {
 
         /**
          * Gets all events for the current user
-         * @returns {ng.IPromise<SolidArc.IResponse>}
+         * @returns {ng.IPromise<SolidArc.IEventsResponse>}
          */
         public getEvents = ():ng.IPromise<IEventsResponse> => {
             var defered = this.$q.defer();

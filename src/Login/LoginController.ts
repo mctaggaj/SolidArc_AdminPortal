@@ -81,7 +81,7 @@ module App.Login {
             this.authService.login(this.scope.info.email,this.scope.info.password)
                 .then((response : SolidArc.IResponse) => {
                     // Success
-                    this.$state.go(Home.state);
+                    this.$state.go(SelectEvent.state);
                 }, (response : SolidArc.IResponse) => {
                     this.error.title = 'Error!'
 

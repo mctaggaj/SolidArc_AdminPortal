@@ -53,7 +53,7 @@
     <script src="bower_components/angular-base64-upload/dist/angular-base64-upload.min.js"></script>
 </head>
 <body ng-app="App" ng-controller="ShellController">
-<nav class="navbar navbar-default navbar-fixed-top" ng-show="authService.isLoggedIn()">
+<nav class="navbar navbar-default navbar-top" ng-show="authService.isLoggedIn()">
 
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -76,7 +76,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a ui-sref="Profile({userId:dataService.getAuthData().userId})">Profile</a></li>
-                        <li><a ng-click="dataService.clientLogout()" ui-sref="Login">Logout</a></li>
+                        <li><a ng-click="authService.logout()" ui-sref="Login">Logout</a></li>
                     </ul>
                 </li>
                 <li ng-hide="authService.isLoggedIn()"><a ui-sref="Login">Login</a></li>

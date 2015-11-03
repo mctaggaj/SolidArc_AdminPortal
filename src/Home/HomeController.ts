@@ -17,8 +17,8 @@ module App.Home {
     // Angular module and controller registration
     angular.module(HomeController.moduleId, []).
         controller(HomeController.controllerId, HomeController)
-        .config(["$stateProvider", ($routeProvider: ng.ui.IStateProvider) => {
-            $routeProvider.state(Home.state, {
+        .config(["$stateProvider", ($stateProvider: ng.ui.IStateProvider) => {
+            $stateProvider.state(Home.state, {
                 templateUrl: Home.baseUrl+'home.html',
                 controller: HomeController.controllerId,
                 url: "/home"

@@ -105,8 +105,8 @@ module App.Auth {
          * Logs the current user out
          */
         public logout = (): void => {
+            this.clearAuthData();
             this.$http.delete("/api/authentication").success(() => {
-                this.clearAuthData();
             })
         }
 
@@ -116,7 +116,6 @@ module App.Auth {
         public isLoggedIn = (): any => {
             var user = this.getAuthData();
             var authed = (user&&user.token!==null&&user.userId!==null&&user.username!==null);
-            console.log(authed)
             return authed;
         }
 
@@ -168,6 +167,7 @@ module App.Auth {
          */
         private clearAuthData = () => {
             this.clearToken()
+            this.user = null;
             this.localStorageService.remove(Auth.LS_Username);
             this.localStorageService.remove(Auth.LS_UserId);
         }
@@ -223,8 +223,8 @@ module App.Auth {
                     return [403, {msg: "Invalid Username/Password"}, {header: 'one'}];
                 }
             });
+            $httpBackend.whenDELETE('/api/authentication').respond(function (method:string, url:string, data:any, headers:any, params:any) {
+                return [200, {msg: "Logged out"}];
+            });
         });
-
-
-
 }
