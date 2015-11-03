@@ -96,7 +96,7 @@ module App.Auth {
                 (response: ng.IHttpPromiseCallbackArg<any>) => {
                     defered.reject({
                         msg: response.data.msg
-                    });
+                    });;
                 });
             return defered.promise;
         }
@@ -115,7 +115,9 @@ module App.Auth {
          */
         public isLoggedIn = (): any => {
             var user = this.getAuthData();
-            return (user.userId&&user.token&&user.username);
+            var authed = (user&&user.token!==null&&user.userId!==null&&user.username!==null);
+            console.log(authed)
+            return authed;
         }
 
         /**
@@ -129,7 +131,7 @@ module App.Auth {
          * @returns {string} the user id of the current user
          */
         public getUserId = (): number => {
-            return parseInt(this.localStorageService.get(Auth.LS_UserId));
+            return this.localStorageService.get(Auth.LS_UserId);
         }
 
         /**
@@ -215,7 +217,7 @@ module App.Auth {
             $httpBackend.whenPOST('/api/authentication').respond(function (method:string, url:string, data:any, headers:any, params:any) {
                 data = JSON.parse(JSON.stringify(eval("(" +data+ ")")));
                 if (data["username"] === "superadmin1@mx.com" && data["password"] === "pass1234") {
-                    return [200, {"X-Token": "abc123", "userId": "1", "username": data.username}];
+                    return [200, {"token": "abc123", "userId": "f2", "username": data.username}];
                 }
                 else {
                     return [403, {msg: "Invalid Username/Password"}, {header: 'one'}];

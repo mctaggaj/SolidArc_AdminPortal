@@ -13,6 +13,7 @@ declare module SolidArc {
     **/
     export interface IResponse {
         msg: string;
+        data?: any;
     }
 
      /**

@@ -27,9 +27,9 @@ module App.Login {
     export class LoginController {
         public static controllerId = "LoginController";
         public static moduleId = Login.moduleId + "." + LoginController.controllerId;
-        public static $inject = ["$scope", "$state", Data.DataService.serviceId];
+        public static $inject = ["$scope", "$state", Auth.AuthService.serviceId];
 
-        private dataService: Data.DataService;
+        private authService: Auth.AuthService;
         private $state: ng.ui.IStateService;
         private info = {
             email: "",
@@ -54,8 +54,8 @@ module App.Login {
         private loginMode = true;
         private scope;
 
-        constructor ($scope: ILoginController, $state: ng.ui.IStateService, dataService: Data.DataService) {
-            this.dataService = dataService;
+        constructor ($scope: ILoginController, $state: ng.ui.IStateService, authService: Auth.AuthService) {
+            this.authService = authService;
             this.$state = $state;
             $scope.loginMode = true;
 
@@ -69,7 +69,6 @@ module App.Login {
             $scope.info = this.info
 
             $scope.error = this.error
-
         }
 
         private login = () => {
@@ -79,9 +78,9 @@ module App.Login {
                 return
             }
 
-            this.dataService.clientLogin(this.scope.info.email,this.scope.info.password)
+            this.authService.login(this.scope.info.email,this.scope.info.password)
                 .then((response : SolidArc.IResponse) => {
-                    // Sucess
+                    // Success
                     this.$state.go(Home.state);
                 }, (response : SolidArc.IResponse) => {
                     this.error.title = 'Error!'
@@ -95,7 +94,7 @@ module App.Login {
 
 
     // Angular module and controller registration
-    angular.module(LoginController.moduleId, [Data.DataService.moduleId]).
+    angular.module(LoginController.moduleId, [Auth.AuthService.moduleId]).
         controller(LoginController.controllerId, LoginController)
         .config(["$stateProvider", ($routeProvider: ng.ui.IStateProvider) => {
             $routeProvider.state(Login.state, {

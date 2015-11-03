@@ -8,7 +8,7 @@ module App.Shell {
     export class ShellController {
         public static controllerName = "ShellController";
         public static moduleId = Shell.moduleId + "." + ShellController.controllerName;
-        public static $inject = ["$scope", Data.DataService.serviceId, Auth.AuthService.serviceId];
+        public static $inject = ["$scope", Auth.AuthService.serviceId];
 
         constructor ($scope: IShellControllerShell, authService: Auth.AuthService) {
             $scope.authService=authService;

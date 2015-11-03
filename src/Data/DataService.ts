@@ -1,6 +1,11 @@
 /// <reference path="DataGlobals.ts" />
 module App.Data {
 
+
+    interface IEventsResponse extends SolidArc.IResponse {
+        data?: any[]
+    }
+
     /**
      * Handles user authentication and current user state
      */
@@ -34,28 +39,42 @@ module App.Data {
             this.authService = authService
         }
 
-        public clientLogin = (username: string, password: string):ng.IPromise<SolidArc.IResponse> => {
-            return this.authService.login(username, password)
-        }
-
-        public clientRegister = (username: string, password: string, firstName: string, lastName: string):ng.IPromise<SolidArc.IResponse> => {
-            return this.authService.register(username, password, firstName, lastName)
-        }
-
-        public clientLogout = (): void => {
-            this.authService.logout();
-        }
-
-        public getAuthData = ():SolidArc.IUser => {
-            return this.authService.getAuthData();
+        /**
+         * Gets all events for the current user
+         * @returns {ng.IPromise<SolidArc.IResponse>}
+         */
+        public getEvents = ():ng.IPromise<IEventsResponse> => {
+            var defered = this.$q.defer();
+            this.$http.post("/api/events", {})
+                .then(
+                (response: ng.IHttpPromiseCallbackArg<any>) => {
+                    // Success
+                    defered.resolve({
+                        msg: null,
+                        data: response.data
+                    });
+                },
+                (response: ng.IHttpPromiseCallbackArg<any>) => {
+                    // Failure
+                    defered.reject({
+                        msg: response.data.msg
+                    });
+                });
+            return defered.promise;
         }
     }
 
     /**
      * Angular module and service registration
      */
-    angular.module(DataService.moduleId, [])
+    angular.module(DataService.moduleId, ["ngMockE2E"])
         .service(DataService.serviceId, DataService)
+        .run(function($httpBackend:angular.IHttpBackendService) {
+        // do not bother server, respond with given content
+        $httpBackend.whenPOST('/api/events').respond(function (method:string, url:string, data:any, headers:any, params:any) {
+            return [200, {events: [{name: "Guelph 2016"}, {name: "Laurier 2016"}]}];
+        });
+    });
 
 
 
