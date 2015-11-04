@@ -27,11 +27,6 @@ declare module SolidArc {
         userId: number;
 
         /**
-         * email, only initialized if constructed by authorized user
-         */
-        // email: string;
-
-        /**
          * Username if set
          */
         username: string;
@@ -40,31 +35,9 @@ declare module SolidArc {
          * Password if set
          */
         password: string;
-
-        /**
-         * First name of user
-         */
-        firstName: string;
-
-        /**
-         * Last name of user
-         */
-        lastName: string;
-
         /**
          * Session token
          */
         token: string;
-
-        /**
-         * Bio of user
-         */
-        bio: string;
-
-
-        /**
-         * User picture (not always populated)
-         */
-        picture: string;
     }
 }

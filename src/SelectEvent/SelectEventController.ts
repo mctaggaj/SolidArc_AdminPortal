@@ -22,7 +22,6 @@ module App.SelectEvent {
             this.$state = $state;
             this.scope = $scope
             this.scope.select = () => {
-                console.log(this.scope.selectedEvent);
                 if (this.scope.selectedEvent) {
                     this.$state.go(Home.state);
                 }
@@ -36,7 +35,6 @@ module App.SelectEvent {
 
             })
         }
-
     }
 
 

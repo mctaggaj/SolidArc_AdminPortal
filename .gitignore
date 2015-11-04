@@ -3,3 +3,4 @@ node_modules/**/*
 package/**/*
 dist/**/*
 serverConfig.json
+.idea/workspace.xml

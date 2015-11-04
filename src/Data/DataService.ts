@@ -7,7 +7,7 @@ module App.Data {
     }
 
     /**
-     * Handles user authentication and current user state
+     * Gets data from the api
      */
     export class DataService {
         public static serviceId = "DataService";
