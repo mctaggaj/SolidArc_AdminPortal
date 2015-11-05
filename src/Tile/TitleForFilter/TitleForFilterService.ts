@@ -2,10 +2,6 @@
 module App.Tile.TitleForFilter {
 
 
-    export interface ITitleResponse extends SolidArc.IResponse {
-        title: string;
-    }
-
     /**
      * Gets data from the api
      */
@@ -37,22 +33,20 @@ module App.Tile.TitleForFilter {
          * Gets all events for the current user
          * @returns {ng.IPromise<SolidArc.ITitleResponse>}
          */
-        public getTitleForFilter = (filter: string):ng.IPromise<ITitleResponse> => {
+        public getTitleForFilter = (filter: string):ng.IPromise<string> => {
             var defered = this.$q.defer();
-            this.$http.get("/api/title-for-filter", {filter: filter})
+            if (filter === undefined) {
+                filter = " ";
+            }
+            this.$http.post("/api/title-for-filter", {filter: filter})
                 .then(
                 (response: ng.IHttpPromiseCallbackArg<any>) => {
                     // Success
-                    defered.resolve({
-                        msg: null,
-                        tile: response.data.title
-                    });
+                    defered.resolve(response.data.title);
                 },
                 (response: ng.IHttpPromiseCallbackArg<any>) => {
                     // Failure
-                    defered.reject({
-                        msg: response.data.msg
-                    });
+                    defered.resolve("Dashboard")
                 });
             return defered.promise;
         }
@@ -65,13 +59,19 @@ module App.Tile.TitleForFilter {
         .service(TitleForFilterService.serviceId, TitleForFilterService)
         .run(function($httpBackend:angular.IHttpBackendService) {
         // do not bother server, respond with given content
-        $httpBackend.whenGET('/api/title-for-filter').respond(function (method:string, url:string, data:any, headers:any, params:any) {
-            if (data.filter === "") {
-                return [200, {title: "Administrator Dashboard"}]
+        $httpBackend.whenPOST('/api/title-for-filter').respond(function (method:string, url:string, data:any, headers:any, params:any) {
+            data = JSON.parse(JSON.stringify(eval("(" +data+ ")")));
+            var title = "Unknown Title";
+            var titles:any = {
+                "": "Administrator Dashboard",
+                "routes": "Routes Dashboard",
+                "all": "All Options Dashboard"
+
             }
-            else {
-                return [200, {title: "Unknown Title"}]
+            if (titles.hasOwnProperty(data.filter)) {
+                title = titles[data.filter]
             }
+            return [200, {title: title}];
         });
     });
 
