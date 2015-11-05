@@ -23,7 +23,7 @@ module App.Tile {
     export class TileService {
         public static serviceId = "TileService";
         public static moduleId = App.moduleId + "." + TileService.serviceId;
-        public static $inject: string[] = ["$http", "$q"];
+        public static $inject: string[] = ["$http", "$q", "$state"];
 
         /**
          * The http service
@@ -34,6 +34,11 @@ module App.Tile {
          * The promise service
          */
         private $q: ng.IQService;
+
+        /**
+         * The state service
+         */
+        private $state: ng.ui.IStateService;
 
         /**
          * Helper function to get the subset of an array where each item satisfies a condition
@@ -68,9 +73,10 @@ module App.Tile {
         /**
          * Creates a new DataService
          */
-        constructor ($http: ng.IHttpService, $q: ng.IQService) {
+        constructor ($http: ng.IHttpService, $q: ng.IQService, $state: ng.ui.IStateService) {
             this.$http = $http;
             this.$q = $q;
+            this.$state = $state;
         }
 
         /**
@@ -112,6 +118,10 @@ module App.Tile {
             })
             return deferred.promise;
         }
+
+        public executeTile = (tile: Tile.ITile) => {
+            this.$state.go(tile.action.state, tile.action.stateParams);
+        }
     }
 
     /**
@@ -124,6 +134,118 @@ module App.Tile {
         $httpBackend.whenPOST('/api/tiles').respond(function (method:string, url:string, data:any, headers:any, params:any) {
             var tiles: ITile[] = [];
             tiles.push(
+                {
+                    text: "Events",
+                    tags: [
+                        "all",
+                        ""
+                    ],
+                    textColor: "white",
+                    background: "black",
+                    action: {
+                        state: "home",
+                        stateParams: {
+                            filter: "events"
+                        }
+                    }
+                },
+                {
+                    text: "Participants",
+                    tags: [
+                        "all",
+                        ""
+                    ],
+                    textColor: "white",
+                    background: "black",
+                    action: {
+                        state: "home",
+                        stateParams: {
+                            filter: "participants"
+                        }
+                    }
+                },
+                {
+                    text: "Create Participant",
+                    tags: [
+                        "all",
+                        "create",
+                        "participants"
+                    ],
+                    textColor: "white",
+                    background: "black",
+                    action: {
+                        state: "home",
+                        stateParams: {
+                            filter: "routes"
+                        }
+                    }
+                },
+                {
+                    text: "Edit Participant",
+                    tags: [
+                        "all",
+                        "edit",
+                        "participants"
+                    ],
+                    textColor: "white",
+                    background: "black",
+                    action: {
+                        state: "home",
+                        stateParams: {
+                            filter: "routes"
+                        }
+                    }
+                },
+                {
+                    text: "Delete Participant",
+                    tags: [
+                        "all",
+                        "delete",
+                        "participants"
+                    ],
+                    textColor: "white",
+                    background: "black",
+                    action: {
+                        state: "home",
+                        stateParams: {
+                            filter: "routes"
+                        }
+                    }
+                },
+                {
+                    text: "Add Participant to Team",
+                    tags: [
+                        "all",
+                        "add",
+                        "teams",
+                        "participants"
+                    ],
+                    textColor: "white",
+                    background: "black",
+                    action: {
+                        state: "home",
+                        stateParams: {
+                            filter: "routes"
+                        }
+                    }
+                },
+                {
+                    text: "Remove Participant to Team",
+                    tags: [
+                        "all",
+                        "remove",
+                        "teams",
+                        "participants"
+                    ],
+                    textColor: "white",
+                    background: "black",
+                    action: {
+                        state: "home",
+                        stateParams: {
+                            filter: "routes"
+                        }
+                    }
+                },
                 {
                     text: "Routes",
                     tags: [
@@ -140,39 +262,74 @@ module App.Tile {
                     }
                 },
                 {
-                    text: "Participants",
+                    text: "Create Route",
                     tags: [
-                        "All",
-                        ""
+                        "all",
+                        "create",
+                        "routes"
                     ],
                     textColor: "white",
                     background: "black",
                     action: {
                         state: "home",
                         stateParams: {
-                            filter: "participants"
+                            filter: "routes"
                         }
                     }
                 },
                 {
-                    text: "Event",
+                    text: "Edit Route",
                     tags: [
-                        "All",
-                        ""
+                        "all",
+                        "edit",
+                        "routes"
                     ],
                     textColor: "white",
                     background: "black",
                     action: {
                         state: "home",
                         stateParams: {
-                            filter: "event"
+                            filter: "routes"
+                        }
+                    }
+                },
+                {
+                    text: "Delete Route",
+                    tags: [
+                        "all",
+                        "delete",
+                        "routes"
+                    ],
+                    textColor: "white",
+                    background: "black",
+                    action: {
+                        state: "home",
+                        stateParams: {
+                            filter: "routes"
+                        }
+                    }
+                },
+                {
+                    text: "Assign Team to Route",
+                    tags: [
+                        "all",
+                        "assign",
+                        "teams",
+                        "routes"
+                    ],
+                    textColor: "white",
+                    background: "black",
+                    action: {
+                        state: "home",
+                        stateParams: {
+                            filter: "routes"
                         }
                     }
                 },
                 {
                     text: "Teams",
                     tags: [
-                        "All",
+                        "all",
                         ""
                     ],
                     textColor: "white",
@@ -185,9 +342,39 @@ module App.Tile {
                     }
                 },
                 {
+                    text: "Info",
+                    tags: [
+                        "all",
+                        ""
+                    ],
+                    textColor: "white",
+                    background: "black",
+                    action: {
+                        state: "home",
+                        stateParams: {
+                            filter: "event"
+                        }
+                    }
+                },
+                {
+                    text: "Chat",
+                    tags: [
+                        "all",
+                        ""
+                    ],
+                    textColor: "white",
+                    background: "black",
+                    action: {
+                        state: "home",
+                        stateParams: {
+                            filter: "chat"
+                        }
+                    }
+                },
+                {
                     text: "Administrators",
                     tags: [
-                        "All",
+                        "all",
                         ""
                     ],
                     textColor: "white",
@@ -196,6 +383,35 @@ module App.Tile {
                         state: "home",
                         stateParams: {
                             filter: "administrators"
+                        }
+                    }
+                },
+                {
+                    text: "Buses",
+                    tags: [
+                        "all",
+                        ""
+                    ],
+                    textColor: "white",
+                    background: "black",
+                    action: {
+                        state: "home",
+                        stateParams: {
+                            filter: "buses"
+                        }
+                    }
+                },
+                {
+                    text: "All",
+                    tags: [
+                        ""
+                    ],
+                    textColor: "white",
+                    background: "black",
+                    action: {
+                        state: "home",
+                        stateParams: {
+                            filter: "all"
                         }
                     }
                 });
