@@ -45,7 +45,7 @@ module App.Data {
          */
         public getEvents = ():ng.IPromise<IEventsResponse> => {
             var defered = this.$q.defer();
-            this.$http.post("/api/events", {})
+            this.$http.get("/api/events", {})
                 .then(
                 (response: ng.IHttpPromiseCallbackArg<any>) => {
                     // Success
@@ -71,7 +71,7 @@ module App.Data {
         .service(DataService.serviceId, DataService)
         .run(function($httpBackend:angular.IHttpBackendService) {
         // do not bother server, respond with given content
-        $httpBackend.whenPOST('/api/events').respond(function (method:string, url:string, data:any, headers:any, params:any) {
+        $httpBackend.whenGET('/api/events').respond(function (method:string, url:string, data:any, headers:any, params:any) {
             return [200, {events: [{name: "Guelph 2016"}, {name: "Laurier 2016"}]}];
         });
     });
