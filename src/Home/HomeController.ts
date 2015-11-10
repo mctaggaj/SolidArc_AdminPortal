@@ -1,7 +1,7 @@
 /// <reference path="HomeGlobals.ts" />
 module App.Home {
 
-    interface IHomeControllerShell extends ng.IScope{
+    interface IHomeControllerScope extends ng.IScope{
         tiles: Tile.ITile[];
         clickTile(tile: Tile.ITile):void;
         title: string;
@@ -18,7 +18,7 @@ module App.Home {
         public static moduleId = Home.moduleId + "." + HomeController.controllerId;
 
         public static $inject = ["$scope","$stateParams",Tile.TileService.serviceId, Tile.TitleForFilter.TitleForFilterService.serviceId];
-        constructor (private $scope: IHomeControllerShell, $stateParams: IHomeStateParams, tileService: Tile.TileService, titleForFilterService: Tile.TitleForFilter.TitleForFilterService) {
+        constructor (private $scope: IHomeControllerScope, $stateParams: IHomeStateParams, tileService: Tile.TileService, titleForFilterService: Tile.TitleForFilter.TitleForFilterService) {
             this.$scope = $scope;
             this.$scope.clickTile = (tile: Tile.ITile) => this.tileService.executeTile(tile);
             this.tileService = tileService;
