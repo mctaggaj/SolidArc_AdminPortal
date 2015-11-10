@@ -2,6 +2,9 @@
 module App.Participant {
 
     interface IParticipantControllerScope extends ng.IScope{
+        participants: any[];
+        selectedParticipant: any;
+        select: (participant: any) => void;
     }
 
     interface IParticipantStateParams {
@@ -16,6 +19,13 @@ module App.Participant {
         public static $inject = ["$scope","$stateParams"];
         constructor (private $scope: IParticipantControllerScope, $stateParams: IParticipantStateParams) {
             this.$scope = $scope;
+            this.$scope.participants = [
+                {name: "Participant 1"},
+                {name: "Participant 2"}
+            ]
+            this.$scope.select = (participant: any) => {
+                this.$scope.selectedParticipant = participant;
+            }
         }
     }
 
@@ -26,7 +36,7 @@ module App.Participant {
             $stateProvider.state(Participant.state, {
                 templateUrl: Participant.baseUrl+'participant.html',
                 controller: ParticipantController.controllerId,
-                url: "/participant/{participantId}"
+                url: "/participant?user={participantId}"
             })
         }])
 }

@@ -42,9 +42,8 @@ module App.Tile {
                     textColor: "white",
                     background: "black",
                     action: {
-                        state: "home",
+                        state: "createParticipant",
                         stateParams: {
-                            filter: "routes"
                         }
                     }
                 },
@@ -58,9 +57,8 @@ module App.Tile {
                     textColor: "white",
                     background: "black",
                     action: {
-                        state: "home",
+                        state: "participant",
                         stateParams: {
-                            filter: "routes"
                         }
                     }
                 },
@@ -74,9 +72,8 @@ module App.Tile {
                     textColor: "white",
                     background: "black",
                     action: {
-                        state: "home",
+                        state: "participant",
                         stateParams: {
-                            filter: "routes"
                         }
                     }
                 },
@@ -91,9 +88,8 @@ module App.Tile {
                     textColor: "white",
                     background: "black",
                     action: {
-                        state: "home",
+                        state: "participant",
                         stateParams: {
-                            filter: "routes"
                         }
                     }
                 },
@@ -108,9 +104,8 @@ module App.Tile {
                     textColor: "white",
                     background: "black",
                     action: {
-                        state: "home",
+                        state: "participant",
                         stateParams: {
-                            filter: "routes"
                         }
                     }
                 },
