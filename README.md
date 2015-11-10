@@ -2,7 +2,24 @@
 
 # Getting Started
 
-Note: You must have bower and gulp globally installed on your machine. If you don't already have them, run `npm install -g bower gulp`.
+## First Things First
+
+### Install node and npm
+
+```bash
+  # Using Ubuntu's package manager (you will probably use sudo)
+  apt-get install nodejs npm
+  ln -s /usr/bin/nodejs /usr/bin/node
+```
+
+### Install bower and gulp
+
+```bash
+  # Might need sudo for the following command
+  npm install -g bower gulp
+```
+
+## Second Things Second
 
 To download, package, and serve the application, run the following commands. The packaged application will be found in `dist/package`.
 
@@ -14,7 +31,7 @@ To download, package, and serve the application, run the following commands. The
   npm install # Get dependencies, package, watch, then run the server
 ```
 
-## Troubleshooting
+# Troubleshooting
 
 If you run into problems when `npm install` complains about a deprecated node version or something, try the following commands:
 
