@@ -139,7 +139,7 @@ module App.Tile {
                     textColor: "white",
                     background: "black",
                     action: {
-                        state: "routes",
+                        state: "createRoute",
                         stateParams: {
                         }
                     }
