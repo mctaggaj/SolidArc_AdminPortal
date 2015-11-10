@@ -1,6 +1,7 @@
 {
   "styles": {
     "src": "styles/app.less",
+    "all": "src/**/*.less",
     "dest": "package/"
   },
 

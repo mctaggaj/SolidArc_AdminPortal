@@ -69,6 +69,7 @@ gulp.task('build-ts', function() {
 gulp.task('watch', function () {
     gulp.watch(config.ts.src, ["deploy"]);
     gulp.watch(config.styles.src, ["deploy"]);
+    gulp.watch(config.styles.all, ["deploy"]);
     gulp.watch('./index.html', ["deploy"]);
     gulp.watch(config.partials.src, ["deploy"]);
 });
