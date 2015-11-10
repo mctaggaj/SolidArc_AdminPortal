@@ -4,6 +4,7 @@
 /// <reference path="Tile/TileModule.ts"/>
 /// <reference path="Shell/ShellModule.ts"/>
 /// <reference path="Home/HomeModule.ts"/>
+/// <reference path="Participant/ParticipantModule.ts"/>
 /// <reference path="Login/LoginModule.ts"/>
 /// <reference path="SelectEvent/SelectEventModule.ts"/>
 /**
