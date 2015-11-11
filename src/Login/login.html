@@ -1,4 +1,4 @@
-<div class="login-container" id="login">
+<div class="container login-container" id="login">
     <h1>Administrator Login</h1>
     <img src="/assets/images/logo.png" class="logo">
     <div class="alert alert-danger alert-dismissible login-alert" ng-show="error.enabled" role="alert">
@@ -7,13 +7,14 @@
     </div>
     <form class="jumbotron panel login-form" ng-show="loginMode" ng-submit="login()">
 
-        <div class="form-group form-group-lg">
-            <input type="email" class="form-control input-lg" id="email" placeholder="Email" ng-model="info.email" ng-required="true">
+        <div class="form-group form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Email" ng-model="info.email" ng-required="true">
         </div>
-        <div class="form-group form-group-lg">
-            <input type="password" class="form-control input-lg" id="password" placeholder="Password" ng-model="info.password" ng-required="true">
+        <div class="form-group form-group">
+            <label>Password</label><input type="password" class="form-control" id="password" placeholder="Password" ng-model="info.password" ng-required="true">
         </div>
 
-        <button type="submit" class="btn-lg btn-primary btn-block">Login</button>
+        <button type="submit" class="btn btn-primary pull-right">Login</button>
     </form>
 </div>

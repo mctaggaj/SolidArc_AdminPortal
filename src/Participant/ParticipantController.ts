@@ -1,31 +1,29 @@
 /// <reference path="ParticipantGlobals.ts" />
 module App.Participant {
 
-    interface IParticipantControllerScope extends ng.IScope{
-        participants: any[];
-        selectedParticipant: any;
-        select: (participant: any) => void;
+    interface IParticipant extends IItem{
+        name: string;
+    }
+    interface IParticipantControllerScope extends App.IListDetailScope{
     }
 
-    interface IParticipantStateParams {
-        participantId: string;
+    interface IParticipantStateParams extends App.IListDetailStateParams {
     }
 
-    export class ParticipantController {
+    export class ParticipantController extends App.ListDetailController<IParticipant>{
 
         public static controllerId = "ParticipantController";
         public static moduleId = Home.moduleId + "." + ParticipantController.controllerId;
 
-        public static $inject = ["$scope","$stateParams"];
-        constructor (private $scope: IParticipantControllerScope, $stateParams: IParticipantStateParams) {
-            this.$scope = $scope;
-            this.$scope.participants = [
-                {name: "Participant 1"},
-                {name: "Participant 2"}
+
+        public static $inject = ["$scope","$stateParams","$rootScope", "$state", Data.DataService.serviceId];
+        constructor (protected $scope: IParticipantControllerScope , protected $stateParams: IParticipantStateParams, $rootScope:ng.IRootScopeService, protected $state: ng.ui.IStateService) {
+            super($scope, $stateParams, $rootScope, $state, state);
+            this.$scope.list = [
+                {id: "1", name: "Participant 1"},
+                {id: "2", name: "Participant 2"}
             ]
-            this.$scope.select = (participant: any) => {
-                this.$scope.selectedParticipant = participant;
-            }
+            this.didUpdateParams();
         }
     }
 
@@ -36,7 +34,7 @@ module App.Participant {
             $stateProvider.state(Participant.state, {
                 templateUrl: Participant.baseUrl+'participant.html',
                 controller: ParticipantController.controllerId,
-                url: "/participant?user={participantId}"
+                url: "/participant?selectedId"
             })
         }])
 }
