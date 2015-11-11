@@ -47,10 +47,13 @@ module App {
 
         constructor ($scope: ng.IScope, protected $stateParams: any, $rootScope:ng.IRootScopeService, protected $state: ng.ui.IStateService, state: string) {
             var _this = this;
+            var previousParams;
             var unsubscribe = $rootScope.$on('$stateChangeStart',
                 function(event, toState, toParams, fromState, fromParams){
-                    if (fromState.name === toState.name && toState.name === state) {
+                    if (fromState.name === toState.name && toState.name === state && JSON.stringify(toParams) !== JSON.stringify(previousParams)) {
                         event.preventDefault();
+                        previousParams = toParams;
+                        history.pushState(this.$stateParams, "Trick Or Eat", _this.$state.href(state, toParams));
                         _this.$stateParams = toParams;
                         _this.didUpdateParams();
                         $state.go(toState.name, toParams, {location:'replace',notify:false})

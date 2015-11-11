@@ -139,51 +139,6 @@ module App.Tile {
             }
         },
         {
-            text: "Create Administrator",
-            tags: [
-                "all",
-                "create",
-                "administrators"
-            ],
-            textColor: "white",
-            background: "black",
-            action: {
-                state: "createAdministrator",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "Edit Administrator",
-            tags: [
-                "all",
-                "edit",
-                "administrators"
-            ],
-            textColor: "white",
-            background: "black",
-            action: {
-                state: "administrator",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "Delete Administrator",
-            tags: [
-                "all",
-                "delete",
-                "administrators"
-            ],
-            textColor: "white",
-            background: "black",
-            action: {
-                state: "administrator",
-                stateParams: {
-                }
-            }
-        },
-        {
             text: "Add Participant to Team",
             tags: [
                 "all",
@@ -310,6 +265,51 @@ module App.Tile {
             }
         },
         {
+            text: "Edit Team",
+            tags: [
+                "all",
+                "edit",
+                "teams"
+            ],
+            textColor: "white",
+            background: "black",
+            action: {
+                state: "teams",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Delete Team",
+            tags: [
+                "all",
+                "delete",
+                "teams"
+            ],
+            textColor: "white",
+            background: "black",
+            action: {
+                state: "teams",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Create Team",
+            tags: [
+                "all",
+                "delete",
+                "teams"
+            ],
+            textColor: "white",
+            background: "black",
+            action: {
+                state: "teams",
+                stateParams: {
+                }
+            }
+        },
+        {
             text: "Info",
             tags: [
                 "all",
@@ -351,6 +351,51 @@ module App.Tile {
                 state: "home",
                 stateParams: {
                     filter: "administrators"
+                }
+            }
+        },
+        {
+            text: "Create Administrator",
+            tags: [
+                "all",
+                "create",
+                "administrators"
+            ],
+            textColor: "white",
+            background: "black",
+            action: {
+                state: "createAdministrator",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Edit Administrator",
+            tags: [
+                "all",
+                "edit",
+                "administrators"
+            ],
+            textColor: "white",
+            background: "black",
+            action: {
+                state: "administrator",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Delete Administrator",
+            tags: [
+                "all",
+                "delete",
+                "administrators"
+            ],
+            textColor: "white",
+            background: "black",
+            action: {
+                state: "administrator",
+                stateParams: {
                 }
             }
         },
