@@ -10,6 +10,7 @@
 @import "../src/Team/Create/create";
 @import "../src/Participant/participant";
 @import "../src/Participant/Create/create";
+@import "../src/SelectEvent/select_event";
 
 html, body {
   height: 100%;
@@ -62,11 +63,11 @@ body {
   }
 }
 
-.listDetailView {
+.listDetailView, .login-container{
   .list {
     min-width: 100px;
   }
-  .detail {
+  .detail, &#Login  {
     overflow: hidden;
     .detailContainer {
       position: relative;
@@ -78,6 +79,7 @@ body {
         float:left;
         border-right: 1px solid darken(@body-bg, 10%);
         padding-right: 10px;
+        font-weight: bold;
       }
       .detailValue {
         min-width: 150px;
@@ -85,7 +87,20 @@ body {
         overflow: hidden;
         padding-left: 10px;
       }
+      &.noLine {
+        .detailLabel {
+          border-right: 0px;
+        }
+      }
     }
+  }
+}
+h1 {
+  text-align: center;
+}
+select {
+  option {
+    text-align: center;
   }
 }
 
