@@ -63,36 +63,37 @@ body {
   }
 }
 
-.listDetailView, .login-container{
+.listDetailView, .login-container, .container{
   .list {
     min-width: 100px;
   }
-  .detail, &#Login  {
+  .detail {
     overflow: hidden;
-    .detailContainer {
-      position: relative;
-      padding-bottom: 1em;
+  }
+  .detailContainer {
+    position: relative;
+    padding-bottom: 1em;
+    .detailLabel {
+      width: 20%;
+      min-width: 150px;
+      max-width: 200px;
+      float:left;
+      border-right: 1px solid darken(@body-bg, 10%);
+      padding-right: 10px;
+      font-weight: bold;
+    }
+    .detailValue {
+      min-width: 150px;
+      min-height: 100%;
+      overflow: hidden;
+      padding-left: 10px;
+    }
+    &.noLine {
       .detailLabel {
-        width: 20%;
-        min-width: 150px;
-        max-width: 200px;
-        float:left;
-        border-right: 1px solid darken(@body-bg, 10%);
-        padding-right: 10px;
-        font-weight: bold;
-      }
-      .detailValue {
-        min-width: 150px;
-        min-height: 100%;
-        overflow: hidden;
-        padding-left: 10px;
-      }
-      &.noLine {
-        .detailLabel {
-          border-right: 0px;
-        }
+        border-right: 0px;
       }
     }
+
   }
 }
 h1 {
