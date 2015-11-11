@@ -102,5 +102,12 @@ gulp.task("run-server", function() {
     echo("Server exited with code " + code);
   });
 })
+gulp.task("clean", function() {
+  rm = spawn('rm', ['-rf', 'dist/package', 'package']);
+  function echo(msg) { console.log("" + msg); }
+  rm.on('exit', function(code) {
+    echo("Cleaned package files");
+  });
+});
 
 gulp.task('default', ["deploy", "watch", "run-server"]);

@@ -1,6 +1,7 @@
 /// <reference path="TileGlobals.ts" />
 
 module App.Tile {
+
     export var mockData = [
         {
             text: "Events",
@@ -94,7 +95,7 @@ module App.Tile {
             }
         },
         {
-            text: "Remove Participant from Team",
+            text: "Remove Participant to Team",
             tags: [
                 "all",
                 "remove",
@@ -134,7 +135,7 @@ module App.Tile {
             textColor: "white",
             background: "black",
             action: {
-                state: "routes",
+                state: "createRoute",
                 stateParams: {
                 }
             }
@@ -200,51 +201,6 @@ module App.Tile {
                 state: "home",
                 stateParams: {
                     filter: "teams"
-                }
-            }
-        },
-        {
-            text: "Edit Team",
-            tags: [
-                "all",
-                "teams",
-                "edit"
-            ],
-            textColor: "white",
-            background: "black",
-            action: {
-                state: "teams",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "Create Team",
-            tags: [
-                "all",
-                "teams",
-                "create"
-            ],
-            textColor: "white",
-            background: "black",
-            action: {
-                state: "createTeam",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "Delete Team",
-            tags: [
-                "all",
-                "teams",
-                "delete"
-            ],
-            textColor: "white",
-            background: "black",
-            action: {
-                state: "teams",
-                stateParams: {
                 }
             }
         },
@@ -322,5 +278,6 @@ module App.Tile {
                 }
             }
         }
+
     ];
 }

@@ -8,6 +8,7 @@
 /// <reference path="Team/TeamModule.ts"/>
 /// <reference path="Login/LoginModule.ts"/>
 /// <reference path="SelectEvent/SelectEventModule.ts"/>
+/// <reference path="Routes/RoutesModule.ts"/>
 /**
  * The App module.
  * Contains all sub-modules and implementation required for the app

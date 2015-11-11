@@ -4,3 +4,7 @@ package/**/*
 dist/**/*
 serverConfig.json
 .idea/workspace.xml
+
+npm-debug.log
+
+npm-debug.log
