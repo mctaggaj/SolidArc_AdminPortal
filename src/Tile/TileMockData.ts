@@ -79,6 +79,51 @@ module App.Tile {
             }
         },
         {
+            text: "Create Administrator",
+            tags: [
+                "all",
+                "create",
+                "administrators"
+            ],
+            textColor: "white",
+            background: "black",
+            action: {
+                state: "createAdministrator",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Edit Administrator",
+            tags: [
+                "all",
+                "edit",
+                "administrators"
+            ],
+            textColor: "white",
+            background: "black",
+            action: {
+                state: "administrator",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Delete Administrator",
+            tags: [
+                "all",
+                "delete",
+                "administrators"
+            ],
+            textColor: "white",
+            background: "black",
+            action: {
+                state: "administrator",
+                stateParams: {
+                }
+            }
+        },
+        {
             text: "Add Participant to Team",
             tags: [
                 "all",
