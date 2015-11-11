@@ -67,6 +67,7 @@ module App.Tile.TitleForFilter {
                 "routes": "Routes Dashboard",
                 "teams": "Teams Dashboard",
                 "administrators": "Administrators Dashboard",
+                "events":"Events Dashboard",
                 "all": "All Options Dashboard"
 
             }

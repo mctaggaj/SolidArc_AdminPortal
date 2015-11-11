@@ -2,7 +2,7 @@
 
 module App.Tile {
 
-    export var mockData = [
+    export var mockData: ITile[] = [
         {
             text: "Events",
             tags: [
@@ -13,6 +13,66 @@ module App.Tile {
             background: "black",
             action: {
                 state: "home",
+                stateParams: {
+                    filter: "events"
+                }
+            }
+        },
+        {
+            text: "Create Event",
+            tags: [
+                "all",
+                "create",
+                "events"
+            ],
+            textColor: "white",
+            background: "black",
+            action: {
+                state: "",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Select Event",
+            tags: [
+                "all",
+                "events"
+            ],
+            textColor: "white",
+            background: "black",
+            action: {
+                state: "selectEvent",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Edit Event",
+            tags: [
+                "all",
+                "edit",
+                "events"
+            ],
+            textColor: "white",
+            background: "black",
+            action: {
+                state: "",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Delete Event",
+            tags: [
+                "all",
+                "delete",
+                "events"
+            ],
+            textColor: "white",
+            background: "black",
+            action: {
+                state: "",
                 stateParams: {
                     filter: "events"
                 }
