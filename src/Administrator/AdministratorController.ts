@@ -22,20 +22,9 @@ module App.Administrator {
         constructor (protected $scope: IAdministratorControllerScope , protected $stateParams: IAdministratorStateParams, $rootScope:ng.IRootScopeService, protected $state: ng.ui.IStateService) {
             super($scope, $stateParams, $rootScope, $state, state);
             this.$scope = $scope;
-            this.$scope.list = [
-                {
-                    id: "1",
-                    username: "Administrator 1",
-                    mail: "Admin1@mx.com",
-                    password: "[RESET BUTTON HERE]"
-                },
-                {
-                    id: "2",
-                    username: "Administrator 2",
-                    mail: "Admin2@mx.com",
-                    password: "[RESET BUTTON HERE]"
-                }
-            ]
+
+            this.$scope.list = Administrator.administrators;
+
             this.didUpdateParams();
         }
     }
