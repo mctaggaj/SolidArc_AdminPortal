@@ -427,6 +427,20 @@ module App.Tile {
                     filter: "all"
                 }
             }
+        },
+        {
+            text: "Home",
+            tags: [
+                "all"
+            ],
+            textColor: "white",
+            background: "black",
+            action: {
+                state: "home",
+                stateParams: {
+                    filter: ""
+                }
+            }
         }
 
     ];
