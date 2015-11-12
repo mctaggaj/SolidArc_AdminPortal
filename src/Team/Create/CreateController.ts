@@ -1,7 +1,6 @@
 /// <reference path="CreateGlobals.ts" />
 module App.Team.Create {
 
-    import ParticipantController = App.Participant.ParticipantController;
     interface ICreateControllerScope extends ng.IScope{
         participants: Participant.IParticipant[];
         teamName: string;
@@ -20,18 +19,26 @@ module App.Team.Create {
 
             this.$scope.create = () => {
                 var name = this.$scope.teamName;
-                var captain = this.$scope.teamCaptain;
-                Team.teams.push({
+                var captain = JSON.parse(<any>this.$scope.teamCaptain);
+                for (var i = 0 ; i < Participant.unassignedParticipants.length ; i ++)
+                {
+                    if(captain.id === Participant.unassignedParticipants[i].id) {
+                        captain = Participant.unassignedParticipants[i];
+                        break;
+                    }
+                }
+                var team = {
                     id: "3",
                     name: name,
                     participants: [],
                     captain: captain
-                })
+                }
+                Team.teams.push(team);
                 var index = Participant.unassignedParticipants.indexOf(captain);
                 if (index >= 0) {
                     Participant.unassignedParticipants.splice(index, 1);
                 }
-                $state.go("teams");
+                $state.go("teams", {selectedId: team.id});
             }
 
         }

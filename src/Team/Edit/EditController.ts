@@ -13,7 +13,6 @@ module App.Team.Edit {
         public static $inject = ["$scope", Data.DataService.serviceId];
         constructor (private $scope: IEditControllerScope, dataService: Data.DataService) {
             this.$scope = $scope;
-
         }
     }
 
@@ -24,7 +23,7 @@ module App.Team.Edit {
             $stateProvider.state(Edit.state, {
                 templateUrl: Edit.baseUrl+'edit.html',
                 controller: EditController.controllerId,
-                url: "/team/edit"
+                url: "/teams/edit?teamId"
             })
         }])
 }

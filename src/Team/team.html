@@ -15,16 +15,18 @@
         <div id="TeamCaptain" class="row container-fluid detailContainer">
             <div class="detailLabel">Team Captain: </div>
             <div class="detailValue">
-                {{selected.captain.name}}
+                <a ui-sref="participant({selectedId: selected.captain.id})">{{selected.captain.name}}</a>
             </div>
         </div>
         <div id="Participants" class="row container-fluid detailContainer">
             <div class="detailLabel">
                 Participants:
-                <button class="btn btn-sm btn-block btn-secondary">Edit Participants</button>
+                <button class="btn btn-sm btn-block btn-secondary" ui-sref="editParticipants({teamId: selected.id})">Edit Participants</button>
             </div>
             <div class="detailValue">
-                <div ng-repeat="participant in selected.participants">{{participant.name}}</div>
+                <div ng-repeat="participant in selected.participants">
+                    <a ui-sref="participant({selectedId: participant.id})">{{participant.name}}</a>
+                </div>
             </div>
         </div>
         <div id="Routes" class="row container-fluid detailContainer">
@@ -36,6 +38,6 @@
                 <div ng-repeat="route in selected.routes">{{route.name}}</div>
             </div>
         </div>
-        <div id="BottomButtons" class="row container-fluid detailContainer"><button class="btn btn-secondary col-sm-5 col-xs-12">Edit Team Details</button><button class="btn btn-danger  col-sm-offset-2 col-sm-5 col-xs-12">Delete Team</button></div>
+        <div id="BottomButtons" class="row container-fluid detailContainer"><button class="btn btn-secondary col-sm-5 col-xs-12" ui-sref="editTeam({teamId:selected.id})">Edit Team Details</button><button class="btn btn-danger  col-sm-offset-2 col-sm-5 col-xs-12">Delete Team</button></div>
     </div>
 </div>
