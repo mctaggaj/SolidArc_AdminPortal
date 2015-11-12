@@ -6,7 +6,115 @@
 
 @import "../src/Login/login";
 @import "../src/Home/home";
+
 @import "../src/Routes/Create/create.less";
+
+@import "../src/Team/team";
+@import "../src/Team/Create/create";
+
+@import "../src/Participant/participant";
+@import "../src/Participant/Create/create";
+
+@import "../src/SelectEvent/select_event";
+
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-flow: column;
+  .navbar {
+    flex: 0 1 auto;
+    &:not([style*="display:none"]) {
+      + .main-view {
+        margin-top: -20px;
+      }
+    }
+  }
+
+  .main-view {
+    flex: 1 1 auto;
+    position: relative;
+    >.top-push {
+      height: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      >*[class^="col-"] {
+
+        height: 100%;
+        border-right: 1px solid darken(@body-bg, 10%);
+        &:last-of-type {
+          border:0;
+        }
+      }
+    }
+  }
+}
+
+.listRow {
+  @table-bg: @body-bg;
+  padding: 0.5rem 1rem;
+  background-color: @table-bg;
+  &:nth-of-type(2n+1) {
+    background-color: darken(@table-bg, 5%);
+  }
+  &:hover {
+    background-color: @table-bg-hover;
+  }
+  &.selected {
+    background-color:@table-bg-active
+  }
+}
+
+.listDetailView, .login-container, .container{
+  .list {
+    min-width: 100px;
+  }
+  .detail {
+    overflow: hidden;
+  }
+  .detailContainer {
+    position: relative;
+    padding-bottom: 1em;
+    .detailLabel {
+      width: 20%;
+      min-width: 150px;
+      max-width: 200px;
+      float:left;
+      border-right: 1px solid darken(@body-bg, 10%);
+      padding-right: 10px;
+      font-weight: bold;
+    }
+    .detailValue {
+      min-width: 150px;
+      min-height: 100%;
+      overflow: hidden;
+      padding-left: 10px;
+    }
+    &.noLine {
+      .detailLabel {
+        border-right: 0px;
+      }
+    }
+
+  }
+}
+h1 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+select {
+  option {
+    text-align: center;
+  }
+}
+
+
+.box .row.footer {
+  flex: 0 1 40px;
+}
 
 
 .text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {

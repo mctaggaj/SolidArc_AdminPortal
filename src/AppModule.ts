@@ -5,6 +5,8 @@
 /// <reference path="Shell/ShellModule.ts"/>
 /// <reference path="Home/HomeModule.ts"/>
 /// <reference path="Participant/ParticipantModule.ts"/>
+/// <reference path="Administrator/AdministratorModule.ts"/>
+/// <reference path="Team/TeamModule.ts"/>
 /// <reference path="Login/LoginModule.ts"/>
 /// <reference path="SelectEvent/SelectEventModule.ts"/>
 /// <reference path="Routes/RoutesModule.ts"/>
@@ -30,6 +32,5 @@ module App {
             }
         };
     });
-
 }
 

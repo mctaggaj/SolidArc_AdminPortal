@@ -1,10 +1,10 @@
-<div class="row top-push" id="participant">
-    <div class="col-xs-2 bordered">
-        <div ng-repeat="participant in participants" class="row" ng-click="select(participant)">
+<div class="top-push" id="participant">
+    <div class="col-xs-2">
+        <div ng-repeat="participant in list"class="row listRow" ng-class="{selected: participant==selected}"  ng-click="select(participant)">
             <p>{{participant.name}}</p>
         </div>
     </div>
-    <div class="col-xs-10">
-        <h2>{{selectedParticipant.name}}</h2>
+    <div class="col-xs-10 container">
+        <h2>{{selected.name}}</h2>
     </div>
 </div>

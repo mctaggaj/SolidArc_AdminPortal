@@ -1,31 +1,31 @@
 /// <reference path="ParticipantGlobals.ts" />
 module App.Participant {
 
-    interface IParticipantControllerScope extends ng.IScope{
-        participants: any[];
-        selectedParticipant: any;
-        select: (participant: any) => void;
+    interface IParticipantControllerScope extends App.IListDetailScope{
+        list: IParticipant[];
     }
 
-    interface IParticipantStateParams {
-        participantId: string;
+    interface IParticipantStateParams extends App.IListDetailStateParams {
     }
 
-    export class ParticipantController {
+    export class ParticipantController extends App.ListDetailController<Participant.IParticipant>{
 
         public static controllerId = "ParticipantController";
         public static moduleId = Home.moduleId + "." + ParticipantController.controllerId;
 
-        public static $inject = ["$scope","$stateParams"];
-        constructor (private $scope: IParticipantControllerScope, $stateParams: IParticipantStateParams) {
-            this.$scope = $scope;
-            this.$scope.participants = [
-                {name: "Participant 1"},
-                {name: "Participant 2"}
-            ]
-            this.$scope.select = (participant: any) => {
-                this.$scope.selectedParticipant = participant;
+
+        public static $inject = ["$scope","$stateParams","$rootScope", "$state", Data.DataService.serviceId];
+        constructor (protected $scope: IParticipantControllerScope , protected $stateParams: IParticipantStateParams, $rootScope:ng.IRootScopeService, protected $state: ng.ui.IStateService) {
+            super($scope, $stateParams, $rootScope, $state, state);
+            this.$scope.list = [].concat(unassignedParticipants);
+            for (var i = 0 ; i < Team.teams.length ; i ++) {
+                var team = Team.teams[i]
+                this.$scope.list.push(team.captain);
+                for (var j = 0 ; j < team.participants.length ; j ++) {
+                    this.$scope.list.push(team.participants[j]);
+                }
             }
+            this.didUpdateParams();
         }
     }
 
@@ -36,7 +36,7 @@ module App.Participant {
             $stateProvider.state(Participant.state, {
                 templateUrl: Participant.baseUrl+'participant.html',
                 controller: ParticipantController.controllerId,
-                url: "/participant?user={participantId}"
+                url: "/participants?selectedId"
             })
         }])
 }

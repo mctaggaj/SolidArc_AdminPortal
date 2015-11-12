@@ -40,4 +40,78 @@ module App {
         return dep
     }
 
+
+    export class SubParameterController {
+
+        public didUpdateParams:() => void;
+
+        constructor ($scope: ng.IScope, protected $stateParams: any, $rootScope:ng.IRootScopeService, protected $state: ng.ui.IStateService, state: string) {
+            var _this = this;
+            var unsubscribe = $rootScope.$on('beforeStateChange',
+                function(event, toState, toParams, fromState, fromParams){
+                    if (fromState.name === toState.name && toState.name === state) {
+                        event.preventDefault();
+                        _this.$stateParams = toParams;
+                        _this.didUpdateParams();
+                        $state.go(toState.name, toParams, {location:'replace',notify:false})
+                    }
+                })
+            $scope.$on('$destroy', function() {
+                unsubscribe();
+            });
+        }
+    }
+
+    export interface IItem {
+        id: string;
+    }
+
+    export interface IListDetailScope extends ng.IScope{
+        list: IItem[];
+        selected: IItem;
+        select: (item: IItem) => void;
+    }
+
+    export interface IListDetailStateParams {
+        selectedId: string;
+    }
+
+    export class ListDetailController<T extends IItem> extends SubParameterController{
+
+        protected getList: () => ng.IPromise<IItem[]>;
+
+        public select = (item: IItem) => {
+            this.$state.go(this.state, {selectedId: item.id})
+        }
+
+        public didUpdateParams = () => {
+            if (this.$scope.list && this.$scope.list.length) {
+                if (this.$stateParams.selectedId !== undefined) {
+                    for (var i = 0 ; i < this.$scope.list.length; i++) {
+                        if (this.$scope.list[i].id === this.$stateParams.selectedId) {
+                            this.$scope.selected = this.$scope.list[i];
+                        }
+                    }
+                }
+                else {
+                    this.$state.go(this.state, {selectedId: this.$scope.list[0].id})
+                }
+            }
+            else {
+                this.getList().then((items: IItem[]) => {
+                    this.$scope.list = items;
+                    this.didUpdateParams();
+                }, () => {
+                    //todo: handle error
+                })
+            }
+        };
+
+
+        constructor (protected $scope: IListDetailScope , protected $stateParams: IListDetailStateParams, $rootScope:ng.IRootScopeService, protected $state: ng.ui.IStateService, private state: string) {
+            super($scope, $stateParams, $rootScope, $state, state);
+            this.$scope.select = this.select;
+        }
+    }
+
 }

@@ -65,6 +65,9 @@ module App.Tile.TitleForFilter {
             var titles:any = {
                 "": "Administrator Dashboard",
                 "routes": "Routes Dashboard",
+                "teams": "Teams Dashboard",
+                "administrators": "Administrators Dashboard",
+                "events":"Events Dashboard",
                 "all": "All Options Dashboard"
 
             }

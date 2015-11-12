@@ -3,7 +3,6 @@
 module App.Tile {
 
 
-    export interface ITileTag extends String {}
 
     export interface ITileAction {
         state: string;
@@ -11,7 +10,7 @@ module App.Tile {
     }
 
     export interface ITile {
-        tags: ITileTag[];
+        tags: string[];
         text: string;
         textColor: string;
         background: string;

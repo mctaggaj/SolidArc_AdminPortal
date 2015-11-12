@@ -84,7 +84,7 @@ gulp.task("deploy-copy", function () {
         gulp.src("./package/**/*")
             .pipe(gulp.dest("./dist/package/"))
         console.log("Deployed");
-    },2000);
+    },5000);
 
 })
 

@@ -1,0 +1,28 @@
+<div class="top-push container" id="CreateTeam">
+    <h1>Create Team</h1>
+
+    <form class="container-fluid jumbotron select-event-form" ng-submit="create()">
+        <div id="TeamNameContainer" class="row container-fluid detailContainer noLine">
+            <div class="detailLabel">Team Name:</div>
+            <div class="detailValue">
+                <input type="text" class="form-control" id="TeamName" placeholder="Team Name" ng-model="teamName" ng-required="true">
+            </div>
+        </div>
+        <div id="TeamCaptainContainer" class="row container-fluid detailContainer noLine">
+            <div class="detailLabel">Team Captain:</div>
+            <div class="detailValue">
+                <select
+                        ng-model="teamCaptain"
+                        style="margin-bottom: 1em"
+                        name="Event"
+                        ng-required="true"
+                        class="col-xs-12 col-md-6 col-md-offset-3">
+                    <option value="">---Please select---</option>
+                    <option ng-repeat="participant in participants" value="{{participant}}">{{participant.name}}</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary pull-right">Create Team</button>
+    </form>
+</div>
