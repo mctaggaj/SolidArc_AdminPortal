@@ -31,6 +31,7 @@ module App.Administrator.Create {
 
             this.scope.mailMatch = false;
             this.scope.passwordMatch = false;
+
             if (this.scope.info.mail != this.scope.info.mail2) {
                 this.scope.mailMatch = true;
             }
