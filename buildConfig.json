@@ -44,7 +44,8 @@
       "bower_components/font-awesome/fonts/*",
       "bower_components/lodash/lodash.min.js",
       "bower_components/angular-simple-logger/dist/*",
-      "bower_components/angular-google-maps/dist/*"
+      "bower_components/angular-google-maps/dist/*",
+      "bower_components/angular-ui-validate/dist/*"
     ],
     "dest" : "package/"
   }

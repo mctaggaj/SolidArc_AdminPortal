@@ -12,9 +12,13 @@
         <div id="EmailContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Email:</div>
             <div class="detailValue">
-                <input type="email" class="form-control" id="email" placeholder="@mx.com" ng-model="info.mail2" ng-required="true">
+                <input type="email" class="form-control" id="email" placeholder="@mx.com" ng-model="info.mail2" ng-required="true" >
             </div>
         </div>
+
+
+        <span ng-show="mailMatch">Emails Don't Match</span>
+
         <div id="PasswordContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Password:</div>
             <div class="detailValue">
@@ -27,6 +31,8 @@
                 <input type="password" class="form-control" id="passwordCheck" placeholder="Password (Again)" ng-model="info.password2" ng-required="true">
             </div>
         </div>
+
+        <span ng-show="passwordMatch">Passwords Don't Match</span>
 
         <button type="submit" class="btn btn-primary pull-right">Create Administrator</button>
     </form>
