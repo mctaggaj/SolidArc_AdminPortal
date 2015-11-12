@@ -64,6 +64,10 @@ module App.Tile.TitleForFilter {
             var title = "Unknown Title";
             var titles:any = {
                 "": "Administrator Dashboard",
+                "participants": "Participants Dashboard",
+                "info": "Information Dashboard",
+                "chat": "Chat Dashboard",
+                "buses":"Buses Dashboard",
                 "routes": "Routes Dashboard",
                 "teams": "Teams Dashboard",
                 "administrators": "Administrators Dashboard",

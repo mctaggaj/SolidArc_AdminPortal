@@ -320,7 +320,7 @@ module App.Tile {
             action: {
                 state: "home",
                 stateParams: {
-                    filter: "event"
+                    filter: "info"
                 }
             }
         },
