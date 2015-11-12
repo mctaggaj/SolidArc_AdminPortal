@@ -18,9 +18,6 @@ module App.Administrator.Create {
         public static controllerId = "CreateAdministratorController";
         public static moduleId = Create.moduleId + "." + CreateController.controllerId;
 
-        private $state: ng.ui.IStateService;
-
-
         private scope;
 
         public static $inject = ["$scope", "$state", Data.DataService.serviceId];
