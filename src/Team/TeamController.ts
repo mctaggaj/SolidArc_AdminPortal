@@ -1,12 +1,6 @@
 /// <reference path="TeamGlobals.ts" />
 module App.Team {
 
-    interface ITeam extends IItem{
-        name: string;
-        captain: any;
-        participants: any[];
-    }
-
     interface ITeamControllerScope extends App.IListDetailScope{
     }
 
@@ -22,21 +16,7 @@ module App.Team {
         constructor (protected $scope: ITeamControllerScope , protected $stateParams: ITeamStateParams, $rootScope:ng.IRootScopeService, protected $state: ng.ui.IStateService) {
             super($scope, $stateParams, $rootScope, $state, state);
             this.$scope = $scope;
-            this.$scope.list = [
-                {
-                    id: "1",
-                    name: "Team 1",
-                    captain: {name: "Captain 1"},
-                    participants: [
-                        {name: "Participant 1"},
-                        {name: "Participant 2"}
-                    ]
-                },
-                {
-                    id: "2",
-                    name: "Team 2"
-                }
-            ]
+            this.$scope.list = teams;
             this.didUpdateParams();
         }
     }

@@ -1,16 +1,14 @@
 /// <reference path="ParticipantGlobals.ts" />
 module App.Participant {
 
-    interface IParticipant extends IItem{
-        name: string;
-    }
     interface IParticipantControllerScope extends App.IListDetailScope{
+        list: IParticipant[];
     }
 
     interface IParticipantStateParams extends App.IListDetailStateParams {
     }
 
-    export class ParticipantController extends App.ListDetailController<IParticipant>{
+    export class ParticipantController extends App.ListDetailController<Participant.IParticipant>{
 
         public static controllerId = "ParticipantController";
         public static moduleId = Home.moduleId + "." + ParticipantController.controllerId;
@@ -19,10 +17,14 @@ module App.Participant {
         public static $inject = ["$scope","$stateParams","$rootScope", "$state", Data.DataService.serviceId];
         constructor (protected $scope: IParticipantControllerScope , protected $stateParams: IParticipantStateParams, $rootScope:ng.IRootScopeService, protected $state: ng.ui.IStateService) {
             super($scope, $stateParams, $rootScope, $state, state);
-            this.$scope.list = [
-                {id: "1", name: "Participant 1"},
-                {id: "2", name: "Participant 2"}
-            ]
+            this.$scope.list = [].concat(unassignedParticipants);
+            for (var i = 0 ; i < Team.teams.length ; i ++) {
+                var team = Team.teams[i]
+                this.$scope.list.push(team.captain);
+                for (var j = 0 ; j < team.participants.length ; j ++) {
+                    this.$scope.list.push(team.participants[j]);
+                }
+            }
             this.didUpdateParams();
         }
     }
@@ -34,7 +36,7 @@ module App.Participant {
             $stateProvider.state(Participant.state, {
                 templateUrl: Participant.baseUrl+'participant.html',
                 controller: ParticipantController.controllerId,
-                url: "/participant?selectedId"
+                url: "/participants?selectedId"
             })
         }])
 }

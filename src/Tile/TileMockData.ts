@@ -304,7 +304,7 @@ module App.Tile {
             textColor: "white",
             background: "black",
             action: {
-                state: "teams",
+                state: "createTeam",
                 stateParams: {
                 }
             }
