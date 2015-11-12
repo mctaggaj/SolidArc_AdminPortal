@@ -149,7 +149,7 @@ module App.Tile {
             textColor: "white",
             background: "black",
             action: {
-                state: "participant",
+                state: "teams",
                 stateParams: {
                 }
             }
@@ -165,7 +165,7 @@ module App.Tile {
             textColor: "white",
             background: "black",
             action: {
-                state: "participant",
+                state: "teams",
                 stateParams: {
                 }
             }
