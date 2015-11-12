@@ -51,6 +51,11 @@
     <script src="bower_components/angular-http-auth/src/http-auth-interceptor.js"></script>
     <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
     <script src="bower_components/angular-base64-upload/dist/angular-base64-upload.min.js"></script>
+    <!-- Include dependencies for google maps integration -->
+    <script src="bower_components/lodash/lodash.min.js"></script>
+    <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+    <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
 </head>
 <body ng-app="App" ng-controller="ShellController">
 <nav class="navbar navbar-default navbar-top" ng-show="authService.isLoggedIn()">

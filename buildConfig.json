@@ -41,7 +41,10 @@
       "bower_components/angular-base64-upload/dist/angular-base64-upload.min.js",
       "bower_components/font-awesome/css/font-awesome.min.css",
       "bower_components/font-awesome/css/font-awesome.min.css.map",
-      "bower_components/font-awesome/fonts/*"
+      "bower_components/font-awesome/fonts/*",
+      "bower_components/lodash/lodash.min.js",
+      "bower_components/angular-simple-logger/dist/*",
+      "bower_components/angular-google-maps/dist/*"
     ],
     "dest" : "package/"
   }

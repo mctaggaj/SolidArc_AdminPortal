@@ -31,5 +31,8 @@
     "gulp-less": "~3",
     "run-sequence": "1.0.2"
   },
-  "homepage": "https://github.com/mctaggaj/SolidArc_AdminPortal"
+  "homepage": "https://github.com/mctaggaj/SolidArc_AdminPortal",
+  "dependencies": {
+    "angular-google-maps": "~2.2.1"
+  }
 }
