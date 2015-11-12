@@ -9,8 +9,8 @@ module App.Tile {
                 "all",
                 ""
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "home",
                 stateParams: {
@@ -25,8 +25,8 @@ module App.Tile {
                 "create",
                 "events"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "",
                 stateParams: {
@@ -39,8 +39,8 @@ module App.Tile {
                 "all",
                 "events"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "selectEvent",
                 stateParams: {
@@ -54,8 +54,8 @@ module App.Tile {
                 "edit",
                 "events"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "",
                 stateParams: {
@@ -69,8 +69,8 @@ module App.Tile {
                 "delete",
                 "events"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "",
                 stateParams: {
@@ -84,8 +84,8 @@ module App.Tile {
                 "all",
                 ""
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "home",
                 stateParams: {
@@ -100,8 +100,8 @@ module App.Tile {
                 "create",
                 "participants"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "createParticipant",
                 stateParams: {
@@ -115,8 +115,8 @@ module App.Tile {
                 "edit",
                 "participants"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "participant",
                 stateParams: {
@@ -130,8 +130,8 @@ module App.Tile {
                 "delete",
                 "participants"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "participant",
                 stateParams: {
@@ -146,8 +146,8 @@ module App.Tile {
                 "teams",
                 "participants"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "teams",
                 stateParams: {
@@ -162,8 +162,8 @@ module App.Tile {
                 "teams",
                 "participants"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "teams",
                 stateParams: {
@@ -176,8 +176,8 @@ module App.Tile {
                 "all",
                 ""
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "home",
                 stateParams: {
@@ -192,8 +192,8 @@ module App.Tile {
                 "create",
                 "routes"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "createRoute",
                 stateParams: {
@@ -207,8 +207,8 @@ module App.Tile {
                 "edit",
                 "routes"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "home",
                 stateParams: {
@@ -223,8 +223,8 @@ module App.Tile {
                 "delete",
                 "routes"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "home",
                 stateParams: {
@@ -240,8 +240,8 @@ module App.Tile {
                 "teams",
                 "routes"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "home",
                 stateParams: {
@@ -255,8 +255,8 @@ module App.Tile {
                 "all",
                 ""
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "home",
                 stateParams: {
@@ -271,8 +271,8 @@ module App.Tile {
                 "edit",
                 "teams"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "teams",
                 stateParams: {
@@ -286,8 +286,8 @@ module App.Tile {
                 "delete",
                 "teams"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "teams",
                 stateParams: {
@@ -301,8 +301,8 @@ module App.Tile {
                 "delete",
                 "teams"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "createTeam",
                 stateParams: {
@@ -315,8 +315,8 @@ module App.Tile {
                 "all",
                 ""
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "home",
                 stateParams: {
@@ -330,8 +330,8 @@ module App.Tile {
                 "all",
                 ""
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "home",
                 stateParams: {
@@ -345,8 +345,8 @@ module App.Tile {
                 "all",
                 ""
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "home",
                 stateParams: {
@@ -361,8 +361,8 @@ module App.Tile {
                 "create",
                 "administrators"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "createAdministrator",
                 stateParams: {
@@ -376,8 +376,8 @@ module App.Tile {
                 "edit",
                 "administrators"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "administrator",
                 stateParams: {
@@ -391,8 +391,8 @@ module App.Tile {
                 "delete",
                 "administrators"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "administrator",
                 stateParams: {
@@ -405,8 +405,8 @@ module App.Tile {
                 "all",
                 ""
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "home",
                 stateParams: {
@@ -419,8 +419,8 @@ module App.Tile {
             tags: [
                 ""
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "home",
                 stateParams: {
@@ -433,8 +433,8 @@ module App.Tile {
             tags: [
                 "all"
             ],
-            textColor: "white",
-            background: "black",
+            textColor: "#333",
+            background: "#fea101",
             action: {
                 state: "home",
                 stateParams: {

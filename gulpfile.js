@@ -111,3 +111,5 @@ gulp.task("clean", function() {
 });
 
 gulp.task('default', ["deploy", "watch", "run-server"]);
+
+gulp.task('no-server', ["deploy", "watch"])
