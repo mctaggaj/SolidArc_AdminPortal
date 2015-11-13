@@ -28,7 +28,7 @@ module App.Team.Create {
                     }
                 }
                 var team = {
-                    id: "9" + captain.id,
+                    id: getNextId()+"",
                     name: name,
                     participants: [],
                     captain: captain
