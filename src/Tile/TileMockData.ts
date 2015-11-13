@@ -48,7 +48,7 @@ module App.Tile {
             }
         },
         {
-            text: "Edit Event",
+            text: "View/Edit Event",
             tags: [
                 "all",
                 "edit",
@@ -109,7 +109,7 @@ module App.Tile {
             }
         },
         {
-            text: "Edit Participant",
+            text: "View/Edit Participant",
             tags: [
                 "all",
                 "edit",
@@ -201,7 +201,7 @@ module App.Tile {
             }
         },
         {
-            text: "Edit Route",
+            text: "View/Edit Route",
             tags: [
                 "all",
                 "edit",
@@ -265,7 +265,7 @@ module App.Tile {
             }
         },
         {
-            text: "Edit Team",
+            text: "View/Edit Team",
             tags: [
                 "all",
                 "edit",
@@ -370,7 +370,7 @@ module App.Tile {
             }
         },
         {
-            text: "Edit Administrator",
+            text: "View/Edit Administrator",
             tags: [
                 "all",
                 "edit",
