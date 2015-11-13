@@ -24,6 +24,11 @@ module App {
     export var moduleId = "App";
     export var baseUrl = "/src/";
 
+    var id = 1;
+    export function getNextId() {
+        return id++
+    }
+
     /**
      * Gets the list of child module ids given a module
      * @param object the parent modules

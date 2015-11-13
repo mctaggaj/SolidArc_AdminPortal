@@ -35,7 +35,7 @@ module App.Routes.Create {
               };
               $scope.markers = [
                 {
-                  id: "1",
+                  id: getNextId()+"",
                   coords: {
                     latitude: 45,
                     longitude: -73
@@ -48,7 +48,7 @@ module App.Routes.Create {
                   }
                 },
                 {
-                  id: "2",
+                  id: getNextId()+"",
                   coords: {
                     latitude: 45.3,
                     longitude: -73
@@ -61,7 +61,7 @@ module App.Routes.Create {
                   }
                 },
                 {
-                  id: "3",
+                  id: getNextId()+"",
                   coords: {
                     latitude: 45,
                     longitude: -73.3

@@ -9,23 +9,30 @@ module App.Participant {
 
     export interface IParticipant extends IItem{
         name: string;
+        email?: string;
+        password?: string;
     }
 
     export var unassignedParticipants:IParticipant [] = [{
-        id: "0",
-        name: "Bryant, Seth"
+        id: getNextId()+"",
+        name: "Bryant, Seth",
+        email: "BryantSeth@gmai"
     },{
-        id: "1",
-        name: "Beckham, Jimmy"
+        id: getNextId()+"",
+        name: "Beckham, Jimmy",
+        email: "BeckhamJimmy@gmail.com"
     },{
-        id: "2",
+        id: getNextId()+"",
         name: "Rodgers, Kemp",
+        email: "RodgersKemp@gmail.com"
     },{
-        id: "3",
+        id: getNextId()+"",
         name: "Riley, Clair",
+        email: "RileyClair@gmail.com"
     },{
-        id: "4",
+        id: getNextId()+"",
         name: "Michael, Jordan",
+        email: "MichaelJordan@gmail.com"
     }
     ]
 }

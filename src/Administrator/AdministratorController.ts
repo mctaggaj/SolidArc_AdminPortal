@@ -4,7 +4,7 @@ module App.Administrator {
     interface IAdministrator extends IItem{
         name: string;
         captain: any;
-        participants: any[];
+        participants: IAdministrator[];
     }
 
     interface IAdministratorControllerScope extends App.IListDetailScope{
