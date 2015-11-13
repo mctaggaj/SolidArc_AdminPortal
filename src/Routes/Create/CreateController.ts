@@ -5,67 +5,98 @@ module App.Routes.Create {
         map: any;
         markers: any;
         route: any;
+        geocoder: any;
         create: () => void;
+        changeZoom: () => void;
+        goToAddress: () => void;
     }
 
     export class CreateController {
         public static controllerId = "CreateController";
         public static moduleId = Create.moduleId + "." + CreateController.controllerId;
 
-        public static $inject = ["$scope", Data.DataService.serviceId];
+        public static $inject = ["$scope", Data.DataService.serviceId, "uiGmapGoogleMapApi"];
 
-        constructor (private $scope: ICreateControllerScope, dataService: Data.DataService) {
+        constructor (private $scope: ICreateControllerScope, dataService: Data.DataService, uiGmapGoogleMapApi: any) {
             this.$scope = $scope;
-
-            $scope.map = {
-              center: {
-                latitude: 45,
-                longitude: -73
-              },
-              zoom: 8
+            $scope.changeZoom = () => {
+              console.log("Gravy!");
             };
-            $scope.markers = [
-              {
-                id: "1",
-                coords: {
+            
+            uiGmapGoogleMapApi.then(function(maps) {
+              $scope.geocoder = new maps.Geocoder();
+              $scope.map = {
+                center: {
                   latitude: 45,
                   longitude: -73
                 },
-                options: {
+                zoom: 8,
+                zoom_options: [1, 2, 3, 4, 5, 6, 7, 8]
+              };
+              $scope.markers = [
+                {
+                  id: "1",
+                  coords: {
+                    latitude: 45,
+                    longitude: -73
+                  },
+                  options: {
 
+                  },
+                  events: {
+
+                  }
                 },
-                events: {
+                {
+                  id: "2",
+                  coords: {
+                    latitude: 45.3,
+                    longitude: -73
+                  },
+                  options: {
 
+                  },
+                  events: {
+
+                  }
+                },
+                {
+                  id: "3",
+                  coords: {
+                    latitude: 45,
+                    longitude: -73.3
+                  },
+                  options: {
+
+                  },
+                  events: {
+
+                  }
                 }
-              },
-              {
-                id: "2",
-                coords: {
-                  latitude: 45.3,
-                  longitude: -73
-                },
-                options: {
-
-                },
-                events: {
-
+              ];
+              
+              $scope.goToAddress = () => {
+                if ($scope.map.center.address !== "") {
+                  var searching = true;
+                  console.log("Searching...");
+                  $scope.geocoder.geocode({
+                    address: $scope.map.center.address
+                  }, function(results, status) {
+                    searching = false;
+                    console.log("Found!");
+                    console.log(results, status);
+                    if (status == maps.GeocoderStatus.OK) {
+                      var lat, lng;
+                      lat = results[0].geometry.location.lat();
+                      lng = results[0].geometry.location.lng();
+                      console.log(lat, lng);
+                      $scope.map.center.latitude = lat;
+                      $scope.map.center.longitude = lng;
+                    }
+                  });
                 }
-              },
-              {
-                id: "3",
-                coords: {
-                  latitude: 45,
-                  longitude: -73.3
-                },
-                options: {
-
-                },
-                events: {
-
-                }
-              }
-            ];
-
+              };
+            });
         }
     }
 

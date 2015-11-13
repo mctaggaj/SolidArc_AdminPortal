@@ -5,4 +5,19 @@
       <ui-gmap-marker ng-repeat="marker in markers" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
       </ui-gmap-marker>
     </ui-gmap-google-map>
+    <div class="container">
+      <div class="row">
+        <select ng-options="zoom as zoom for zoom in map.zoom_options"
+                ng-model="map.zoom"
+                ng-change="console.log('hey!')">
+        </select>
+        <div class="col-xs-12">
+          <h1>Center</h1>
+          <label>Lat: <input type="text" ng-model="map.center.latitude"/></label>
+          <label>Long: <input type="text" ng-model="map.center.longitude"/></label>
+          <label>Center Address: <input type="text" ng-model="map.center.address"/></label>
+          <button ng-click="goToAddress()">Go To Address</button>
+        </div>
+      </div>
+    </div>
 </div>
