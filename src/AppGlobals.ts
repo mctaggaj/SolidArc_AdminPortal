@@ -24,6 +24,11 @@ module App {
     export var moduleId = "App";
     export var baseUrl = "/src/";
 
+    var id = 1;
+    export function getNextId() {
+        return id++
+    }
+
     /**
      * Gets the list of child module ids given a module
      * @param object the parent modules
@@ -45,10 +50,14 @@ module App {
 
         public didUpdateParams:() => void;
 
+
         constructor ($scope: ng.IScope, protected $stateParams: any, $rootScope:ng.IRootScopeService, protected $state: ng.ui.IStateService, state: string) {
+
             var _this = this;
             var unsubscribe = $rootScope.$on('$stateChangeStart',
                 function(event, toState, toParams, fromState, fromParams){
+
+                    /*console.log(event, toState, toParams, fromState, fromParams);*/
                     if (fromState.name === toState.name && toState.name === state) {
                         event.preventDefault();
                         _this.$stateParams = toParams;

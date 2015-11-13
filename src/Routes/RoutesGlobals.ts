@@ -6,4 +6,5 @@ module App.Routes {
 
     export var state = "routes"
     export var routes = [];
+    export var map = {};
 }

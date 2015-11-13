@@ -51,7 +51,7 @@ module App.Administrator.Create {
                 password: ""
             };
 
-            administratorInfo.id = "-1";
+            administratorInfo.id = getNextId()+"";
             administratorInfo.username = this.scope.info.mail;
             administratorInfo.mail = this.scope.info.mail;
             administratorInfo.password = this.scope.info.password;

@@ -17,13 +17,14 @@ module App.Routes.Create {
         mapClick: (mapModel: any, eventName: any, originalEventArgs: any) => void;
     }
 
-    export class CreateController {
+    export class CreateController extends App.ListDetailController<IType> {
         public static controllerId = "CreateController";
         public static moduleId = Create.moduleId + "." + CreateController.controllerId;
 
-        public static $inject = ["$scope", Data.DataService.serviceId, "uiGmapGoogleMapApi"];
+        public static $inject = ["$rootScope", "$scope", Data.DataService.serviceId, "uiGmapGoogleMapApi", "$state", "$stateParams"];
 
-        constructor (private $scope: ICreateControllerScope, dataService: Data.DataService, uiGmapGoogleMapApi: any) {
+        constructor ($rootScope: any, private $scope: ICreateControllerScope, dataService: Data.DataService, uiGmapGoogleMapApi: any, protected $state: ng.ui.IStateService, $stateParams: any) {
+          super($scope, $stateParams, $rootScope, $state, state);
             this.$scope = $scope;
             $scope.routePending = false;
             $scope.changeZoom = () => {
@@ -71,8 +72,11 @@ module App.Routes.Create {
                 console.log("save route");
                 var route = {
                   "id": "" + App.getNextId(),
-                  "markers": $scope.markers
+                  "markers": []
                 };
+                for (var i = 0; i < $scope.markers.length; i++) {
+                  route.markers.push($scope.markers[i]);
+                }
                 Routes.routes.push(route);
                 $state.go('routes', { selectedId: route.id });
               };
@@ -146,7 +150,7 @@ module App.Routes.Create {
                 url: "/routes/create"
             })
         }])
-        .config(['uiGmapGoogleMapApiProvider', (GoogleMapApiProviders) => {
+        .config(['uiGmapGoogleMapApiProvider', '$stateProvider', (GoogleMapApiProviders, $stateProvider: ng.ui.IStateProvider) => {
           GoogleMapApiProviders.configure({
 
           });

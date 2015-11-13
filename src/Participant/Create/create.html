@@ -1,4 +1,45 @@
 <div class="top-push container" id="CreateParticipant">
     <h1>Create Participant</h1>
 
+    <form class=" container jumbotron" ng-submit="create()">
+
+        <div id="EmailContainer" class="row container-fluid detailContainer noLine">
+            <div class="detailLabel">Email:</div>
+            <div class="detailValue">
+                <input type="email" class="form-control" id="username" placeholder="Email" ng-model="info.mail" ng-required="true">
+            </div>
+        </div>
+        <div id="ConfirmEmailContainer" class="row container-fluid detailContainer noLine">
+            <div class="detailLabel">Re-enter Email:</div>
+            <div class="detailValue">
+                <input type="email" class="form-control" id="email" placeholder="Confirm Email" ng-model="info.mail2" ng-required="true" >
+                <br><span class="errorLabel" ng-show="mailMatch">Emails Don't Match</span>
+            </div>
+        </div>
+
+        <div id="NameContainer" class="row container-fluid detailContainer noLine">
+            <div class="detailLabel">Name:</div>
+            <div class="detailValue">
+                <input type="text" class="form-control" id="name" placeholder="Last, First" ng-model="info.name" ng-required="true">
+            </div>
+        </div>
+
+        <div id="PasswordContainer" class="row container-fluid detailContainer noLine">
+            <div class="detailLabel">Password:</div>
+            <div class="detailValue">
+                <input type="password" class="form-control" id="password" placeholder="Password" ng-model="info.password" ng-required="true">
+            </div>
+        </div>
+        <div id="PasswordCheckContainer" class="row container-fluid detailContainer noLine">
+            <div class="detailLabel">Re-enter Password:</div>
+            <div class="detailValue">
+                <input type="password" class="form-control" id="passwordCheck" placeholder="Password (Again)" ng-model="info.password2" ng-required="true">
+                <br><span class="errorLabel" ng-show="passwordMatch">Passwords Don't Match</span>
+            </div>
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary pull-right">Create Participant</button>
+    </form>
 </div>

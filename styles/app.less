@@ -61,7 +61,8 @@ body {
     background-color: darken(@table-bg, 5%);
   }
   &:hover {
-    background-color: #666666;
+    background-color: @table-bg-hover;
+    color: black;
   }
   &.selected {
     background-color:@table-bg-active;
@@ -276,5 +277,9 @@ select {
 }
 
 select{
+  color: black;
+}
+
+input{
   color: black;
 }
