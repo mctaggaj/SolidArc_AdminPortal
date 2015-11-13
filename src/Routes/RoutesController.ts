@@ -2,6 +2,7 @@
 module App.Routes {
 
     interface IRoutesControllerScope extends ng.IScope{
+      list: any;
     }
 
     interface IRoutesStateParams {
@@ -14,6 +15,7 @@ module App.Routes {
         public static $inject = ["$scope","$stateParams"];
         constructor (private $scope: IRoutesControllerScope, $stateParams: IRoutesStateParams) {
             this.$scope = $scope;
+            $scope.list = Routes.routes;
         }
     }
 

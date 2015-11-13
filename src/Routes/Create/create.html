@@ -30,26 +30,29 @@
 -->
 <div class="top-push listDetailView" id="CreateRoute">
     <div class="col-xs-2 list">
-        <div ng-repeat="marker in markers" class="row listRow">
+        <div ng-model="markers" ng-repeat="marker in markers" class="row listRow">
             <p>{{ marker.coords.latitude }}, {{ marker.coords.longitude }}</p>
         </div>
     </div>
     <div class="detail container-fluid">
         <h1>Create Route</h1>
+        <p>Add at least two points to save the route.</p>
         <p>Click a point on the map below or type in an address to add a waypoint.</p>
         
         <label>Center Address: <input type="text" ng-model="map.center.address"/></label>
         <button class="btn btn-default" ng-click="goToAddress()">Go To Address</button>
         
         <div class="row container-fluid detailContainer">
-          <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+          <ui-gmap-google-map center='map.center' zoom='map.zoom' events='map.events'>
+            <ui-gmap-marker ng-hide="!newmarker.pending" ng-model="newmarker" coords="newmarker.coords" options="newmarker.options" events="newmarker.events" idkey="newmarker.id">
+            </ui-gmap-marker>
             <ui-gmap-marker ng-repeat="marker in markers" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
             </ui-gmap-marker>
           </ui-gmap-google-map>
         </div>
         <div class="row container-fluid detailContainer">
-            second row
+            <button class="btn btn-default" ng-show="newmarker.pending" ng-click="saveMarker()">Save Point</button>
+            <button class="btn btn-primary" ng-show="routePending" ng-click="saveRoute()">Save Route</button>
         </div>
-        <div class="row container-fluid detailContainer">lol</div>
     </div>
 </div>

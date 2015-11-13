@@ -5,4 +5,5 @@ module App.Routes {
     export var baseUrl = App.baseUrl + "Routes/";
 
     export var state = "routes"
+    export var routes = [];
 }
