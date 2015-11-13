@@ -28,6 +28,22 @@ module App.Administrator.Create {
 
 
         private createAdmin = () => {
+
+            this.scope.mailMatch = false;
+            this.scope.passwordMatch = false;
+
+            if (this.scope.info.mail != this.scope.info.mail2) {
+                this.scope.mailMatch = true;
+            }
+
+            if (this.scope.info.password != this.scope.info.password2){
+                this.scope.passwordMatch = true;
+            }
+
+            if (this.scope.passwordMatch === true || this.scope.mailMatch === true){
+                return false;
+            }
+
             var administratorInfo = {
                 id : "",
                 username: "",
@@ -49,7 +65,7 @@ module App.Administrator.Create {
     }
 
     // Angular module and controller registration
-    angular.module(CreateController.moduleId, [Data.moduleId]).
+    angular.module(CreateController.moduleId, ['ui.validate', Data.moduleId]).
         controller(CreateController.controllerId, CreateController)
         .config(["$stateProvider", ($stateProvider: ng.ui.IStateProvider) => {
             $stateProvider.state(Create.state, {

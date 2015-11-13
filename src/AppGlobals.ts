@@ -47,13 +47,13 @@ module App {
 
         constructor ($scope: ng.IScope, protected $stateParams: any, $rootScope:ng.IRootScopeService, protected $state: ng.ui.IStateService, state: string) {
             var _this = this;
-            var unsubscribe = $rootScope.$on('beforeStateChange',
+            var unsubscribe = $rootScope.$on('$stateChangeStart',
                 function(event, toState, toParams, fromState, fromParams){
                     if (fromState.name === toState.name && toState.name === state) {
                         event.preventDefault();
                         _this.$stateParams = toParams;
                         _this.didUpdateParams();
-                        $state.go(toState.name, toParams, {location:'replace',notify:false})
+                        $state.go(toState.name, toParams, {location:true,notify:false})
                     }
                 })
             $scope.$on('$destroy', function() {
