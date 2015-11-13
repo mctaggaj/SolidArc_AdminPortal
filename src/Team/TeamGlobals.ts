@@ -15,35 +15,35 @@ module App.Team {
     export var teams: ITeam[] = [
         {
             id: getNextId()+"",
-            name: "Team 1",
-            captain: {id: getNextId()+"", name: "Captain 1"},
+            name: "Hallow-Treats",
+            captain: {id: getNextId()+"", name: "Graham, Chris", email: "Chris.Graham@gmail.com"},
             participants: [
-                {id: getNextId()+"", name: "Participant 1"},
-                {id: getNextId()+"", name: "Participant 2"}
+                {id: getNextId()+"", name: "Smith, Greg", email: "Greg.Smith@gmail.com"},
+                {id: getNextId()+"", name: "Hogg, Paul", email: "Paul.Hogg@gmail.com"}
             ]
         },
         {
             id: getNextId()+"",
-            name: "Team 2",
-            captain: {id: getNextId()+"", name: "Captain 2"},
+            name: "Dream Team",
+            captain: {id: getNextId()+"", name: "Walker, Rachelle", email: "Rachelle.Smith@gmail.com"},
             participants: []
         },
         {
             id: getNextId()+"",
-            name: "Team 3",
-            captain: {id: getNextId()+"", name: "Captain 3"},
+            name: "Red Jays",
+            captain: {id: getNextId()+"", name: "Bryant, Cathy", email: "Cathy.Bryant@gmail.com"},
             participants: [
-                {id: getNextId()+"", name: "Participant 3"},
-                {id: getNextId()+"", name: "Participant 4"}
+                {id: getNextId()+"", name: "Hill, Leah", email: "Leah.Hill@gmail.com"},
+                {id: getNextId()+"", name: "Phillips, Julie", email: "Julie.Phillips@gmail.com"}
             ]
         },
         {
             id: getNextId()+"",
-            name: "Team 4",
-            captain: {id: getNextId()+"", name: "Captain 4"},
+            name: "Team Yellow",
+            captain: {id: getNextId()+"", name: "Rico, Marry", email: "Marry.Rico@gmail.com"},
             participants: [
-                {id: getNextId()+"", name: "Participant 5"},
-                {id: getNextId()+"", name: "Participant 6"}
+                {id: getNextId()+"", name: "Mendoza, Jacklyn", email: "Jacklyn.Mendoza@gmail.com"},
+                {id: getNextId()+"", name: "Roach, Brian", email: "Brian.Roach@gmail.com"}
             ]
         }
     ]

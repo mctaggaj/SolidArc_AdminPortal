@@ -9,13 +9,13 @@ module App.Administrator {
     export var administrators = [
         {
             id: getNextId()+"",
-            username: "Administrator 1",
+            username: "Admin1@mx.com",
             mail: "Admin1@mx.com",
             password: "[RESET BUTTON HERE]"
         },
         {
             id: getNextId()+"",
-            username: "Administrator 2",
+            username: "Admin2@mx.com",
             mail: "Admin2@mx.com",
             password: "[RESET BUTTON HERE]"
         }
