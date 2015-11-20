@@ -12,17 +12,16 @@ module App.Participant.Create {
             password: string;
             password2: string;
         };
+        mailMatch: boolean;
+        passwordMatch: boolean;
     }
 
     export class CreateController {
         public static controllerId = "CreateParticipantController";
         public static moduleId = Create.moduleId + "." + CreateController.controllerId;
 
-        private scope;
-
         public static $inject = ["$scope", "$state", Data.DataService.serviceId];
-        constructor ($scope: ICreateControllerScope, private $state:ng.ui.IStateService, dataService: Data.DataService) {
-            this.scope = $scope;
+        constructor (private scope: ICreateControllerScope, private $state:ng.ui.IStateService, dataService: Data.DataService) {
             this.scope.create = this.create;
         }
 
