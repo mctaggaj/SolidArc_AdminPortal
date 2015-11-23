@@ -1,5 +1,6 @@
 /// <reference path="AuthGlobals.ts"/>
 /// <reference path="AuthService.ts"/>
+/// <reference path="AuthRouter.ts"/>
 
 module App.Auth {
     /**

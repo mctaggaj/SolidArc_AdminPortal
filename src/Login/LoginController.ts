@@ -100,10 +100,9 @@ module App.Login {
             $routeProvider.state(Login.state, {
                 templateUrl: Login.baseUrl+'login.html',
                 controller: LoginController.controllerId,
-                url: "/login"
+                url: "/login",
+                noAuth: true,
+                noEvent: true
             })
-        }])
-        .config(["$urlRouterProvider", ($urlRouterProvider: ng.ui.IUrlRouterProvider) => {
-            $urlRouterProvider.otherwise("/login")
-        }]);;
+        }]);
 }

@@ -12,11 +12,19 @@ module App.Home {
     }
 
     export class HomeController extends App.SubParameterController{
-        private tileService: Tile.TileService;
-        private titleForFilterService: Tile.TitleForFilter.TitleForFilterService;
-
         public static controllerId = "HomeController";
         public static moduleId = Home.moduleId + "." + HomeController.controllerId;
+
+        public static $inject = ["$scope","$stateParams", "$rootScope", "$state", Tile.TileService.serviceId, Tile.TitleForFilter.TitleForFilterService.serviceId];
+        constructor (private $scope: IHomeControllerScope, protected $stateParams: IHomeStateParams, $rootScope:ng.IRootScopeService, $state: ng.ui.IStateService, private tileService: Tile.TileService, private titleForFilterService: Tile.TitleForFilter.TitleForFilterService) {
+            super($scope, $stateParams, $rootScope, $state, state);
+            this.$scope = $scope;
+            this.$stateParams = $stateParams;
+            this.$scope.clickTile = (tile: Tile.ITile) => this.tileService.executeTile(tile);
+            this.tileService = tileService;
+            this.titleForFilterService = titleForFilterService;
+            this.didUpdateParams();
+        }
 
         public didUpdateParams = () => {
             this.titleForFilterService.getTitleForFilter(this.$stateParams.filter).then((title: string) => {
@@ -31,19 +39,6 @@ module App.Home {
             })
         }
 
-
-        protected $stateParams: IHomeStateParams;
-
-        public static $inject = ["$scope","$stateParams", "$rootScope", "$state", Tile.TileService.serviceId, Tile.TitleForFilter.TitleForFilterService.serviceId];
-        constructor (private $scope: IHomeControllerScope, $stateParams: IHomeStateParams, $rootScope:ng.IRootScopeService, $state: ng.ui.IStateService,  tileService: Tile.TileService, titleForFilterService: Tile.TitleForFilter.TitleForFilterService) {
-            super($scope, $stateParams, $rootScope, $state, state);
-            this.$scope = $scope;
-            this.$stateParams = $stateParams;
-            this.$scope.clickTile = (tile: Tile.ITile) => this.tileService.executeTile(tile);
-            this.tileService = tileService;
-            this.titleForFilterService = titleForFilterService;
-            this.didUpdateParams();
-        }
     }
 
 // Angular module and controller registration
@@ -56,4 +51,7 @@ angular.module(HomeController.moduleId, [Tile.moduleId]).
             url: "/home/{filter}"
         })
     }])
+    .config(["$urlRouterProvider", ($urlRouterProvider: ng.ui.IUrlRouterProvider) => {
+        $urlRouterProvider.otherwise("/home/")
+    }]);
 }

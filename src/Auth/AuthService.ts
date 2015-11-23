@@ -134,6 +134,13 @@ module App.Auth {
         }
 
         /**
+         * @returns {string} the user event of the current user
+         */
+        public getEvent = (): any => {
+            return this.localStorageService.get(Auth.LS_Event);
+        }
+
+        /**
          * Sets the token, and reties failed requests
          * @param token
          */
@@ -170,12 +177,19 @@ module App.Auth {
             this.user = null;
             this.localStorageService.remove(Auth.LS_Username);
             this.localStorageService.remove(Auth.LS_UserId);
+            this.localStorageService.remove(Auth.LS_UserToken);
+            this.localStorageService.remove(Auth.LS_Event);
         }
 
 
         private setUsername = (username: string) => {
             this.user.username = username;
             this.localStorageService.set(Auth.LS_Username, username);
+        }
+
+        public setEvent = (event: string) => {
+            this.user.event = event;
+            this.localStorageService.set(Auth.LS_Event, event);
         }
 
         private setUserId = (userId: number) => {
@@ -191,6 +205,7 @@ module App.Auth {
          */
         private setAuthData = (data: any) => {
             this.setUsername(data.username);
+            this.setEvent(data.event);
             this.setUserId(data.userId);
             this.setToken(data.token);
         }
@@ -201,10 +216,17 @@ module App.Auth {
                 this.user.token = this.getToken();
                 this.user.username = this.getUsername();
                 this.user.userId = this.getUserId();
+                this.user.event = this.getEvent();
             }
             return this.user;
         }
 
+        public hasSelectedEvent = () => {
+            if(this.getAuthData().event) {
+                return true;
+            }
+            return false;
+        }
     }
 
     /**
