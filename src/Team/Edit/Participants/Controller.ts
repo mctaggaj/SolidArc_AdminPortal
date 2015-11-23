@@ -20,7 +20,9 @@ module App.Team.Edit.Participants {
             this.$scope = $scope;
             this.$scope.unassignedParticipants = App.Participant.unassignedParticipants;
             for (var i = 0 ; i < Team.teams.length ; i ++) {
-                this.$scope.team = Team.teams[i];
+                if ($stateParams.teamId === Team.teams[i].id) {
+                    this.$scope.team = Team.teams[i];
+                }
             }
 
             function moveItemBetweenLists<T> (item: T, fromList: T[], toList:T[]) {
