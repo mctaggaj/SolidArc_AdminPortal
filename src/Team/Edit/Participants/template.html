@@ -7,19 +7,17 @@
     <div class="detail container-fluid container-sm">
         <h1>Edit Participants</h1>
         <h2>{{team.name}}</h2>
-        <div id="OnTeamContainer" class="row container-fluid detailContainer noLine">
-            <div class="detailLabel">Assigned to {{team.name}}</div>
-            <div class="detailValue">
-                <div class="col-xs-12 list">
-                    <div ng-repeat="participant in team.participants" ng-click="unassign(participant)" class="row listRow">
-                        <p>{{participant.name}} <i class="fa fa-minus pull-right"></i></p>
+        <form class="container-fluid select-event-form" ng-submit="done()">
+            <div id="OnTeamContainer" class="row container-fluid detailContainer noLine">
+                <div class="detailLabel">Assigned to {{team.name}}</div>
+                <div class="detailValue">
+                    <div class="col-xs-12 list">
+                        <div ng-repeat="participant in team.participants" ng-click="unassign(participant)" class="row listRow">
+                            <p>{{participant.name}} <i class="fa fa-minus pull-right"></i></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <form class="container-fluid select-event-form" ng-submit="done()">
-
-
             <button type="submit" class="btn btn-primary pull-right">Done</button>
         </form>
     </div>
