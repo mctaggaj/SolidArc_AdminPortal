@@ -1,14 +1,20 @@
 <div class="top-push listDetailView" id="EditParticipants">
     <div class="col-xs-2 list">
-        <div ng-repeat="participant in unassignedParticipants" class="row listRow" ng-click="assign(participant)">{{participant.name}}</div>
+        <div ng-repeat="participant in unassignedParticipants" class="row listRow" ng-click="assign(participant)">
+            <p>{{participant.name}} <i class="fa fa-plus pull-right"></i></p>
+        </div>
     </div>
-    <div class="detail container-fluid">
+    <div class="detail container-fluid container-sm">
         <h1>Edit Participants</h1>
         <h2>{{team.name}}</h2>
         <div id="OnTeamContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Assigned to {{team.name}}</div>
             <div class="detailValue">
-                <div ng-repeat="participant in team.participants" ng-click="unassign(participant)">{{participant.name}}</div>
+                <div class="col-xs-12 list">
+                    <div ng-repeat="participant in team.participants" ng-click="unassign(participant)" class="row listRow">
+                        <p>{{participant.name}} <i class="fa fa-minus pull-right"></i></p>
+                    </div>
+                </div>
             </div>
         </div>
         <form class="container-fluid select-event-form" ng-submit="done()">
