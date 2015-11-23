@@ -10,6 +10,7 @@ module App.Routes.Create {
         changeZoom: () => void;
         goToAddress: () => void;
         newroute: any;
+        routeName: any;
         routePending: any;
         newmarker: any;
         saveMarker: () => void;
@@ -30,7 +31,7 @@ module App.Routes.Create {
             $scope.changeZoom = () => {
               console.log("Gravy!");
             };
-            
+          $scope.routeName = "";
             uiGmapGoogleMapApi.then(function(maps) {
               $scope.geocoder = new maps.Geocoder();
 
@@ -64,7 +65,8 @@ module App.Routes.Create {
                 };
                 marker.options.title = marker.id;
                 $scope.markers.push(marker);
-                if ($scope.markers.length > 1) {
+                if ($scope.markers.length > 1 && $scope.routeName.length > 0) {
+                  console.log($scope.routeName, "is the route");
                   $scope.routePending = true;
                 }
               };
@@ -129,8 +131,13 @@ module App.Routes.Create {
                         var lat, lng;
                         lat = results[0].geometry.location.lat();
                         lng = results[0].geometry.location.lng();
-                        $scope.map.center.latitude = lat;
-                        $scope.map.center.longitude = lng;
+                        //$scope.map.center.latitude = lat;
+                        //$scope.map.center.longitude = lng;
+                        $scope.newmarker.coords = {
+                          latitude: lat,
+                          longitude: lng
+                        };
+                        $scope.newmarker.pending = true;
                       });
                     }
                   });
