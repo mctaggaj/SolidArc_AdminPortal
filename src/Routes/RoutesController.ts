@@ -1,12 +1,12 @@
 /// <reference path="RoutesGlobals.ts" />
 module App.Routes {
 
-    interface IRoutesControllerScope extends ng.IScope{
+    interface IRoutesControllerScope extends IListDetailScope{
       list: any;
       map: any;
     }
 
-    interface IRoutesStateParams {
+    interface IRoutesStateParams extends IListDetailStateParams{
     }
 
     export class RoutesController extends App.ListDetailController<any> {
@@ -14,9 +14,8 @@ module App.Routes {
         public static moduleId = Routes.moduleId + "." + RoutesController.controllerId;
 
         public static $inject = ["$rootScope", "$state", "$scope", "uiGmapGoogleMapApi", "$stateParams"];
-        constructor ($rootScope: any, $state: any, private $scope: IRoutesControllerScope, uiGmapGoogleMapApi: any, $stateParams: IRoutesStateParams) {
+        constructor ($rootScope: any, $state: any, $scope: IRoutesControllerScope, uiGmapGoogleMapApi: any, $stateParams: IRoutesStateParams) {
           super($scope, $stateParams, $rootScope, $state, state);
-            this.$scope = $scope;
             $scope.list = Routes.routes;
             uiGmapGoogleMapApi.then(function(maps) {
               $scope.map = {

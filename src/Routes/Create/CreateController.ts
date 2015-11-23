@@ -1,7 +1,11 @@
 /// <reference path="CreateGlobals.ts" />
 module App.Routes.Create {
 
-    interface ICreateControllerScope extends ng.IScope{
+    interface IRoute extends IItem {
+
+    }
+
+    interface ICreateControllerScope extends IListDetailScope{
         map: any;
         markers: any;
         route: any;
@@ -18,15 +22,14 @@ module App.Routes.Create {
         mapClick: (mapModel: any, eventName: any, originalEventArgs: any) => void;
     }
 
-    export class CreateController extends App.ListDetailController<IType> {
+    export class CreateController extends App.ListDetailController<IRoute> {
         public static controllerId = "CreateController";
         public static moduleId = Create.moduleId + "." + CreateController.controllerId;
 
         public static $inject = ["$rootScope", "$scope", Data.DataService.serviceId, "uiGmapGoogleMapApi", "$state", "$stateParams"];
 
-        constructor ($rootScope: any, private $scope: ICreateControllerScope, dataService: Data.DataService, uiGmapGoogleMapApi: any, protected $state: ng.ui.IStateService, $stateParams: any) {
+        constructor ($rootScope: any, $scope: ICreateControllerScope, dataService: Data.DataService, uiGmapGoogleMapApi: any, protected $state: ng.ui.IStateService, $stateParams: any) {
           super($scope, $stateParams, $rootScope, $state, state);
-            this.$scope = $scope;
             $scope.routePending = false;
             $scope.changeZoom = () => {
               console.log("Gravy!");

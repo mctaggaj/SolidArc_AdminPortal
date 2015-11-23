@@ -34,21 +34,22 @@ module App.Tile {
             }
         },
         {
-            text: "Select Event",
+            text: "View Event",
             tags: [
                 "all",
+                "view",
                 "events"
             ],
             textColor: "#333",
             background: "#fea101",
             action: {
-                state: "selectEvent",
+                state: "",
                 stateParams: {
                 }
             }
         },
         {
-            text: "View/Edit Event",
+            text: "Edit Event",
             tags: [
                 "all",
                 "edit",
@@ -75,6 +76,20 @@ module App.Tile {
                 state: "",
                 stateParams: {
                     filter: "events"
+                }
+            }
+        },
+        {
+            text: "Select Event",
+            tags: [
+                "all",
+                "events"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "selectEvent",
+                stateParams: {
                 }
             }
         },
@@ -109,7 +124,22 @@ module App.Tile {
             }
         },
         {
-            text: "View/Edit Participant",
+            text: "View Participant",
+            tags: [
+                "all",
+                "view",
+                "participants"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "participant",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Edit Participant",
             tags: [
                 "all",
                 "edit",
@@ -134,38 +164,6 @@ module App.Tile {
             background: "#fea101",
             action: {
                 state: "participant",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "Add Participant to Team",
-            tags: [
-                "all",
-                "add",
-                "teams",
-                "participants"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "teams",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "Remove Participant to Team",
-            tags: [
-                "all",
-                "remove",
-                "teams",
-                "participants"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "teams",
                 stateParams: {
                 }
             }
@@ -201,7 +199,22 @@ module App.Tile {
             }
         },
         {
-            text: "View/Edit Route",
+            text: "View Route",
+            tags: [
+                "all",
+                "view",
+                "routes"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "routes",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Edit Route",
             tags: [
                 "all",
                 "edit",
@@ -232,23 +245,6 @@ module App.Tile {
             }
         },
         {
-            text: "Assign Team to Route",
-            tags: [
-                "all",
-                "assign",
-                "teams",
-                "routes"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "",
-                stateParams: {
-                    filter: ""
-                }
-            }
-        },
-        {
             text: "Teams",
             tags: [
                 "all",
@@ -264,7 +260,37 @@ module App.Tile {
             }
         },
         {
-            text: "View/Edit Team",
+            text: "Create Team",
+            tags: [
+                "all",
+                "create",
+                "teams"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "createTeam",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "View Team",
+            tags: [
+                "all",
+                "view",
+                "teams"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "teams",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Edit Team",
             tags: [
                 "all",
                 "edit",
@@ -294,17 +320,36 @@ module App.Tile {
             }
         },
         {
-            text: "Create Team",
+            text: "Add/Remove Participant on Team",
             tags: [
                 "all",
-                "delete",
-                "teams"
+                "add",
+                "remove",
+                "teams",
+                "participants"
             ],
             textColor: "#333",
             background: "#fea101",
             action: {
-                state: "createTeam",
+                state: "teams",
                 stateParams: {
+                }
+            }
+        },
+        {
+            text: "Assign Team to Route",
+            tags: [
+                "all",
+                "assign",
+                "teams",
+                "routes"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "",
+                stateParams: {
+                    filter: ""
                 }
             }
         },
@@ -369,7 +414,22 @@ module App.Tile {
             }
         },
         {
-            text: "View/Edit Administrator",
+            text: "View Administrator",
+            tags: [
+                "all",
+                "view",
+                "administrators"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "administrator",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Edit Administrator",
             tags: [
                 "all",
                 "edit",

@@ -39,5 +39,10 @@ declare module SolidArc {
          * Session token
          */
         token: string;
+
+         /**
+          * The event that the user is a part of
+          */
+         event: string;
     }
 }

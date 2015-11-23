@@ -50,19 +50,16 @@ module App {
 
         public didUpdateParams:() => void;
 
-
         constructor ($scope: ng.IScope, protected $stateParams: any, $rootScope:ng.IRootScopeService, protected $state: ng.ui.IStateService, state: string) {
 
             var _this = this;
             var unsubscribe = $rootScope.$on('$stateChangeStart',
                 function(event, toState, toParams, fromState, fromParams){
-
-                    /*console.log(event, toState, toParams, fromState, fromParams);*/
                     if (fromState.name === toState.name && toState.name === state) {
                         event.preventDefault();
                         _this.$stateParams = toParams;
                         _this.didUpdateParams();
-                        $state.go(toState.name, toParams, {location:true,notify:false})
+                        $state.go(toState.name, toParams, {location:true, notify:false})
                     }
                 })
             $scope.$on('$destroy', function() {
@@ -95,15 +92,17 @@ module App {
 
         public didUpdateParams = () => {
             if (this.$scope.list && this.$scope.list.length) {
-                if (this.$stateParams.selectedId !== undefined) {
+                if (!this.$stateParams.selectedId || this.$stateParams.selectedId.length === 0)
+                {
+                    this.$stateParams.selectedId = this.$scope.list[0].id;
+                    this.didUpdateParams();
+                }
+                else {
                     for (var i = 0 ; i < this.$scope.list.length; i++) {
                         if (this.$scope.list[i].id === this.$stateParams.selectedId) {
                             this.$scope.selected = this.$scope.list[i];
                         }
                     }
-                }
-                else {
-                    this.$state.go(this.state, {selectedId: this.$scope.list[0].id})
                 }
             }
             else {

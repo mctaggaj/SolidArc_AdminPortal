@@ -1,4 +1,4 @@
-<div class="top-push container" id="CreateTeam">
+<div class="top-push container container-sm" id="CreateTeam">
     <h1>Create Team</h1>
 
     <form class="container-fluid jumbotron select-event-form" ng-submit="create()">
@@ -16,7 +16,7 @@
                         style="margin-bottom: 1em"
                         name="Event"
                         ng-required="true"
-                        class="col-xs-12 col-md-6 col-md-offset-3">
+                        class="col-xs-12">
                     <option value="">---Please select---</option>
                     <option ng-repeat="participant in participants" value="{{participant}}">{{participant.name}}</option>
                 </select>
