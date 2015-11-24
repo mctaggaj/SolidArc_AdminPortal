@@ -1,6 +1,8 @@
 /// <reference path="ParticipantGlobals.ts" />
 module App.Participant {
 
+
+    export import IParticipant = SolidArc.IParticipant;
     interface IParticipantControllerScope extends App.IListDetailScope{
         list: IParticipant[];
     }
@@ -13,18 +15,11 @@ module App.Participant {
         public static controllerId = "ParticipantController";
         public static moduleId = Home.moduleId + "." + ParticipantController.controllerId;
 
-
         public static $inject = ["$scope","$stateParams","$rootScope", "$state", Data.DataService.serviceId];
-        constructor (protected $scope: IParticipantControllerScope , protected $stateParams: IParticipantStateParams, $rootScope:ng.IRootScopeService, protected $state: ng.ui.IStateService) {
+        constructor (protected $scope: IParticipantControllerScope , protected $stateParams: IParticipantStateParams, $rootScope:ng.IRootScopeService, protected $state: ng.ui.IStateService, private dataService: Data.DataService) {
             super($scope, $stateParams, $rootScope, $state, state);
-            this.$scope.list = [].concat(unassignedParticipants);
-            for (var i = 0 ; i < Team.teams.length ; i ++) {
-                var team = Team.teams[i]
-                this.$scope.list.push(team.captain);
-                for (var j = 0 ; j < team.participants.length ; j ++) {
-                    this.$scope.list.push(team.participants[j]);
-                }
-            }
+            this.getList = dataService.getUnassignedParticipants
+
             this.didUpdateParams();
         }
     }

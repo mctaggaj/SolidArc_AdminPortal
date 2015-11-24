@@ -1,5 +1,6 @@
 /// <reference path="Globals.ts" />
 module App.Team.Edit.Participants {
+    import IParticipant = SolidArc.IParticipant;
     interface IControllerScope extends ng.IScope{
         team: ITeam;
         unassignedParticipants: Participant.IParticipant [];
@@ -16,14 +17,16 @@ module App.Team.Edit.Participants {
         public static moduleId = Create.moduleId + "." + Controller.controllerId;
 
         public static $inject = ["$scope", "$state", "$stateParams",  Data.DataService.serviceId];
-        constructor (private $scope: IControllerScope, $state: ng.ui.IStateService, $stateParams: IControllerStateParams, dataService: Data.DataService) {
+        constructor (private $scope: IControllerScope, $state: ng.ui.IStateService, $stateParams: IControllerStateParams, private dataService: Data.DataService) {
             this.$scope = $scope;
-            this.$scope.unassignedParticipants = App.Participant.unassignedParticipants;
-            for (var i = 0 ; i < Team.teams.length ; i ++) {
-                if ($stateParams.teamId === Team.teams[i].id) {
-                    this.$scope.team = Team.teams[i];
+            dataService.getTeam($stateParams.teamId).then((team: ITeam) => {
+                this.$scope.team=team;
+            })
+            dataService.getUnassignedParticipants().then(
+                (items: IParticipant[]) => {
+                    this.$scope.unassignedParticipants = items;
                 }
-            }
+            )
 
             function moveItemBetweenLists<T> (item: T, fromList: T[], toList:T[]) {
                 var index = fromList.indexOf(item);
@@ -35,7 +38,9 @@ module App.Team.Edit.Participants {
             this.$scope.assign = (participant: Participant.IParticipant) => moveItemBetweenLists(participant, this.$scope.unassignedParticipants, this.$scope.team.participants)
             this.$scope.unassign = (participant: Participant.IParticipant) => moveItemBetweenLists(participant, this.$scope.team.participants, this.$scope.unassignedParticipants)
             this.$scope.done = () => {
-                $state.go(Team.state, {selectedId: $stateParams.teamId});
+                this.dataService.editTeam($scope.team).then((team: ITeam) => {
+                    $state.go(Team.state, {selectedId: team.id});
+                })
             }
 
         }

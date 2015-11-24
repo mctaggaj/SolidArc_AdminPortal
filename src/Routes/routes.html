@@ -13,7 +13,11 @@
     <div class="detail container-fluid">
         <div class="row container-fluid detailContainer">
           <ui-gmap-google-map center='map.center' zoom='map.zoom' events='map.events'>
-            <ui-gmap-marker ng-repeat="marker in selected.markers" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+            <ui-gmap-marker ng-repeat="marker in selected.markers"
+                            coords="marker.coords"
+                            options="marker.options"
+                            events="marker.events"
+                            idkey="marker.id">
             </ui-gmap-marker>
             <ui-gmap-polyline ng-repeat="marker in selected.markers" path="[marker.coords, selected.markers[$index > 0 ? $index-1 : $index].coords]"></ui-gmap-polyline>
             <div ng-init="other_routes = list; other_routes.splice(other_routes.indexOf(selected),1); console.log(list, other_routes);" ng-repeat="route in other_routes">

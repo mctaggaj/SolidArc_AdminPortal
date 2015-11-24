@@ -2,6 +2,7 @@
 
 module App.Auth {
 
+    import IItem = SolidArc.IItem;
     export var moduleId = App.moduleId + ".Auth";
     export var baseUrl = App.baseUrl + "Auth/";
 
@@ -10,7 +11,7 @@ module App.Auth {
     export var LS_UserId = "SolidArc.Auth.UserId";
     export var LS_UserToken = "SolidArc.Auth.UserToken";
 
-    export interface IAdministrator extends App.IItem {
+    export interface IAdministrator extends IItem {
         email: string;
         password: string;
     }

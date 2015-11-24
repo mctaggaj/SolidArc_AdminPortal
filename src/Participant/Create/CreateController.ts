@@ -21,7 +21,7 @@ module App.Participant.Create {
         public static moduleId = Create.moduleId + "." + CreateController.controllerId;
 
         public static $inject = ["$scope", "$state", Data.DataService.serviceId];
-        constructor (private scope: ICreateControllerScope, private $state:ng.ui.IStateService, dataService: Data.DataService) {
+        constructor (private scope: ICreateControllerScope, private $state:ng.ui.IStateService, private dataService: Data.DataService) {
             this.scope.create = this.create;
         }
 
@@ -43,17 +43,19 @@ module App.Participant.Create {
                 return false;
             }
 
-            var info = {
+            var info: IParticipant = {
                 id : getNextId()+"",
                 name: this.scope.info.name,
                 email : this.scope.info.mail,
                 password: this.scope.info.password
             };
 
+            this.dataService.createParticipant(info).then(
+                (participant: IParticipant) => {
+                    this.$state.go(Participant.state, {selectedId: participant.id});
+                }
+            )
 
-            Participant.unassignedParticipants.push(info);
-
-            this.$state.go(Participant.state, {selectedId: info.id});
 
         };
 

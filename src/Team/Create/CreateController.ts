@@ -1,10 +1,12 @@
 /// <reference path="CreateGlobals.ts" />
 module App.Team.Create {
 
+    import IParticipant = SolidArc.IParticipant;
+    import ITeam = SolidArc.ITeam;
     interface ICreateControllerScope extends ng.IScope{
-        participants: Participant.IParticipant[];
+        participants: IParticipant[];
         teamName: string;
-        teamCaptain: Participant.IParticipant;
+        teamCaptain: IParticipant;
         create: () => void;
     }
 
@@ -13,17 +15,20 @@ module App.Team.Create {
         public static moduleId = Create.moduleId + "." + CreateController.controllerId;
 
         public static $inject = ["$scope", "$state", Data.DataService.serviceId];
-        constructor (private $scope: ICreateControllerScope, $state: ng.ui.IStateService, dataService: Data.DataService) {
+        constructor (private $scope: ICreateControllerScope, $state: ng.ui.IStateService, private dataService: Data.DataService) {
             this.$scope = $scope;
-            this.$scope.participants = Participant.unassignedParticipants;
+            dataService.getUnassignedParticipants()
+                .then((items: IParticipant[]) =>{
+                    this.$scope.participants = items;
+                })
 
             this.$scope.create = () => {
                 var name = this.$scope.teamName;
                 var captain = JSON.parse(<any>this.$scope.teamCaptain);
-                for (var i = 0 ; i < Participant.unassignedParticipants.length ; i ++)
+                for (var i = 0 ; i < this.$scope.participants.length ; i ++)
                 {
-                    if(captain.id === Participant.unassignedParticipants[i].id) {
-                        captain = Participant.unassignedParticipants[i];
+                    if(captain.id === this.$scope.participants[i].id) {
+                        captain = this.$scope.participants[i];
                         break;
                     }
                 }
@@ -33,12 +38,10 @@ module App.Team.Create {
                     participants: [],
                     captain: captain
                 }
-                Team.teams.push(team);
-                var index = Participant.unassignedParticipants.indexOf(captain);
-                if (index >= 0) {
-                    Participant.unassignedParticipants.splice(index, 1);
-                }
-                $state.go("teams", {selectedId: team.id});
+
+                this.dataService.createTeam(team).then((team: ITeam) => {
+                    $state.go("teams", {selectedId: team.id});
+                })
             }
 
         }

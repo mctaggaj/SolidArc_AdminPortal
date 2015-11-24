@@ -6,6 +6,7 @@
  */
 module App {
 
+    import IItem = SolidArc.IItem;
     /**
      * An angular module
      */
@@ -68,9 +69,7 @@ module App {
         }
     }
 
-    export interface IItem {
-        id: string;
-    }
+
 
     export interface IListDetailScope extends ng.IScope{
         list: IItem[];

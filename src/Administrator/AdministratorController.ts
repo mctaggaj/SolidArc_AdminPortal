@@ -1,6 +1,7 @@
 /// <reference path="AdministratorGlobals.ts" />
 module App.Administrator {
 
+    import IItem = SolidArc.IItem;
     interface IAdministrator extends IItem{
         name: string;
         captain: any;

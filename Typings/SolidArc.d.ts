@@ -45,4 +45,22 @@ declare module SolidArc {
           */
          event: string;
     }
+
+    export interface IItem {
+        id: string;
+    }
+
+
+    export interface IParticipant extends IItem{
+        name: string;
+        email?: string;
+        password?: string;
+    }
+
+
+    export interface ITeam extends IItem{
+        name: string;
+        captain: IParticipant;
+        participants: IParticipant[];
+    }
 }

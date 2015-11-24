@@ -1,5 +1,6 @@
 /// <reference path="CreateGlobals.ts" />
 module App.Routes.Create {
+    import IItem = SolidArc.IItem;
 
     interface IRoute extends IItem {
 

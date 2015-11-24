@@ -12,11 +12,13 @@ module App.Team {
         public static controllerId = "TeamController";
         public static moduleId = Team.moduleId + "." + TeamController.controllerId;
 
+
+        protected getList = this.dataService.getTeams
+
         public static $inject = ["$scope","$stateParams","$rootScope", "$state", Data.DataService.serviceId];
-        constructor (protected $scope: ITeamControllerScope , protected $stateParams: ITeamStateParams, $rootScope:ng.IRootScopeService, protected $state: ng.ui.IStateService) {
+        constructor (protected $scope: ITeamControllerScope , protected $stateParams: ITeamStateParams, $rootScope:ng.IRootScopeService, protected $state: ng.ui.IStateService, private dataService: Data.DataService) {
             super($scope, $stateParams, $rootScope, $state, state);
             this.$scope = $scope;
-            this.$scope.list = teams;
             this.didUpdateParams();
         }
     }
