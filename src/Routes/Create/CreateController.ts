@@ -4,10 +4,15 @@ module App.Routes.Create {
     interface IRoute extends IItem {
 
     }
+    interface ICoords extends IItem {
+      latitude : number;
+      longitude : number;
+    }
 
     interface ICreateControllerScope extends IListDetailScope{
         map: any;
         markers: any;
+        path: ICoords[];
         route: any;
         geocoder: any;
         create: () => void;
@@ -19,6 +24,7 @@ module App.Routes.Create {
         newmarker: any;
         saveMarker: () => void;
         saveRoute: () => void;
+        genPath: () => ICoords[];
         mapClick: (mapModel: any, eventName: any, originalEventArgs: any) => void;
     }
 
@@ -73,6 +79,12 @@ module App.Routes.Create {
                   $scope.routePending = true;
                 }
               };
+              $scope.$watch("routeName", (newValue, oldValue) => {
+                console.log(newValue);
+                if (newValue.length > 2 && $scope.markers.length >= 2) {
+                  $scope.routePending = true;
+                }
+              });
               $scope.saveRoute = () => {
                 console.log("save route");
                 var route = {
@@ -118,6 +130,18 @@ module App.Routes.Create {
                 };
               }());
               $scope.markers = [];
+              $scope.path = [];
+              $scope.genPath = () => {
+                while ($scope.path.length > 1) $scope.path.pop();
+                if ($scope.markers.length > 1) {
+                  for (var i = 0; i < $scope.markers.length; i++) {
+                    var marker = $scope.markers[i];
+                    while ($scope.path.length > 1) $scope.path.pop();
+                    $scope.path.push(marker.coords);
+                  }
+                }
+                return $scope.path;
+              };
               $scope.goToAddress = () => {
                 if ($scope.map.center.address !== "") {
                   var searching = true;
