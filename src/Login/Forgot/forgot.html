@@ -1,0 +1,20 @@
+<div class="container forgot-container" id="Forgot">
+    <div class="container-fluid">
+        <img src="/assets/images/logo.png" class="logo">
+        <h1>Forgot Password</h1>
+    </div>
+    <form class=" container jumbotron forgot-form container-sm" ng-submit="submit()">
+
+        <div id="EmailContainer" class="row container-fluid detailContainer noLine">
+            <div class="detailLabel">Email</div>
+            <div class="detailValue">
+                <input type="email" class="form-control" id="email" placeholder="Email" ng-model="info.email" ng-required="true">
+            </div>
+        </div>
+
+            <button type="submit" class="btn btn-primary">Send Email</button>
+            <button ui-sref="Login" type="reset" class="btn btn-secondary">Back</button>
+
+    </form>
+
+</div>

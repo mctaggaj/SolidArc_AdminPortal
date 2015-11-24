@@ -6,7 +6,6 @@ module App.Tile {
         {
             text: "Events",
             tags: [
-                "all",
                 ""
             ],
             textColor: "#333",
@@ -96,7 +95,6 @@ module App.Tile {
         {
             text: "Participants",
             tags: [
-                "all",
                 ""
             ],
             textColor: "#333",
@@ -171,7 +169,6 @@ module App.Tile {
         {
             text: "Routes",
             tags: [
-                "all",
                 ""
             ],
             textColor: "#333",
@@ -247,7 +244,6 @@ module App.Tile {
         {
             text: "Teams",
             tags: [
-                "all",
                 ""
             ],
             textColor: "#333",
@@ -356,7 +352,6 @@ module App.Tile {
         {
             text: "Info",
             tags: [
-                "all",
                 ""
             ],
             textColor: "#333",
@@ -371,7 +366,6 @@ module App.Tile {
         {
             text: "Chat",
             tags: [
-                "all",
                 ""
             ],
             textColor: "#333",
@@ -386,7 +380,6 @@ module App.Tile {
         {
             text: "Administrators",
             tags: [
-                "all",
                 ""
             ],
             textColor: "#333",
@@ -461,7 +454,6 @@ module App.Tile {
         {
             text: "Buses",
             tags: [
-                "all",
                 ""
             ],
             textColor: "#333",
@@ -487,20 +479,5 @@ module App.Tile {
                 }
             }
         },
-        {
-            text: "Home",
-            tags: [
-                "all"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "home",
-                stateParams: {
-                    filter: ""
-                }
-            }
-        }
-
     ];
 }

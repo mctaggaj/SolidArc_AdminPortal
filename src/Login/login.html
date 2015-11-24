@@ -7,7 +7,7 @@
         <button type="button" class="close" aria-label="Close" ng-click="error.enabled = false"><span aria-hidden="true">&times;</span></button>
         <div dynamic="error" style="display:inline;"></div>
     </div>
-    <form class=" container jumbotron login-form" ng-show="loginMode" ng-submit="login()">
+    <form class=" container jumbotron login-form container-sm" ng-show="loginMode" ng-submit="login()">
 
         <div id="EmailContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Email</div>
@@ -22,6 +22,8 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary pull-right">Login</button>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <button ui-sref="Forgot" type="reset" class="btn btn-secondary">Forgot Password</button>
+
     </form>
 </div>
