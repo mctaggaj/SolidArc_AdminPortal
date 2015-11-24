@@ -11,7 +11,6 @@
         </div>
     </div>
     <div class="detail container-fluid">
-      {{selected}}
         <div class="row container-fluid detailContainer">
           <ui-gmap-google-map center='map.center' zoom='map.zoom' events='map.events'>
             <ui-gmap-marker ng-repeat="marker in selected.markers" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
