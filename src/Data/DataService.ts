@@ -241,8 +241,15 @@ module App.Data {
      */
     angular.module(DataService.moduleId, ["ngMockE2E"])
         .service(DataService.serviceId, DataService)
-        .run(function($httpBackend:angular.IHttpBackendService) {
-        // do not bother server, respond with given content
+        .run(["$httpBackend", "$location", "localStorageService", function($httpBackend:angular.IHttpBackendService, $location: ng.ILocationService, localStorageService: ng.localStorage.ILocalStorageService) {
+            if($location.search()["mock"]) {
+                localStorageService.set(LS_UseLocalStorage,$location.search()["mock"]);
+            }
+            if(localStorageService.get(LS_UseLocalStorage)==="false"||localStorageService.get(LS_UseLocalStorage)===false)
+            {
+                return;
+            }
+            // do not bother server, respond with given content
             $httpBackend.whenGET('/api/events').respond(function (method:string, url:string, data:any, headers:any, params:any) {
                 return [200, {events: [{name: "Guelph 2016"}, {name: "Laurier 2016"}]}];
             });
@@ -335,7 +342,7 @@ module App.Data {
                 teams.push(data)
                 return [201, data];
             });
-    });
+    }]);
 
 
 
