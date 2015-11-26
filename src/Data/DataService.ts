@@ -244,16 +244,16 @@ module App.Data {
         .run(["$httpBackend", "$location", "localStorageService", function($httpBackend:angular.IHttpBackendService, $location: ng.ILocationService, localStorageService: ng.localStorage.ILocalStorageService) {
             // All Mocks
             if($location.search()["mock"]) {
-                localStorageService.set(LS_UseLocalStorage,$location.search()["mock"]);
+                localStorageService.set(LS_UseMocks,$location.search()["mock"]);
             }
-            if(localStorageService.get(LS_UseLocalStorage)==="false"||localStorageService.get(LS_UseLocalStorage)===false)
+            if(localStorageService.get(LS_UseMocks)==="false"||localStorageService.get(LS_UseMocks)===false)
             {
                 return;
             }
 
             // Events
-            localStorageService.set(LS_UseLocalStorage_Events,$location.search()["mockEvents"]);
-            if(!(localStorageService.get(LS_UseLocalStorage_Events)==="false"||localStorageService.get(LS_UseLocalStorage_Events)===false))
+            localStorageService.set(LS_UseMocks_Events,$location.search()["mockEvents"]);
+            if(!(localStorageService.get(LS_UseMocks_Events)==="false"||localStorageService.get(LS_UseMocks_Events)===false))
             {
                 // do not bother server, respond with given content
                 $httpBackend.whenGET('/api/events').respond(function (method:string, url:string, data:any, headers:any, params:any) {
@@ -263,8 +263,8 @@ module App.Data {
 
 
             // Participants
-            localStorageService.set(LS_UseLocalStorage_Participants,$location.search()["mockParticipants"]);
-            if(!(localStorageService.get(LS_UseLocalStorage_Participants)==="false"||localStorageService.get(LS_UseLocalStorage_Participants)===false)) {
+            localStorageService.set(LS_UseMocks_Participants,$location.search()["mockParticipants"]);
+            if(!(localStorageService.get(LS_UseMocks_Participants)==="false"||localStorageService.get(LS_UseMocks_Participants)===false)) {
                 $httpBackend.whenPOST('/api/participants').respond(function (method:string, url:string, data:IParticipant, headers:any, params:any) {
                     data = <any>JSON.parse(<any>data).data;
                     unassignedParticipants.push(data);
@@ -289,8 +289,8 @@ module App.Data {
 
 
             // Teams
-            localStorageService.set(LS_UseLocalStorage_Teams,$location.search()["mockTeams"]);
-            if(!(localStorageService.get(LS_UseLocalStorage_Teams)==="false"||localStorageService.get(LS_UseLocalStorage_Teams)===false)) {
+            localStorageService.set(LS_UseMocks_Teams,$location.search()["mockTeams"]);
+            if(!(localStorageService.get(LS_UseMocks_Teams)==="false"||localStorageService.get(LS_UseMocks_Teams)===false)) {
 
                 $httpBackend.whenGET(/\/api\/teams(.*)/).respond(function (method:string, url:string, data:any, headers:any, params:any) {
                     var regex = /\/api\/teams\?id=(.*)/;
