@@ -17,6 +17,7 @@ module App.Routes {
         constructor ($rootScope: any, $state: any, $scope: IRoutesControllerScope, uiGmapGoogleMapApi: any, $stateParams: IRoutesStateParams) {
           super($scope, $stateParams, $rootScope, $state, state);
             $scope.list = Routes.routes;
+            this.didUpdateParams();
             uiGmapGoogleMapApi.then(function(maps) {
               $scope.map = {
                 center: {
