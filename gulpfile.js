@@ -1,7 +1,3 @@
-/**
- * @author Jason McTaggart
- */
-
 var gulp = require('gulp');
 var config = require('./buildConfig.json');
 var serverConfig = require('./serverConfig.json');
