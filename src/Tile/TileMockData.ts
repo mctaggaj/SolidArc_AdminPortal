@@ -364,6 +364,19 @@ module App.Tile {
             }
         },
         {
+            text: "Farm to Fork",
+            tags: [
+                "info"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "farmToFork",
+                stateParams: {
+                }
+            }
+        },
+        {
             text: "Chat",
             tags: [
                 ""

@@ -84,21 +84,22 @@ module App {
     export class ListDetailController<T extends IItem> extends SubParameterController{
 
         protected getList: () => ng.IPromise<IItem[]>;
+        protected idName = "id"
 
         public select = (item: IItem) => {
-            this.$state.go(this.state, {selectedId: item.id})
+            this.$state.go(this.state, {selectedId: item[this.idName]})
         }
 
         public didUpdateParams = () => {
             if (this.$scope.list && this.$scope.list.length) {
                 if (!this.$stateParams.selectedId || this.$stateParams.selectedId.length === 0)
                 {
-                    this.$stateParams.selectedId = this.$scope.list[0].id;
+                    this.$stateParams.selectedId = this.$scope.list[0][this.idName];
                     this.didUpdateParams();
                 }
                 else {
                     for (var i = 0 ; i < this.$scope.list.length; i++) {
-                        if (this.$scope.list[i].id === this.$stateParams.selectedId) {
+                        if (this.$scope.list[i][this.idName] === this.$stateParams.selectedId) {
                             this.$scope.selected = this.$scope.list[i];
                         }
                     }

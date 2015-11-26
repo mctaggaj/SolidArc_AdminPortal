@@ -1,5 +1,6 @@
 /// <reference path="FarmToForkGlobals.ts"/>
 /// <reference path="FarmToForkService.ts"/>
+/// <reference path="FarmToForkController.ts"/>
 
 module App.FarmToFork {
 
