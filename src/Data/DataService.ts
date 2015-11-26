@@ -242,6 +242,7 @@ module App.Data {
     angular.module(DataService.moduleId, ["ngMockE2E"])
         .service(DataService.serviceId, DataService)
         .run(["$httpBackend", "$location", "localStorageService", function($httpBackend:angular.IHttpBackendService, $location: ng.ILocationService, localStorageService: ng.localStorage.ILocalStorageService) {
+            // All Mocks
             if($location.search()["mock"]) {
                 localStorageService.set(LS_UseLocalStorage,$location.search()["mock"]);
             }
@@ -249,99 +250,110 @@ module App.Data {
             {
                 return;
             }
-            // do not bother server, respond with given content
-            $httpBackend.whenGET('/api/events').respond(function (method:string, url:string, data:any, headers:any, params:any) {
-                return [200, {events: [{name: "Guelph 2016"}, {name: "Laurier 2016"}]}];
-            });
+
+            // Events
+            localStorageService.set(LS_UseLocalStorage_Events,$location.search()["mockEvents"]);
+            if(!(localStorageService.get(LS_UseLocalStorage_Events)==="false"||localStorageService.get(LS_UseLocalStorage_Events)===false))
+            {
+                // do not bother server, respond with given content
+                $httpBackend.whenGET('/api/events').respond(function (method:string, url:string, data:any, headers:any, params:any) {
+                    return [200, {events: [{name: "Guelph 2016"}, {name: "Laurier 2016"}]}];
+                });
+            }
+
 
             // Participants
-            $httpBackend.whenPOST('/api/participants').respond(function (method:string, url:string, data:IParticipant, headers:any, params:any) {
-                data = <any>JSON.parse(<any>data).data;
-                unassignedParticipants.push(data);
-                return [201, data];
-            });
-            $httpBackend.whenGET('/api/participants').respond(function (method:string, url:string, data:any, headers:any, params:any) {
-                var list = [].concat(unassignedParticipants);
+            localStorageService.set(LS_UseLocalStorage_Participants,$location.search()["mockParticipants"]);
+            if(!(localStorageService.get(LS_UseLocalStorage_Participants)==="false"||localStorageService.get(LS_UseLocalStorage_Participants)===false)) {
+                $httpBackend.whenPOST('/api/participants').respond(function (method:string, url:string, data:IParticipant, headers:any, params:any) {
+                    data = <any>JSON.parse(<any>data).data;
+                    unassignedParticipants.push(data);
+                    return [201, data];
+                });
+                $httpBackend.whenGET('/api/participants').respond(function (method:string, url:string, data:any, headers:any, params:any) {
+                    var list = [].concat(unassignedParticipants);
 
-                for (var i = 0 ; i < teams.length ; i ++) {
-                    var team = teams[i]
-                    list.push(team.captain);
-                    for (var j = 0 ; j < team.participants.length ; j ++) {
-                        list.push(team.participants[j]);
+                    for (var i = 0; i < teams.length; i++) {
+                        var team = teams[i]
+                        list.push(team.captain);
+                        for (var j = 0; j < team.participants.length; j++) {
+                            list.push(team.participants[j]);
+                        }
                     }
-                }
-                return [201, list];
-            });
-            $httpBackend.whenGET('/api/participants/unassigned').respond(function (method:string, url:string, data:any, headers:any, params:any) {
-                return [200, unassignedParticipants];
-            });
+                    return [201, list];
+                });
+                $httpBackend.whenGET('/api/participants/unassigned').respond(function (method:string, url:string, data:any, headers:any, params:any) {
+                    return [200, unassignedParticipants];
+                });
+            }
 
 
             // Teams
-            $httpBackend.whenGET(/\/api\/teams(.*)/).respond(function (method:string, url:string, data:any, headers:any, params:any) {
-                var regex = /\/api\/teams\?id=(.*)/;
-                var match = url.match(regex);
-                if (match) {
-                    var id = match[1];
-                    for (var i = 0 ; i < teams.length ; i ++)
-                    {
-                        if(id === teams[i].id) {
-                            return [200, teams[i]];
+            localStorageService.set(LS_UseLocalStorage_Teams,$location.search()["mockTeams"]);
+            if(!(localStorageService.get(LS_UseLocalStorage_Teams)==="false"||localStorageService.get(LS_UseLocalStorage_Teams)===false)) {
+
+                $httpBackend.whenGET(/\/api\/teams(.*)/).respond(function (method:string, url:string, data:any, headers:any, params:any) {
+                    var regex = /\/api\/teams\?id=(.*)/;
+                    var match = url.match(regex);
+                    if (match) {
+                        var id = match[1];
+                        for (var i = 0; i < teams.length; i++) {
+                            if (id === teams[i].id) {
+                                return [200, teams[i]];
+                            }
                         }
                     }
-                }
-                return [200, teams];
-            });
-            $httpBackend.whenPUT('/api/teams').respond(function (method:string, url:string, newVal:ITeam, headers:any, params:any) {
-                var oldVal: ITeam;
-                var teamIndex = 0;
-                newVal = <any>JSON.parse(<any>newVal).data;
-                for (var i = 0 ; i < teams.length ; i ++)
-                {
-                    if(newVal.id === teams[i].id) {
-                        oldVal = teams[i];
-                        teamIndex = i;
-                        break;
-                    }
-                }
-
-                // Removes all participants from the team
-                while (oldVal.participants && oldVal.participants.length) {
-                    unassignedParticipants.push(oldVal.participants[0]);
-                    oldVal.participants.splice(0,1);
-                }
-
-                // Adds participants to the team
-                for (var i = 0 ; i < newVal.participants.length ; i ++) {
-                    for (var j = 0 ; j < unassignedParticipants.length ; j ++) {
-                        if (unassignedParticipants[j].id === newVal.participants[i].id) {
-                            unassignedParticipants.slice(j, 1);
+                    return [200, teams];
+                });
+                $httpBackend.whenPUT('/api/teams').respond(function (method:string, url:string, newVal:ITeam, headers:any, params:any) {
+                    var oldVal:ITeam;
+                    var teamIndex = 0;
+                    newVal = <any>JSON.parse(<any>newVal).data;
+                    for (var i = 0; i < teams.length; i++) {
+                        if (newVal.id === teams[i].id) {
+                            oldVal = teams[i];
+                            teamIndex = i;
                             break;
                         }
                     }
-                }
 
-                teams[teamIndex] = newVal;
-
-                return [200, teams];
-            });
-            $httpBackend.whenPOST('/api/teams').respond(function (method:string, url:string, data:ITeam, headers:any, params:any) {
-
-                data = <any>JSON.parse(<any>data).data;
-                for (var i = 0 ; i < unassignedParticipants.length ; i ++)
-                {
-                    if(data.captain.id === unassignedParticipants[i].id) {
-                        data.captain = unassignedParticipants[i];
-                        break;
+                    // Removes all participants from the team
+                    while (oldVal.participants && oldVal.participants.length) {
+                        unassignedParticipants.push(oldVal.participants[0]);
+                        oldVal.participants.splice(0, 1);
                     }
-                }
-                var index = unassignedParticipants.indexOf(data.captain);
-                if (index >= 0) {
-                    unassignedParticipants.splice(index, 1);
-                }
-                teams.push(data)
-                return [201, data];
-            });
+
+                    // Adds participants to the team
+                    for (var i = 0; i < newVal.participants.length; i++) {
+                        for (var j = 0; j < unassignedParticipants.length; j++) {
+                            if (unassignedParticipants[j].id === newVal.participants[i].id) {
+                                unassignedParticipants.slice(j, 1);
+                                break;
+                            }
+                        }
+                    }
+
+                    teams[teamIndex] = newVal;
+
+                    return [200, teams];
+                });
+                $httpBackend.whenPOST('/api/teams').respond(function (method:string, url:string, data:ITeam, headers:any, params:any) {
+
+                    data = <any>JSON.parse(<any>data).data;
+                    for (var i = 0; i < unassignedParticipants.length; i++) {
+                        if (data.captain.id === unassignedParticipants[i].id) {
+                            data.captain = unassignedParticipants[i];
+                            break;
+                        }
+                    }
+                    var index = unassignedParticipants.indexOf(data.captain);
+                    if (index >= 0) {
+                        unassignedParticipants.splice(index, 1);
+                    }
+                    teams.push(data)
+                    return [201, data];
+                });
+            }
     }]);
 
 
