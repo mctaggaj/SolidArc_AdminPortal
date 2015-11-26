@@ -15,7 +15,7 @@
         <div id="TeamCaptain" class="row container-fluid detailContainer">
             <div class="detailLabel">Team Captain: </div>
             <div class="detailValue">
-                <a ui-sref="participant({selectedId: selected.captain.id})">{{selected.captain.name}}</a>
+                <a ui-sref="participant({selectedId: selected.captain.id})">{{selected.captain.LASTNAME}}, {{selected.captain.FIRSTNAME}}</a>
             </div>
         </div>
         <div id="Participants" class="row container-fluid detailContainer">
@@ -25,7 +25,7 @@
             </div>
             <div class="detailValue">
                 <div ng-repeat="participant in selected.participants">
-                    <a ui-sref="participant({selectedId: participant.id})">{{participant.name}}</a>
+                    <a ui-sref="participant({selectedId: participant.id})">{{participant.LASTNAME}}, {{participant.FIRSTNAME}}</a>
                 </div>
             </div>
         </div>

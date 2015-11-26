@@ -1,11 +1,11 @@
 <div class="top-push listDetailView" id="participant">
     <div class="col-xs-2 list">
         <div ng-repeat="participant in list"class="row listRow" ng-class="{selected: participant==selected}"  ng-click="select(participant)">
-            <p>{{participant.name}}</p>
+            <p>{{participant.LASTNAME}}, {{participant.FIRSTNAME}}</p>
         </div>
     </div>
     <div class="detail container-fluid container-sm">
-        <h2>{{selected.name}}</h2>
+        <h2>{{selected.LASTNAME}}, {{selected.FIRSTNAME}}</h2>
         <div id="Mail" class="row container-fluid detailContainer">
             <div class="detailLabel">Participant E-mail: </div>
             <div class="detailValue">

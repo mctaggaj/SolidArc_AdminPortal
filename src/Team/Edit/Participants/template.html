@@ -1,7 +1,7 @@
 <div class="top-push listDetailView" id="EditParticipants">
     <div class="col-xs-2 list">
         <div ng-repeat="participant in unassignedParticipants" class="row listRow" ng-click="assign(participant)">
-            <p>{{participant.name}} <i class="fa fa-plus pull-right"></i></p>
+            <p>{{participant.LASTNAME}}, {{participant.FIRSTNAME}}<i class="fa fa-plus pull-right"></i></p>
         </div>
     </div>
     <div class="detail container-fluid container-sm">
@@ -13,7 +13,7 @@
                 <div class="detailValue">
                     <div class="col-xs-12 list">
                         <div ng-repeat="participant in team.participants" ng-click="unassign(participant)" class="row listRow">
-                            <p>{{participant.name}} <i class="fa fa-minus pull-right"></i></p>
+                            <p>{{participant.LASTNAME}}, {{participant.FIRSTNAME}} <i class="fa fa-minus pull-right"></i></p>
                         </div>
                     </div>
                 </div>

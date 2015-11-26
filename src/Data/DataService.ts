@@ -180,23 +180,28 @@ module App.Data {
 
     var unassignedParticipants:IParticipant [] = [{
         id: getNextId()+"",
-        name: "Bryant, Seth",
+        LASTNAME: "Bryant",
+        FIRSTNAME: "Seth",
         email: "BryantSeth@gmai"
     },{
         id: getNextId()+"",
-        name: "Beckham, Jimmy",
+        LASTNAME: "Beckham",
+        FIRSTNAME: "Jimmy",
         email: "BeckhamJimmy@gmail.com"
     },{
         id: getNextId()+"",
-        name: "Rodgers, Kemp",
+        LASTNAME: "Rodgers",
+        FIRSTNAME: "Kemp",
         email: "RodgersKemp@gmail.com"
     },{
         id: getNextId()+"",
-        name: "Riley, Clair",
+        LASTNAME: "Riley",
+        FIRSTNAME: "Clair",
         email: "RileyClair@gmail.com"
     },{
         id: getNextId()+"",
-        name: "Michael, Jordan",
+        LASTNAME: "Jordan",
+        FIRSTNAME: "Michael",
         email: "MichaelJordan@gmail.com"
     }
     ]
@@ -204,34 +209,34 @@ module App.Data {
         {
             id: getNextId()+"",
             name: "Hallow-Treats",
-            captain: {id: getNextId()+"", name: "Graham, Chris", email: "Chris.Graham@gmail.com"},
+            captain: {id: getNextId()+"", LASTNAME: "Graham",  FIRSTNAME:"Chris", email: "Chris.Graham@gmail.com"},
             participants: [
-                {id: getNextId()+"", name: "Smith, Greg", email: "Greg.Smith@gmail.com"},
-                {id: getNextId()+"", name: "Hogg, Paul", email: "Paul.Hogg@gmail.com"}
+                {id: getNextId()+"", LASTNAME: "Smith",  FIRSTNAME:"Greg", email: "Greg.Smith@gmail.com"},
+                {id: getNextId()+"", LASTNAME: "Hogg",  FIRSTNAME:"Paul", email: "Paul.Hogg@gmail.com"}
             ]
         },
         {
             id: getNextId()+"",
             name: "Dream Team",
-            captain: {id: getNextId()+"", name: "Walker, Rachelle", email: "Rachelle.Smith@gmail.com"},
+            captain: {id: getNextId()+"", LASTNAME: "Walker",  FIRSTNAME:"Rachelle", email: "Rachelle.Smith@gmail.com"},
             participants: []
         },
         {
             id: getNextId()+"",
             name: "Red Jays",
-            captain: {id: getNextId()+"", name: "Bryant, Cathy", email: "Cathy.Bryant@gmail.com"},
+            captain: {id: getNextId()+"", LASTNAME: "Bryant",  FIRSTNAME:"Cathy", email: "Cathy.Bryant@gmail.com"},
             participants: [
-                {id: getNextId()+"", name: "Hill, Leah", email: "Leah.Hill@gmail.com"},
-                {id: getNextId()+"", name: "Phillips, Julie", email: "Julie.Phillips@gmail.com"}
+                {id: getNextId()+"", LASTNAME: "Hill",  FIRSTNAME:"Leah", email: "Leah.Hill@gmail.com"},
+                {id: getNextId()+"", LASTNAME: "Phillips",  FIRSTNAME:"Julie", email: "Julie.Phillips@gmail.com"}
             ]
         },
         {
             id: getNextId()+"",
             name: "Team Yellow",
-            captain: {id: getNextId()+"", name: "Rico, Marry", email: "Marry.Rico@gmail.com"},
+            captain: {id: getNextId()+"", LASTNAME: "Rico",  FIRSTNAME:"Marry", email: "Marry.Rico@gmail.com"},
             participants: [
-                {id: getNextId()+"", name: "Mendoza, Jacklyn", email: "Jacklyn.Mendoza@gmail.com"},
-                {id: getNextId()+"", name: "Roach, Brian", email: "Brian.Roach@gmail.com"}
+                {id: getNextId()+"", LASTNAME: "Mendoza",  FIRSTNAME:"Jacklyn", email: "Jacklyn.Mendoza@gmail.com"},
+                {id: getNextId()+"", LASTNAME: "Roach",  FIRSTNAME:"Brian", email: "Brian.Roach@gmail.com"}
             ]
         }
     ]
