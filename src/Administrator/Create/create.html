@@ -1,18 +1,18 @@
 <div class="top-push container " id="CreateAdministrator">
     <h1>Create Administrator</h1>
 
-    <form class="container-sm jumbotron login-form" ng-submit="createAdmin()">
+    <form class="container-sm jumbotron login-form" ng-submit="createAdmin()" autocomplete="off">
 
         <div id="EmailContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Email:</div>
             <div class="detailValue">
-                <input type="email" class="form-control" id="username" placeholder="Email" ng-model="info.mail" ng-required="true">
+                <input type="email" class="form-control" id="username" placeholder="Email" ng-model="info.mail" ng-required="true" autocomplete="off">
             </div>
         </div>
         <div id="ConfirmEmailContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Re-enter Email:</div>
             <div class="detailValue">
-                <input type="email" class="form-control" id="email" placeholder="Confirm Email" ng-model="info.mail2" ng-required="true" >
+                <input type="email" class="form-control" id="email" placeholder="Confirm Email" ng-model="info.mail2" ng-required="true" autocomplete="off">
                 <br><span class="errorLabel" ng-show="mailMatch">Emails Don't Match</span>
             </div>
         </div>
@@ -20,27 +20,27 @@
         <div id="LastNameContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Last Name:</div>
             <div class="detailValue">
-                <input type="text" class="form-control" id="last" placeholder="Last Name Here" ng-model="info.last" ng-required="true">
+                <input type="text" class="form-control" id="last" placeholder="Last Name" ng-model="info.last" ng-required="true" autocomplete="off">
             </div>
         </div>
 
         <div id="FirstNameContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">First Name:</div>
             <div class="detailValue">
-                <input type="text" class="form-control" id="first" placeholder="First Name Here" ng-model="info.first" ng-required="true">
+                <input type="text" class="form-control" id="first" placeholder="First Name" ng-model="info.first" ng-required="true" autocomplete="off">
             </div>
         </div>
 
         <div id="PasswordContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Password:</div>
             <div class="detailValue">
-                <input type="password" class="form-control" id="password" placeholder="Password" ng-model="info.password" ng-required="true">
+                <input type="password" class="form-control" id="password" placeholder="Password" ng-model="info.password" ng-required="true" autocomplete="off">
             </div>
         </div>
         <div id="PasswordCheckContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Re-enter Password:</div>
             <div class="detailValue">
-                <input type="password" class="form-control" id="passwordCheck" placeholder="Password (Again)" ng-model="info.password2" ng-required="true">
+                <input type="password" class="form-control" id="passwordCheck" placeholder="Confirm Password" ng-model="info.password2" ng-required="true" autocomplete="off">
                 <br><span class="errorLabel" ng-show="passwordMatch">Passwords Don't Match</span>
             </div>
         </div>

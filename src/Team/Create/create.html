@@ -1,11 +1,11 @@
 <div class="top-push container container-sm" id="CreateTeam">
     <h1>Create Team</h1>
 
-    <form class="container-fluid jumbotron select-event-form" ng-submit="create()">
+    <form class="container-fluid jumbotron select-event-form" ng-submit="create()" autocomplete="off">
         <div id="TeamNameContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Team Name:</div>
             <div class="detailValue">
-                <input type="text" class="form-control" id="TeamName" placeholder="Team Name" ng-model="teamName" ng-required="true">
+                <input type="text" class="form-control" id="TeamName" placeholder="Team Name" ng-model="teamName" ng-required="true" autocomplete="off">
             </div>
         </div>
         <div id="TeamCaptainContainer" class="row container-fluid detailContainer noLine">
