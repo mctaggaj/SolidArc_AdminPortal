@@ -247,29 +247,35 @@ module App.Data {
     angular.module(DataService.moduleId, ["ngMockE2E"])
         .service(DataService.serviceId, DataService)
         .run(["$httpBackend", "$location", "localStorageService", function($httpBackend:angular.IHttpBackendService, $location: ng.ILocationService, localStorageService: ng.localStorage.ILocalStorageService) {
+
             // All Mocks
             if($location.search()["mock"]) {
                 localStorageService.set(LS_UseMocks,$location.search()["mock"]);
             }
+            var master = true;
             if(localStorageService.get(LS_UseMocks)==="false"||localStorageService.get(LS_UseMocks)===false)
             {
+                master = false;
                 return;
             }
 
             // Events
             localStorageService.set(LS_UseMocks_Events,$location.search()["mockEvents"]);
-            if(!(localStorageService.get(LS_UseMocks_Events)==="false"||localStorageService.get(LS_UseMocks_Events)===false))
+            if(master&&!(localStorageService.get(LS_UseMocks_Events)==="false"||localStorageService.get(LS_UseMocks_Events)===false))
             {
                 // do not bother server, respond with given content
                 $httpBackend.whenGET('/api/events').respond(function (method:string, url:string, data:any, headers:any, params:any) {
                     return [200, {events: [{name: "Guelph 2016"}, {name: "Laurier 2016"}]}];
                 });
             }
+            else {
+                $httpBackend.whenGET('/api/events').passThrough();
+            }
 
 
             // Participants
             localStorageService.set(LS_UseMocks_Participants,$location.search()["mockParticipants"]);
-            if(!(localStorageService.get(LS_UseMocks_Participants)==="false"||localStorageService.get(LS_UseMocks_Participants)===false)) {
+            if(master&&!(localStorageService.get(LS_UseMocks_Participants)==="false"||localStorageService.get(LS_UseMocks_Participants)===false)) {
                 $httpBackend.whenPOST('/api/participants').respond(function (method:string, url:string, data:IParticipant, headers:any, params:any) {
                     data = <any>JSON.parse(<any>data).data;
                     unassignedParticipants.push(data);
@@ -291,12 +297,16 @@ module App.Data {
                     return [200, unassignedParticipants];
                 });
             }
+            else {
+                $httpBackend.whenPOST('/api/participants').passThrough();
+                $httpBackend.whenGET('/api/participants').passThrough();
+                $httpBackend.whenGET('/api/participants/unassigned').passThrough()
+            }
 
 
             // Teams
             localStorageService.set(LS_UseMocks_Teams,$location.search()["mockTeams"]);
-            if(!(localStorageService.get(LS_UseMocks_Teams)==="false"||localStorageService.get(LS_UseMocks_Teams)===false)) {
-
+            if(master&&!(localStorageService.get(LS_UseMocks_Teams)==="false"||localStorageService.get(LS_UseMocks_Teams)===false)) {
                 $httpBackend.whenGET(/\/api\/teams(.*)/).respond(function (method:string, url:string, data:any, headers:any, params:any) {
                     var regex = /\/api\/teams\?id=(.*)/;
                     var match = url.match(regex);
@@ -358,6 +368,11 @@ module App.Data {
                     teams.push(data)
                     return [201, data];
                 });
+            }
+            else {
+                $httpBackend.whenGET(/\/api\/teams(.*)/).passThrough();
+                $httpBackend.whenPUT('/api/teams').passThrough();
+                $httpBackend.whenPOST('/api/teams').passThrough();
             }
     }]);
 
