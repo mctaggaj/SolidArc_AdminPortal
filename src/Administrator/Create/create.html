@@ -3,22 +3,33 @@
 
     <form class="container-sm jumbotron login-form" ng-submit="createAdmin()">
 
-        <div id="UsernameContainer" class="row container-fluid detailContainer noLine">
+        <div id="EmailContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Email:</div>
             <div class="detailValue">
-                <input type="email" class="form-control" id="username" placeholder="Admin" ng-model="info.mail" ng-required="true">
+                <input type="email" class="form-control" id="username" placeholder="Email" ng-model="info.mail" ng-required="true">
             </div>
         </div>
-        <div id="EmailContainer" class="row container-fluid detailContainer noLine">
+        <div id="ConfirmEmailContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Re-enter Email:</div>
             <div class="detailValue">
-                <input type="email" class="form-control" id="email" placeholder="@mx.com" ng-model="info.mail2" ng-required="true" >
+                <input type="email" class="form-control" id="email" placeholder="Confirm Email" ng-model="info.mail2" ng-required="true" >
                 <br><span class="errorLabel" ng-show="mailMatch">Emails Don't Match</span>
             </div>
         </div>
 
+        <div id="LastNameContainer" class="row container-fluid detailContainer noLine">
+            <div class="detailLabel">Last Name:</div>
+            <div class="detailValue">
+                <input type="text" class="form-control" id="last" placeholder="Last Name Here" ng-model="info.last" ng-required="true">
+            </div>
+        </div>
 
-
+        <div id="FirstNameContainer" class="row container-fluid detailContainer noLine">
+            <div class="detailLabel">First Name:</div>
+            <div class="detailValue">
+                <input type="text" class="form-control" id="first" placeholder="First Name Here" ng-model="info.first" ng-required="true">
+            </div>
+        </div>
 
         <div id="PasswordContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Password:</div>
