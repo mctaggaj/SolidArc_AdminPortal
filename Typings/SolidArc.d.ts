@@ -52,7 +52,8 @@ declare module SolidArc {
 
 
     export interface IParticipant extends IItem{
-        name: string;
+        FIRSTNAME: string;
+        LASTNAME: string;
         email?: string;
         password?: string;
     }

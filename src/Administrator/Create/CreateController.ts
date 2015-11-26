@@ -6,7 +6,8 @@ module App.Administrator.Create {
         create: () => void;
         info: {
             id : string;
-            username: string;
+            FIRSTNAME: string;
+            LASTNAME: string;
             mail : string;
             mail2 : string;
             password: string;
@@ -46,13 +47,15 @@ module App.Administrator.Create {
 
             var administratorInfo = {
                 id : "",
-                username: "",
+                FIRSTNAME: "",
+                LASTNAME: "",
                 mail : "",
                 password: ""
             };
 
             administratorInfo.id = getNextId()+"";
-            administratorInfo.username = this.scope.info.mail;
+            administratorInfo.FIRSTNAME = this.scope.info.first;
+            administratorInfo.LASTNAME = this.scope.info.last;
             administratorInfo.mail = this.scope.info.mail;
             administratorInfo.password = this.scope.info.password;
 

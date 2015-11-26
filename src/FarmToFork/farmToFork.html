@@ -1,0 +1,31 @@
+<div class="top-push listDetailView" id="Administrator">
+    <div class="col-xs-2 list">
+        <div class="row">
+            <input ng-model="searchText" placeholder="Search for..." class="listSearch"></input>
+        </div>
+        <div ng-repeat="item in list | filter:searchText" class="row listRow" ng-class="{selected: item==selected}" ng-click="select(item)">
+            <p>{{item.item_title}}</p>
+        </div>
+    </div>
+    <div class="detail container-fluid  container-sm">
+        <h1>{{selected.item_title}}</h1>
+        <div id="Category" class="row container-fluid detailContainer" ng-show="selected.category">
+            <div class="detailLabel">Category: </div>
+            <div class="detailValue">
+                {{selected.category}}
+            </div>
+        </div>
+        <div id="Quantity" class="row container-fluid detailContainer">
+            <div class="detailLabel">Quantity: </div>
+            <div class="detailValue">
+                {{selected.quantity}}&nbsp;{{selected.units}}
+            </div>
+        </div>
+        <div id="Description" class="row container-fluid detailContainer" ng-show="selected.description">
+            <div class="detailLabel">Description: </div>
+            <div class="detailValue">
+                {{selected.description}}
+            </div>
+        </div>
+    </div>
+</div>

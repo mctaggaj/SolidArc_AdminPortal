@@ -4,11 +4,20 @@
             <input ng-model="searchText" placeholder="Search for..." class="listSearch"></input>
         </div>
         <div ng-repeat="administrator in list | filter:searchText" class="row listRow" ng-class="{selected: administrator==selected}" ng-click="select(administrator)">
-            <p>{{administrator.username}}</p>
+            <p>{{administrator.LASTNAME}}, {{administrator.FIRSTNAME}}</p>
+        </div>
+        <div align="center">
+            <button class="btn btn-secondary" ui-sref="createAdministrator">Create Administrator</button>
         </div>
     </div>
     <div class="detail container-fluid  container-sm">
         <h1>Administrator Details</h1>
+        <div id="Name" class="row container-fluid detailContainer">
+            <div class="detailLabel">Administrator Name: </div>
+            <div class="detailValue">
+                {{selected.LASTNAME}}, {{selected.FIRSTNAME}}
+            </div>
+        </div>
         <div id="Mail" class="row container-fluid detailContainer">
             <div class="detailLabel">Administrator E-mail: </div>
             <div class="detailValue">

@@ -18,7 +18,7 @@ module App.Participant {
         public static $inject = ["$scope","$stateParams","$rootScope", "$state", Data.DataService.serviceId];
         constructor (protected $scope: IParticipantControllerScope , protected $stateParams: IParticipantStateParams, $rootScope:ng.IRootScopeService, protected $state: ng.ui.IStateService, private dataService: Data.DataService) {
             super($scope, $stateParams, $rootScope, $state, state);
-            this.getList = dataService.getUnassignedParticipants
+            this.getList = dataService.getParticipants;
 
             this.didUpdateParams();
         }

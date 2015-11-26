@@ -9,13 +9,16 @@
           <div class="container-sm">
             <h1>Create a Route</h1>
             <form style="text-align:center;" id="cm" ng-submit="goToAddress()">
-              <label for="routeName">Route Name (required):</label><input id="routeName" type="text" ng-model="routeName"/>
+              <label for="routeName">Route Name (required):</label>
+              <input id="routeName" type="text" placeholder="Route One" ng-model="routeName"/>
               
               <p>Add at least 2 points (or waypoints) to the route by clicking a location on the map and clicking "Save point"</p>
               <button class="btn btn-default" ng-show="newmarker.pending" ng-click="saveMarker()">Save Point</button>
               <hr/>
               
-              <label>Alternatively, you can place a point by entering an address: <input type="text" ng-model="map.center.address"/></label>
+              <label>Alternatively, you can place a point by entering an address:</label>
+              <input type="text" placeholder="123 Example Street" ng-model="map.center.address"/>
+
               <button class="btn btn-default" ng-click="goToAddress()">Place point</button>
               
               <hr/>

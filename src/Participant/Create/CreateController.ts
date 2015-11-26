@@ -46,7 +46,8 @@ module App.Participant.Create {
 
             var info: IParticipant = {
                 id : getNextId()+"",
-                name: this.scope.info.last +", " + this.scope.info.first,
+                LASTNAME: this.scope.info.last,
+                FIRSTNAME: this.scope.info.first,
                 email : this.scope.info.mail,
                 password: this.scope.info.password
             };
