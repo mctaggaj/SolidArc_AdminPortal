@@ -6,7 +6,8 @@ module App.Participant.Create {
         create: () => void;
         info: {
             id : string;
-            name: string;
+            last: string;
+            first: string;
             mail : string;
             mail2 : string;
             password: string;
@@ -45,7 +46,7 @@ module App.Participant.Create {
 
             var info: IParticipant = {
                 id : getNextId()+"",
-                name: this.scope.info.name,
+                name: this.scope.info.last +", " + this.scope.info.first,
                 email : this.scope.info.mail,
                 password: this.scope.info.password
             };
