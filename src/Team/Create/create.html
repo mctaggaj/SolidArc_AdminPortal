@@ -5,7 +5,7 @@
         <div id="TeamNameContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Team Name:</div>
             <div class="detailValue">
-                <input type="text" class="form-control" id="TeamName" placeholder="Team Name" ng-model="teamName" ng-required="true" autocomplete="off">
+                <input type="text" class="form-control" id="TeamName" placeholder="Team One" ng-model="teamName" ng-required="true" autocomplete="off">
             </div>
         </div>
         <div id="TeamCaptainContainer" class="row container-fluid detailContainer noLine">
@@ -17,7 +17,7 @@
                         name="Event"
                         ng-required="true"
                         class="col-xs-12">
-                    <option value="">---Please select---</option>
+                    <option value="">Please Select One Participant</option>
                     <option ng-repeat="participant in participants" value="{{participant}}">{{participant.LASTNAME}}, {{participant.FIRSTNAME}}</option>
                 </select>
             </div>

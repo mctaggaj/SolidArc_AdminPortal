@@ -38,8 +38,9 @@
         <h1>Create Route</h1>
         <p>Add at least two points to save the route.</p>
         <p>Click a point on the map below or type in an address to add a waypoint.</p>
-        <label>Route Name (required):</label><input type="text" ng-model="routeName"/>
-        <form style="text-align:center;" id="cm" ng-submit="goToAddress()"><label>Create point from address: <input type="text" ng-model="map.center.address"/></label>
+        <label>Route Name (required):</label><input type="text" placeholder="Route One" ng-model="routeName"/>
+        <form style="text-align:center;" id="cm" ng-submit="goToAddress()">
+            <label>Create point from address: <input type="text" placeholder="123 Example Street" ng-model="map.center.address"/></label>
         <button class="btn btn-default" ng-click="goToAddress()">Place point</button></form>
         
         <div class="row container-fluid detailContainer">
