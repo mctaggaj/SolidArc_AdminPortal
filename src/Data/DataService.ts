@@ -65,7 +65,7 @@ module App.Data {
         }
 
 
-        public getParticipants = ():ng.IPromise<IParticipant> => {
+        public getParticipants = ():ng.IPromise<IParticipant[]> => {
             var defered = this.$q.defer();
             this.$http.get("/api/participants", {})
                 .then(
@@ -347,7 +347,6 @@ module App.Data {
                             }
                         }
                     }
-
                     teams[teamIndex] = newVal;
 
                     return [200, teams];

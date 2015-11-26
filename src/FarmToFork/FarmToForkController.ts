@@ -26,7 +26,6 @@ module App.FarmToFork {
     angular.module(FarmToForkController.moduleId, [FarmToFork.FarmToForkService.moduleId]).
         controller(FarmToForkController.controllerId, FarmToForkController)
         .config(["$stateProvider", ($stateProvider: ng.ui.IStateProvider) => {
-            console.log("Test")
             $stateProvider.state(state, {
                 templateUrl: FarmToFork.baseUrl+'farmToFork.html',
                 controller: FarmToForkController.controllerId,
