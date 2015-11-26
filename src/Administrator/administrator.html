@@ -1,6 +1,9 @@
 <div class="top-push listDetailView" id="Administrator">
     <div class="col-xs-2 list">
-        <div ng-repeat="administrator in list" class="row listRow" ng-class="{selected: administrator==selected}" ng-click="select(administrator)">
+        <div class="row">
+            <input ng-model="searchText" placeholder="Search for..." class="listSearch"></input>
+        </div>
+        <div ng-repeat="administrator in list | filter:searchText" class="row listRow" ng-class="{selected: administrator==selected}" ng-click="select(administrator)">
             <p>{{administrator.username}}</p>
         </div>
     </div>
@@ -18,6 +21,9 @@
                 <button class="btn btn-sm btn-warning ">RESET</button>
             </div>
         </div>
-        <div id="BottomButtons" class="row container-fluid detailContainer"><button class="btn btn-secondary col-sm-5 col-xs-12">Edit Administrator Details</button><button class="btn btn-danger  col-sm-offset-2 col-sm-5 col-xs-12">Delete Administrator</button></div>
+        <div id="BottomButtons" class="row container-fluid detailContainer">
+            <button class="btn btn-secondary col-sm-5 col-xs-12">Edit Administrator Details</button>
+            <button class="btn btn-danger  col-sm-offset-2 col-sm-5 col-xs-12">Delete Administrator</button>
+        </div>
     </div>
 </div>

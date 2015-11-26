@@ -1,6 +1,9 @@
 <div class="top-push listDetailView" id="participant">
     <div class="col-xs-2 list">
-        <div ng-repeat="participant in list"class="row listRow" ng-class="{selected: participant==selected}"  ng-click="select(participant)">
+        <div class="row">
+            <input ng-model="searchText" placeholder="Search for..." class="listSearch"></input>
+        </div>
+        <div ng-repeat="participant in list | filter:searchText" class="row listRow" ng-class="{selected: participant==selected}"  ng-click="select(participant)">
             <p>{{participant.name}}</p>
         </div>
     </div>
