@@ -63,7 +63,6 @@ module App.Auth {
                     (response: ng.IHttpPromiseCallbackArg<IUser>) => {
                         response.data.USERID="-1";
                         response.data.USERNAME=username;
-                        response.data.EVENTID="1";
                         this.setAuthData(response.data)
                         defered.resolve({
                             msg: null
