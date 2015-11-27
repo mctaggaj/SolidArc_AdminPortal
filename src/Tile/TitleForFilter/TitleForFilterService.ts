@@ -63,7 +63,7 @@ module App.Tile.TitleForFilter {
             data = JSON.parse(JSON.stringify(eval("(" +data+ ")")));
             var title = "Unknown Title";
             var titles:any = {
-                "": "Administrator Dashboard",
+                "": "Home Dashboard",
                 "participants": "Participants Dashboard",
                 "info": "Information Dashboard",
                 "chat": "Chat Dashboard",
