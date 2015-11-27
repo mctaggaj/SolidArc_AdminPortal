@@ -3,7 +3,7 @@
         <div class="row">
             <input ng-model="searchText" placeholder="Search for..." class="listSearch"></input>
         </div>
-        <div ng-repeat="participant in list | filter:searchText" class="row listRow" ng-class="{selected: participant==selected}"  ng-click="select(participant)">
+        <div ng-repeat="participant in list | filter:searchText | orderBy:'+LASTNAME'" class="row listRow" ng-class="{selected: participant==selected}"  ng-click="select(participant)">
             <p>{{participant.LASTNAME}}, {{participant.FIRSTNAME}}</p>
         </div>
         <div align="center">
