@@ -56,7 +56,7 @@ module App.Tile {
                 "participants"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "participant",
                 stateParams: {
@@ -71,7 +71,7 @@ module App.Tile {
                 "participants"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "participant",
                 stateParams: {
@@ -130,7 +130,7 @@ module App.Tile {
                 "routes"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "routes",
                 stateParams: {
@@ -145,7 +145,7 @@ module App.Tile {
                 "routes"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "home",
                 stateParams: {
@@ -253,7 +253,7 @@ module App.Tile {
                 "routes"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "",
                 stateParams: {
@@ -283,7 +283,7 @@ module App.Tile {
                 "buses"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "buses",
                 stateParams: {
@@ -297,7 +297,7 @@ module App.Tile {
                 "buses"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "buses",
                 stateParams: {
@@ -311,7 +311,7 @@ module App.Tile {
                 "buses"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "buses",
                 stateParams: {
@@ -325,7 +325,7 @@ module App.Tile {
                 "buses"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "buses",
                 stateParams: {
@@ -354,7 +354,7 @@ module App.Tile {
                 "events"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "",
                 stateParams: {
@@ -369,7 +369,7 @@ module App.Tile {
                 "events"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "",
                 stateParams: {
@@ -384,7 +384,7 @@ module App.Tile {
                 "events"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "",
                 stateParams: {
@@ -399,7 +399,7 @@ module App.Tile {
                 "events"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "",
                 stateParams: {
@@ -473,7 +473,7 @@ module App.Tile {
                 "administrators"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "administrator",
                 stateParams: {
@@ -488,7 +488,7 @@ module App.Tile {
                 "administrators"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "administrator",
                 stateParams: {
@@ -516,7 +516,7 @@ module App.Tile {
                 "waivers"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "waivers",
                 stateParams: {
@@ -530,7 +530,7 @@ module App.Tile {
                 "waivers"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "waivers",
                 stateParams: {
@@ -544,7 +544,7 @@ module App.Tile {
                 "waivers"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "waivers",
                 stateParams: {
@@ -558,7 +558,7 @@ module App.Tile {
                 "waivers"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "waivers",
                 stateParams: {
@@ -596,6 +596,7 @@ module App.Tile {
         {
             text: "Farm to Fork",
             tags: [
+                "all",
                 "info"
             ],
             textColor: "#333",
@@ -612,7 +613,7 @@ module App.Tile {
                 "info"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "home",
                 stateParams: {
@@ -627,7 +628,7 @@ module App.Tile {
                 "statistics"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "statistics",
                 stateParams: {
@@ -641,7 +642,7 @@ module App.Tile {
                 "statistics"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "statistics",
                 stateParams: {
@@ -655,7 +656,7 @@ module App.Tile {
                 "statistics"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "statistics",
                 stateParams: {
@@ -669,7 +670,7 @@ module App.Tile {
                 "statistics"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "statistics",
                 stateParams: {

@@ -58,7 +58,7 @@ module App.Auth {
         public login = (username: string, password: string): ng.IPromise<SolidArc.IResponse> => {
             this.clearAuthData();
             var defered = this.$q.defer();
-            this.$http.post("/api/authentication", {creds:{username: username, password: password}})
+            this.$http.post("/api/index.php/login", {creds:{USERNAME: username, PASSWORD: password}})
                 .then(
                     (response: ng.IHttpPromiseCallbackArg<IUser>) => {
                         response.data.USERID="-1";
@@ -107,7 +107,7 @@ module App.Auth {
          */
         public logout = (): void => {
             this.clearAuthData();
-            this.$http.delete("/api/authentication").success(() => {
+            this.$http.delete("/api/index.php/login").success(() => {
             })
         }
 
@@ -248,7 +248,7 @@ module App.Auth {
                 localStorageService.set(Auth.LS_UseMocks_Auth, $location.search()["mockLogin"]);
             }
             if (master && !(localStorageService.get(Auth.LS_UseMocks_Auth)==="false")) {
-                $httpBackend.whenPOST('/api/authentication').respond(function (method:string, url:string, data:any, headers:any, params:any) {
+                $httpBackend.whenPOST('/api/index.php/login').respond(function (method:string, url:string, data:any, headers:any, params:any) {
                     data = JSON.parse(JSON.stringify(eval("(" + data + ")")));
                     if (data.creds["USERNAME"] === "superadmin1@mx.com" && data.creds["PASSWORD"] === "pass1234") {
                         return [200, {TOKEN: "abc123", USERID: "f2", USERNAME: data.username}];
@@ -259,7 +259,7 @@ module App.Auth {
                 });
             }
             else {
-                $httpBackend.whenGET('/api/authentication').passThrough();
+                $httpBackend.whenGET('/api/index.php/login').passThrough();
             }
             $httpBackend.whenDELETE('/api/authentication').respond(function (method:string, url:string, data:any, headers:any, params:any) {
                 return [200, {msg: "Logged out"}];
