@@ -19,49 +19,35 @@ declare module SolidArc {
      /**
      * Permissions/roles
      */
-    export interface IUser {
-
-        /**
-         * ID of user, primary key
-         */
-        userId: number;
-
-        /**
-         * Username if set
-         */
-        username: string;
-
-        /**
-         * Password if set
-         */
-        password: string;
-        /**
-         * Session token
-         */
-        token: string;
-
-         /**
-          * The event that the user is a part of
-          */
-         event: string;
+    export interface IUser extends IItem{
+         USERID: string;
+         FIRSTNAME: string;
+         LASTNAME: string;
+         EMAIL: string;
+         USERNAME?: string;
+         CREATEIONDATE?: string;
+         PASSWORD?: string;
+         TEAMID?: string;
+         ACCESS?: string;
+         TOKEN?: string;
+         ISSTUDENT?: boolean;
+         ISTEAMCAPTAIN?: boolean;
+         EVENTID?: string;
     }
 
     export interface IItem {
-        id: string;
     }
 
 
-    export interface IParticipant extends IItem{
-        FIRSTNAME: string;
-        LASTNAME: string;
-        email?: string;
-        password?: string;
+    export interface IParticipant extends IUser{
+
     }
 
 
     export interface ITeam extends IItem{
-        name: string;
-        captain: IParticipant;
-        participants: IParticipant[];
+        TEAMNAME: string;
+        TEAMID: string;
+        NUMMEMBERS?: string;
+        TEAMMEMBERS: IParticipant[];
     }
 }

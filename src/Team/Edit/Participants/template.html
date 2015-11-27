@@ -6,13 +6,13 @@
     </div>
     <div class="detail container-fluid container-sm">
         <h1>Edit Participants</h1>
-        <h2>{{team.name}}</h2>
+        <h2>{{team.TEAMNAME}}</h2>
         <form class="container-fluid select-event-form" ng-submit="done()">
             <div id="OnTeamContainer" class="row container-fluid detailContainer noLine">
-                <div class="detailLabel">Assigned to {{team.name}}</div>
+                <div class="detailLabel">Assigned to {{team.TEAMNAME}}</div>
                 <div class="detailValue">
                     <div class="col-xs-12 list">
-                        <div ng-repeat="participant in team.participants" ng-click="unassign(participant)" class="row listRow">
+                        <div ng-hide="participant.ISTEAMCAPTAIN" ng-repeat="participant in team.TEAMMEMBERS" ng-click="unassign(participant)" class="row listRow">
                             <p>{{participant.LASTNAME}}, {{participant.FIRSTNAME}} <i class="fa fa-minus pull-right"></i></p>
                         </div>
                     </div>

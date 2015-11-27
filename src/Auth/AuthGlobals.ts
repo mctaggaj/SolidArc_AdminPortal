@@ -11,6 +11,8 @@ module App.Auth {
     export var LS_UserId = "SolidArc.Auth.UserId";
     export var LS_UserToken = "SolidArc.Auth.UserToken";
 
+    export var LS_UseMocks_Auth = "SolidArc.Auth.UseMocks.Auth";
+
     export interface IAdministrator extends IItem {
         email: string;
         password: string;
