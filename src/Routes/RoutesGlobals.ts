@@ -10,7 +10,7 @@ module App.Routes {
                           event_id: 1,
                           event_name: "Guelph 2016",
                           route_id: "1",
-                          route_name: "Stone Rd",
+                          route_name: "Dean Ave",
                           waypoints: [
                             {
                               waypoint_id: 1,
@@ -60,28 +60,6 @@ module App.Routes {
                               coords: {
                                 "latitude":43.52783619136309,
                                 "longitude":-80.221266746521
-                              }
-                            }
-                          ]
-                        },
-                        {
-                          event_id: 1,
-                          event_name: "Guelph 2016",
-                          route_id: "3",
-                          route_name: "Bone Rd",
-                          waypoints: [
-                            {
-                              waypoint_id: 1,
-                              coords: {
-                                latitude: 1,
-                                longitude: 1
-                              }
-                            },
-                            {
-                              waypoint_id: 2,
-                              coords: {
-                                latitude: 1.1,
-                                longitude: 1
                               }
                             }
                           ]
