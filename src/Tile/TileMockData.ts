@@ -350,47 +350,6 @@ module App.Tile {
             }
         },
         {
-            text: "Info",
-            tags: [
-                ""
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "home",
-                stateParams: {
-                    filter: "info"
-                }
-            }
-        },
-        {
-            text: "Farm to Fork",
-            tags: [
-                "info"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "farmToFork",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "Chat",
-            tags: [
-                ""
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "home",
-                stateParams: {
-                    filter: "chat"
-                }
-            }
-        },
-        {
             text: "Administrators",
             tags: [
                 ""
@@ -475,6 +434,243 @@ module App.Tile {
                 state: "home",
                 stateParams: {
                     filter: "buses"
+                }
+            }
+        },
+        {
+            text: "Create Bus For Route",
+            tags: [
+                "all",
+                "buses"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "buses",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "View Buses",
+            tags: [
+                "all",
+                "buses"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "buses",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Edit Buses",
+            tags: [
+                "all",
+                "buses"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "buses",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Delete Buses",
+            tags: [
+                "all",
+                "buses"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "buses",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Waivers",
+            tags: [
+                ""
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "home",
+                stateParams: {
+                    filter: "waivers"
+                }
+            }
+        },  
+        {
+            text: "Create Waiver",
+            tags: [
+                "all",
+                "waivers"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "waivers",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "View Waiver",
+            tags: [
+                "all",
+                "waivers"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "waivers",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Edit Waiver",
+            tags: [
+                "all",
+                "waivers"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "waivers",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Delete Waiver",
+            tags: [
+                "all",
+                "waivers"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "waivers",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Info",
+            tags: [
+                ""
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "home",
+                stateParams: {
+                    filter: "info"
+                }
+            }
+        },
+        {
+            text: "Farm to Fork",
+            tags: [
+                "info"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "farmToFork",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Statistics",
+            tags: [
+                "info"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "home",
+                stateParams: {
+                    filter: "statistics"
+                }
+            }
+        },
+        {
+            text: "Event Statistics",
+            tags: [
+                "all",
+                "statistics"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "statistics",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Participant Statistics",
+            tags: [
+                "all",
+                "statistics"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "statistics",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Route Statistics",
+            tags: [
+                "all",
+                "statistics"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "statistics",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Team Statistics",
+            tags: [
+                "all",
+                "statistics"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "statistics",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Chat",
+            tags: [
+                ""
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "statistics",
+                stateParams: {
+                    filter: "chat"
                 }
             }
         },

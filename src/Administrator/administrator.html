@@ -6,8 +6,8 @@
         <div ng-repeat="administrator in list | filter:searchText" class="row listRow" ng-class="{selected: administrator==selected}" ng-click="select(administrator)">
             <p>{{administrator.LASTNAME}}, {{administrator.FIRSTNAME}}</p>
         </div>
-        <div>
-            <button class="btn btn-secondary col-sm-offset-2" ui-sref="createAdministrator">Create Administrator</button>
+        <div align="center">
+            <button class="btn btn-secondary" ui-sref="createAdministrator">Create Administrator</button>
         </div>
     </div>
     <div class="detail container-fluid  container-sm">
