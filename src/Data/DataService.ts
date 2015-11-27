@@ -197,17 +197,17 @@ module App.Data {
     var unassignedParticipants:IParticipant [] = [{
         id:"",
         USERID: getNextId()+"",
-        LASTNAME: "Bryant",
-        FIRSTNAME: "Seth",
-        EMAIL: "BryantSeth@gmai",
-        USERNAME: "BryantSeth@gmai",
-    },{
-        id:"",
-        USERID: getNextId()+"",
         LASTNAME: "Beckham",
         FIRSTNAME: "Jimmy",
         EMAIL: "BeckhamJimmy@gmail.com",
         USERNAME: "BeckhamJimmy@gmail.com"
+    },{
+        id:"",
+        USERID: getNextId()+"",
+        LASTNAME: "Bryant",
+        FIRSTNAME: "Seth",
+        EMAIL: "BryantSeth@gmai",
+        USERNAME: "BryantSeth@gmai",
     },{
         id:"",
         USERID: getNextId()+"",
@@ -234,6 +234,17 @@ module App.Data {
     var teams: ITeam[] = [
         {
             TEAMID: getNextId()+"",
+            TEAMNAME: "Alpha Team",
+            TEAMMEMBERS: [{
+                USERID: getNextId()+"",
+                LASTNAME: "Walker",
+                FIRSTNAME:"Rachelle",
+                EMAIL: "Rachelle.Smith@gmail.com",
+                USERNAME: "Rachelle.Smith@gmail.com",
+                ISTEAMCAPTAIN: true}]
+        },
+        {
+            TEAMID: getNextId()+"",
             TEAMNAME: "Hallow-Treats",
             TEAMMEMBERS: [
                 {
@@ -257,17 +268,6 @@ module App.Data {
                     EMAIL: "Paul.Hogg@gmail.com",
                     USERNAME: "Paul.Hogg@gmail.com"}
             ]
-        },
-        {
-            TEAMID: getNextId()+"",
-            TEAMNAME: "Dream Team",
-            TEAMMEMBERS: [{
-                USERID: getNextId()+"",
-                LASTNAME: "Walker",
-                FIRSTNAME:"Rachelle",
-                EMAIL: "Rachelle.Smith@gmail.com",
-                USERNAME: "Rachelle.Smith@gmail.com",
-                ISTEAMCAPTAIN: true}]
         },
         {
             TEAMID: getNextId()+"",
