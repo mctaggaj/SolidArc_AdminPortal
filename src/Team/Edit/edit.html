@@ -1,4 +1,17 @@
 <div class=" container" id="EditTeam">
-    <h1>Edit Team</h1>
-    <h2>Under Construction</h2>
+
+    <h1>Edit Team Details</h1>
+
+    <form class="container-fluid jumbotron select-event-form" ng-submit="create()" autocomplete="off">
+        <div class="required-label">* denotes mandatory field</div>
+        <div id="TeamNameContainer" class="row container-fluid detailContainer noLine">
+            <div class="detailLabel">Team Name:</div>
+            <div class="star">*</div>
+            <div class="detailValue">
+                <input type="text" class="form-control" id="TeamName" placeholder="Team One" ng-model="teamName" ng-required="true" autocomplete="off">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary pull-right">Update Team</button>
+    </form>
 </div>
