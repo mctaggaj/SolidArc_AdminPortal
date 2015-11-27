@@ -81,6 +81,7 @@ module App.Routes.Create {
                   console.log($scope.routeName, "is the route");
                   $scope.routePending = true;
                 }
+                  $scope.map.center.address = "";
               };
               $scope.$watch("routeName", (newValue, oldValue) => {
                 console.log(newValue);
