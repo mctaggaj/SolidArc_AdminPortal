@@ -261,7 +261,7 @@ module App.Auth {
             else {
                 $httpBackend.whenPOST('/api/index.php/login').passThrough();
             }
-            $httpBackend.whenDELETE('/api/authentication').respond(function (method:string, url:string, data:any, headers:any, params:any) {
+            $httpBackend.whenDELETE('/api/index.php/login').respond(function (method:string, url:string, data:any, headers:any, params:any) {
                 return [200, {msg: "Logged out"}];
             });
         }]);
