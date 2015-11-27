@@ -261,14 +261,13 @@ module App.Data {
         {
             TEAMID: getNextId()+"",
             TEAMNAME: "Dream Team",
-            captain: {
+            TEAMMEMBERS: [{
                 USERID: getNextId()+"",
                 LASTNAME: "Walker",
                 FIRSTNAME:"Rachelle",
                 EMAIL: "Rachelle.Smith@gmail.com",
                 USERNAME: "Rachelle.Smith@gmail.com",
-                ISTEAMCAPTAIN: true},
-            TEAMMEMBERS: []
+                ISTEAMCAPTAIN: true}]
         },
         {
             TEAMID: getNextId()+"",
