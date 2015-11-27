@@ -350,47 +350,6 @@ module App.Tile {
             }
         },
         {
-            text: "Info",
-            tags: [
-                ""
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "home",
-                stateParams: {
-                    filter: "info"
-                }
-            }
-        },
-        {
-            text: "Farm to Fork",
-            tags: [
-                "info"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "farmToFork",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "Chat",
-            tags: [
-                ""
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "home",
-                stateParams: {
-                    filter: "chat"
-                }
-            }
-        },
-        {
             text: "Administrators",
             tags: [
                 ""
@@ -601,6 +560,117 @@ module App.Tile {
             action: {
                 state: "waivers",
                 stateParams: {
+                }
+            }
+        },
+        {
+            text: "Info",
+            tags: [
+                ""
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "home",
+                stateParams: {
+                    filter: "info"
+                }
+            }
+        },
+        {
+            text: "Farm to Fork",
+            tags: [
+                "info"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "farmToFork",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Statistics",
+            tags: [
+                "info"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "home",
+                stateParams: {
+                    filter: "statistics"
+                }
+            }
+        },
+        {
+            text: "Event Statistics",
+            tags: [
+                "all",
+                "statistics"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "statistics",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Participant Statistics",
+            tags: [
+                "all",
+                "statistics"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "statistics",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Route Statistics",
+            tags: [
+                "all",
+                "statistics"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "statistics",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Team Statistics",
+            tags: [
+                "all",
+                "statistics"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "statistics",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Chat",
+            tags: [
+                ""
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "home",
+                stateParams: {
+                    filter: "chat"
                 }
             }
         },

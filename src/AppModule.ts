@@ -11,6 +11,7 @@
 /// <reference path="Login/LoginModule.ts"/>
 /// <reference path="SelectEvent/SelectEventModule.ts"/>
 /// <reference path="Routes/RoutesModule.ts"/>
+/// <reference path="Statistics/StatisticsModule.ts"/>
 /**
  * The App module.
  * Contains all sub-modules and implementation required for the app
