@@ -1,60 +1,40 @@
-<!--<div class="row top-push" id="CreateRoute">
-  <h1>Create Route</h1>
-  
-  <div class="col-xs-2 list">
-    <div ng-repeat="marker in markers" class="row">
-        <p>{{marker.coords.latitude}},{{markers.coords.longitude}}</p>
-    </div>
-  </div>
-  <div class="detail container-fluid">
-
-    <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-      <ui-gmap-marker ng-repeat="marker in markers" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
-      </ui-gmap-marker>
-    </ui-gmap-google-map>
-    <div class="row">
-      <select ng-options="zoom as zoom for zoom in map.zoom_options"
-              ng-model="map.zoom"
-              ng-change="console.log('hey!')">
-      </select>
-      <div class="col-xs-12">
-        <h1>Center</h1>
-        <label>Lat: <input type="text" ng-model="map.center.latitude"/></label>
-        <label>Long: <input type="text" ng-model="map.center.longitude"/></label>
-        <label>Center Address: <input type="text" ng-model="map.center.address"/></label>
-        <button class="btn btn-default" ng-click="goToAddress()">Go To Address</button>
-      </div>
-    </div>
-  </div>
-</div>
--->
 <div class="top-push listDetailView" id="CreateRoute">
     <div class="col-xs-2 list">
         <div ng-model="markers" ng-repeat="marker in markers" class="row listRow">
             <p>{{ marker.coords.latitude }}, {{ marker.coords.longitude }}</p>
         </div>
     </div>
-    <div class="detail container-fluid">
-        <h1>Create Route</h1>
-        <p>Add at least two points to save the route.</p>
-        <p>Click a point on the map below or type in an address to add a waypoint.</p>
-        <label>Route Name (required):</label><input type="text" placeholder="Route One" ng-model="routeName"/>
-        <form style="text-align:center;" id="cm" ng-submit="goToAddress()">
-            <label>Create point from address: <input type="text" placeholder="123 Example Street" ng-model="map.center.address"/></label>
-        <button class="btn btn-default" ng-click="goToAddress()">Place point</button></form>
 
-        <div class="row container-fluid detailContainer">
-          <ui-gmap-google-map center='map.center' zoom='map.zoom' events='map.events'>
-            <ui-gmap-marker ng-hide="!newmarker.pending" ng-model="newmarker" coords="newmarker.coords" options="newmarker.options" events="newmarker.events" idkey="newmarker.id">
-            </ui-gmap-marker>
-            <ui-gmap-marker ng-repeat="marker in markers" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
-            </ui-gmap-marker>
-            <ui-gmap-polyline ng-repeat="marker in markers" path="[marker.coords, markers[$index > 0 ? $index-1 : $index].coords]"></ui-gmap-polyline>
-          </ui-gmap-google-map>
-        </div>
-        <div class="row container-fluid detailContainer">
-            <button class="btn btn-default" ng-show="newmarker.pending" ng-click="saveMarker()">Save Point</button>
-            <button class="btn btn-primary" ng-show="routePending" ng-click="saveRoute()">Save Route</button>
-        </div>
+    <div class="col-xs-10">
+      <div>
+          <div class="container-sm">
+            <h1>Create a Route</h1>
+            <form style="text-align:center;" id="cm" ng-submit="saveRoute()">
+              <label for="routeName">Route Name (required):</label>
+              <input id="routeName" type="text" placeholder="Route One" ng-model="routeName"/>
+              
+              <p>Add at least 2 points (or waypoints) to the route by clicking a location on the map and clicking "Save point"</p>
+              <button class="btn btn-default" ng-show="newmarker.pending" ng-click="saveMarker()">Save Point</button>
+              <hr/>
+              
+              <button type="submit" class="btn btn-primary" ng-show="routePending" >Save Route</button>
+            </form>
+            <form style="text-align:center;" id="cb" ng-submit="goToAddress()">
+              <label>Alternatively, you can place a point by entering an address:</label>
+              <input type="text" placeholder="123 Example Street" ng-model="map.center.address"/>
+
+              <button class="btn btn-default" ng-click="goToAddress()">Place point</button>
+            </form>
+          </div>
+          <div class="row container-fluid detailContainer">
+            <ui-gmap-google-map center='map.center' zoom='map.zoom' events='map.events'>
+              <ui-gmap-marker ng-hide="!newmarker.pending" ng-model="newmarker" coords="newmarker.coords" options="newmarker.options" events="newmarker.events" idkey="newmarker.id">
+              </ui-gmap-marker>
+              <ui-gmap-marker ng-repeat="marker in markers" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+              </ui-gmap-marker>
+              <ui-gmap-polyline ng-repeat="marker in markers" path="[marker.coords, markers[$index > 0 ? $index-1 : $index].coords]"></ui-gmap-polyline>
+            </ui-gmap-google-map>
+          </div>
+      </div>
     </div>
 </div>
