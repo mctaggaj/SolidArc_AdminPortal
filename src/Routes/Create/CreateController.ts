@@ -23,6 +23,7 @@ module App.Routes.Create {
         routeName: any;
         routePending: any;
         newmarker: any;
+        nameAdded: any; //A flag that changes when the user enters a name for the route
         saveMarker: () => void;
         saveRoute: () => void;
         genPath: () => ICoords[];
@@ -41,6 +42,7 @@ module App.Routes.Create {
             $scope.changeZoom = () => {
               console.log("Gravy!");
             };
+            $scope.nameAdded = false;
           $scope.routeName = "";
             uiGmapGoogleMapApi.then(function(maps) {
               $scope.geocoder = new maps.Geocoder();

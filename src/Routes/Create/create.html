@@ -5,10 +5,10 @@
         </div>
     </div>
     <div class="col-xs-10">
-      <div ng-show="nameAdded">
+      <div>
           <div class="container-sm">
             <h1>Create a Route</h1>
-            <form style="text-align:center;" id="cm" ng-submit="goToAddress()">
+            <form style="text-align:center;" id="cm" ng-submit="saveRoute()">
               <label for="routeName">Route Name (required):</label>
               <input id="routeName" type="text" placeholder="Route One" ng-model="routeName"/>
               
@@ -16,14 +16,13 @@
               <button class="btn btn-default" ng-show="newmarker.pending" ng-click="saveMarker()">Save Point</button>
               <hr/>
               
+              <button type="submit" class="btn btn-primary" ng-show="routePending" >Save Route</button>
+            </form>
+            <form style="text-align:center;" id="cb" ng-submit="goToAddress()">
               <label>Alternatively, you can place a point by entering an address:</label>
               <input type="text" placeholder="123 Example Street" ng-model="map.center.address"/>
 
               <button class="btn btn-default" ng-click="goToAddress()">Place point</button>
-              
-              <hr/>
-              
-              <button class="btn btn-primary" ng-show="routePending" ng-click="saveRoute()">Save Route</button>
             </form>
           </div>
           <div class="row container-fluid detailContainer">
