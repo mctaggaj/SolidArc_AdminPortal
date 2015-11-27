@@ -42,7 +42,7 @@
         <form style="text-align:center;" id="cm" ng-submit="goToAddress()">
             <label>Create point from address: <input type="text" placeholder="123 Example Street" ng-model="map.center.address"/></label>
         <button class="btn btn-default" ng-click="goToAddress()">Place point</button></form>
-        
+
         <div class="row container-fluid detailContainer">
           <ui-gmap-google-map center='map.center' zoom='map.zoom' events='map.events'>
             <ui-gmap-marker ng-hide="!newmarker.pending" ng-model="newmarker" coords="newmarker.coords" options="newmarker.options" events="newmarker.events" idkey="newmarker.id">

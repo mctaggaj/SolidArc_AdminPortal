@@ -2,15 +2,18 @@
     <h1>Create Administrator</h1>
 
     <form class="container container-sm jumbotron login-form" ng-submit="createAdmin()" autocomplete="off">
+        <div class="required-label">* denotes mandatory field</div>
 
         <div id="EmailContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Email:</div>
+            <div class="star">*</div>
             <div class="detailValue">
                 <input type="email" class="form-control" id="username" placeholder="example@example.com" ng-model="info.mail" ng-required="true" autocomplete="off">
             </div>
         </div>
         <div id="ConfirmEmailContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Re-enter Email:</div>
+            <div class="star">*</div>
             <div class="detailValue">
                 <input type="email" class="form-control" id="email" placeholder="example@example.com" ng-model="info.mail2" ng-required="true" autocomplete="off">
                 <br><span class="errorLabel" ng-show="mailMatch">Emails Don't Match</span>
@@ -19,6 +22,7 @@
 
         <div id="LastNameContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Last Name:</div>
+            <div class="star">*</div>
             <div class="detailValue">
                 <input type="text" class="form-control" id="last" placeholder="Smith" ng-model="info.last" ng-required="true" autocomplete="off">
             </div>
@@ -26,6 +30,7 @@
 
         <div id="FirstNameContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">First Name:</div>
+            <div class="star">*</div>
             <div class="detailValue">
                 <input type="text" class="form-control" id="first" placeholder="Harold" ng-model="info.first" ng-required="true" autocomplete="off">
             </div>
@@ -33,12 +38,14 @@
 
         <div id="PasswordContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Password:</div>
+            <div class="star">*</div>
             <div class="detailValue">
                 <input type="password" class="form-control" id="password" placeholder="*****" ng-model="info.password" ng-required="true" autocomplete="off">
             </div>
         </div>
         <div id="PasswordCheckContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Re-enter Password:</div>
+            <div class="star">*</div>
             <div class="detailValue">
                 <input type="password" class="form-control" id="passwordCheck" placeholder="*****" ng-model="info.password2" ng-required="true" autocomplete="off">
                 <br><span class="errorLabel" ng-show="passwordMatch">Passwords Don't Match</span>

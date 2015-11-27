@@ -2,14 +2,17 @@
     <h1>Create Team</h1>
 
     <form class="container-fluid jumbotron select-event-form" ng-submit="create()" autocomplete="off">
+        <div class="required-label">* denotes mandatory field</div>
         <div id="TeamNameContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Team Name:</div>
+            <div class="star">*</div>
             <div class="detailValue">
                 <input type="text" class="form-control" id="TeamName" placeholder="Team One" ng-model="teamName" ng-required="true" autocomplete="off">
             </div>
         </div>
         <div id="TeamCaptainContainer" class="row container-fluid detailContainer noLine">
             <div class="detailLabel">Team Captain:</div>
+            <div class="star">*</div>
             <div class="detailValue">
                 <select
                         ng-model="teamCaptain"
