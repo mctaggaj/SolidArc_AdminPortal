@@ -20,6 +20,13 @@ module App.Administrator {
             LASTNAME: "McQueen",
             mail: "Admin2@mx.com",
             password: "[RESET BUTTON HERE]"
+        },
+        {
+            id: getNextId()+"",
+            FIRSTNAME: "Rachelle",
+            LASTNAME: "Star",
+            mail: "superadmin1@mx.com",
+            password: "[RESET BUTTON HERE]"
         }
     ];
 }
