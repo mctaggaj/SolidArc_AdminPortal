@@ -9,4 +9,5 @@ module App.Data {
     export var LS_UseMocks_Events = "SolidArc.Data.UseMocks.Events";
     export var LS_UseMocks_Teams = "SolidArc.Data.UseMocks.Teams";
     export var LS_UseMocks_Participants = "SolidArc.Data.UseMocks.Participants";
+    export var LS_UseMocks_Routes = "SolidArc.Data.UseMocks.Routes";
 }

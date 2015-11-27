@@ -1,8 +1,11 @@
 <div class="top-push container" id="home">
     <h1>{{title}}</h1>
-<div class="tile col-xs-12 col-sm-4 col-md-3" ng-repeat="tile in tiles" ng-click="clickTile(tile)">
+<div  class="tile col-xs-12 col-sm-4 col-md-3"
+      ng-repeat="tile in tiles"
+      ng-click="clickTile(tile)">
     <div class="tileShape"></div>
-    <div class="tileContent" ng-style="{'background':tile.background, 'color': tile.textColor}">
+    <div  class="tileContent"
+          ng-style="{'background':tile.background, 'color': tile.textColor}">
         <span class="middle"><h2>{{tile.text}}</h2></span>
     </div>
 </div>

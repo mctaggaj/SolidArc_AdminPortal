@@ -64,4 +64,12 @@ declare module SolidArc {
         captain: IParticipant;
         participants: IParticipant[];
     }
+    
+    export interface IRoute extends IItem {
+      event_id: any;
+      event_name: string;
+      route_id: any;
+      route_name: string;
+      waypoints: any[];
+    }
 }

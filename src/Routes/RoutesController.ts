@@ -13,10 +13,12 @@ module App.Routes {
         public static controllerId = "RoutesController";
         public static moduleId = Routes.moduleId + "." + RoutesController.controllerId;
 
-        public static $inject = ["$rootScope", "$state", "$scope", "uiGmapGoogleMapApi", "$stateParams"];
-        constructor ($rootScope: any, $state: any, $scope: IRoutesControllerScope, uiGmapGoogleMapApi: any, $stateParams: IRoutesStateParams) {
+        public static $inject = ["$rootScope", "$state", "$scope", "uiGmapGoogleMapApi", "$stateParams", Data.DataService.serviceId];
+        
+        constructor ($rootScope: any, $state: any, $scope: IRoutesControllerScope, uiGmapGoogleMapApi: any, $stateParams: IRoutesStateParams, private dataService: Data.DataService) {
           super($scope, $stateParams, $rootScope, $state, state);
-            $scope.list = Routes.routes;
+          this.getList = dataService.getRoutes;
+          this.idName="route_id";
             this.didUpdateParams();
             uiGmapGoogleMapApi.then(function(maps) {
               $scope.map = {

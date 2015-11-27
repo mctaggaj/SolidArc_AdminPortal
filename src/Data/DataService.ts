@@ -3,6 +3,7 @@ module App.Data {
 
     import IParticipant = SolidArc.IParticipant;
     import ITeam = SolidArc.ITeam;
+    import IRoute = SolidArc.IRoute;
     export interface IEventsResponse extends SolidArc.IResponse {
         data?: {events: any[]}
     }
@@ -79,6 +80,21 @@ module App.Data {
                         });
                     });
             return defered.promise;
+        }
+        public getRoutes = ():ng.IPromise<IRoute[]> => {
+          var defered = this.$q.defer();
+          this.$http.get("/api/routes", {})
+              .then(
+                //success
+                (response: ng.IHttpPromiseCallbackArg<any>) => {
+                  defered.resolve(response.data.routes);
+                },
+                //error
+                (response: ng.IHttpPromiseCallbackArg<any>) => {
+                  defered.reject({msg: response.data.msg});
+                }
+              );
+          return defered.promise;
         }
         public createParticipant = (participant: IParticipant):ng.IPromise<IParticipant> => {
             var defered = this.$q.defer();
@@ -265,11 +281,50 @@ module App.Data {
             {
                 // do not bother server, respond with given content
                 $httpBackend.whenGET('/api/events').respond(function (method:string, url:string, data:any, headers:any, params:any) {
-                    return [200, {events: [{name: "Guelph 2016"}, {name: "Laurier 2016"}]}];
+                    return [200, {events: [{id: 1, name: "Guelph 2016"}, {id: 2, name: "Laurier 2016"}]}];
                 });
             }
             else {
                 $httpBackend.whenGET('/api/events').passThrough();
+            }
+            
+            // Events
+            localStorageService.set(LS_UseMocks_Routes,$location.search()["mockRoutes"]);
+            if(master&&!(localStorageService.get(LS_UseMocks_Routes)==="false"||localStorageService.get(LS_UseMocks_Routes)===false))
+            {
+                // do not bother server, respond with given content
+                $httpBackend.whenGET('/api/routes').respond(function (method:string, url:string, data:any, headers:any, params:any) {
+                    var data: any = {
+                      "routes": [
+                        {
+                          event_id: 1,
+                          event_name: "Guelph 2016",
+                          route_id: 1,
+                          route_name: "Stone Rd",
+                          waypoints: [
+                            {
+                              waypoint_id: 1,
+                              coords: {
+                                latitude: 1,
+                                longitude: 1
+                              }
+                            },
+                            {
+                              waypoint_id: 2,
+                              coords: {
+                                latitude: 1.1,
+                                longitude: 1
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    };
+                    return [/*status*/ 200, data];
+                });
+            }
+            else {
+                $httpBackend.whenGET('/api/routes').passThrough();
             }
 
 

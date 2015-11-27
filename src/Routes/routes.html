@@ -7,7 +7,7 @@
 <div class="top-push listDetailView" id="Routes">
     <div class="col-xs-2 list">
         <div ng-repeat="route in list" class="row listRow" ng-class="{selected: route==selected}" ng-click="select(route)">
-            <p>{{route.id}}</p>
+            <p>{{route.route_name}}</p>
         </div>
         <div align="center">
             <button class="btn btn-secondary" ui-sref="createRoute">Create Route</button>
@@ -16,18 +16,21 @@
     <div class="detail container-fluid">
         <div class="row container-fluid detailContainer">
           <ui-gmap-google-map center='map.center' zoom='map.zoom' events='map.events'>
-            <ui-gmap-marker ng-repeat="marker in selected.markers"
-                            coords="marker.coords"
-                            options="marker.options"
-                            events="marker.events"
-                            idkey="marker.id">
+            <!-- SELECTED ROUTE -->
+            <ui-gmap-marker ng-repeat="waypoint in selected.waypoints"
+                            coords="waypoint.coords"
+                            options="{}"
+                            events="{}"
+                            idkey="7">
             </ui-gmap-marker>
-            <ui-gmap-polyline ng-repeat="marker in selected.markers" path="[marker.coords, selected.markers[$index > 0 ? $index-1 : $index].coords]"></ui-gmap-polyline>
+            <ui-gmap-polyline ng-repeat="waypoint in selected.waypoints" path="[waypoint.coords, selected.waypoints[$index > 0 ? $index-1 : $index].coords]"></ui-gmap-polyline>
+            <!-- OTHER ROUTES -->
             <div ng-init="other_routes = list; other_routes.splice(other_routes.indexOf(selected),1); console.log(list, other_routes);" ng-repeat="route in other_routes">
-              <ui-gmap-marker ng-init="options = marker.options;options.color='grey'" ng-repeat="marker in route.markers" coords="marker.coords" options="options" events="marker.events" idkey="marker.id">
+              <ui-gmap-marker ng-init="options = marker.options;options.color='grey'" ng-repeat="waypoint in route.waypoints" coords="waypoint.coords" options="options" events="{}" idkey="getNextId()">
               </ui-gmap-marker>
-              <ui-gmap-polyline ng-repeat="marker in route.markers" path="[marker.coords, route.markers[$index > 0 ? $index-1 : $index].coords]"></ui-gmap-polyline>
+              <ui-gmap-polyline ng-repeat="waypoint in route.waypoints" path="[waypoint.coords, route.waypoints[$index > 0 ? $index-1 : $index].coords]"></ui-gmap-polyline>
             </div>
+            
           </ui-gmap-google-map>
         </div>
     </div>
