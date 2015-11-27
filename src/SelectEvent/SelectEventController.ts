@@ -23,6 +23,7 @@ module App.SelectEvent {
             this.$state = $state;
             this.scope = $scope
             this.scope.select = () => {
+                console.log("You have selected ", $scope.selectedEvent);
                 authService.setEvent(this.scope.selectedEvent)
                 if (this.scope.selectedEvent) {
                     this.$state.go(Home.state);

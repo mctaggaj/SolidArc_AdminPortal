@@ -98,8 +98,22 @@ module App.Routes.Create {
                 for (var i = 0; i < $scope.markers.length; i++) {
                   route.markers.push($scope.markers[i]);
                 }
-                Routes.routes.push(route);
-                $state.go('routes', { selectedId: route.id });
+                var route_to_store = {
+                  event_id: 1,
+                  event_name: "Guelph 2016",
+                  route_id: ""+ App.getNextId(),
+                  route_name: $scope.routeName,
+                  waypoints: []
+                };
+                for (var i = 0; i < route.markers.length; i++) {
+                  route_to_store.waypoints.push({
+                    waypoint_id: App.getNextId(),
+                    coords: route.markers[i].coords
+                  });
+                }
+                Routes.routes.push(route_to_store);
+                console.log(Routes.routes, route_to_store);
+                $state.go('routes', { selectedId: route_to_store.route_id });
               };
               $scope.map = {
                 center: {

@@ -364,31 +364,8 @@ module App.Data {
                 // do not bother server, respond with given content
                 $httpBackend.whenGET('/api/routes').respond(function (method:string, url:string, data:any, headers:any, params:any) {
                     var data: any = {
-                      "routes": [
-                        {
-                          event_id: 1,
-                          event_name: "Guelph 2016",
-                          route_id: 1,
-                          route_name: "Stone Rd",
-                          waypoints: [
-                            {
-                              waypoint_id: 1,
-                              coords: {
-                                latitude: 1,
-                                longitude: 1
-                              }
-                            },
-                            {
-                              waypoint_id: 2,
-                              coords: {
-                                latitude: 1.1,
-                                longitude: 1
-                              }
-                            }
-                          ]
-                        }
-                      ]
-                    };
+                      "routes": Routes.routes
+                    }
                     return [/*status*/ 200, data];
                 });
             }

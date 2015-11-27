@@ -29,7 +29,7 @@
             <ui-gmap-polyline ng-repeat="waypoint in selected.waypoints" path="[waypoint.coords, selected.waypoints[$index > 0 ? $index-1 : $index].coords]"></ui-gmap-polyline>
             <!-- OTHER ROUTES -->
             <div ng-init="other_routes = list; other_routes.splice(other_routes.indexOf(selected),1); console.log(list, other_routes);" ng-repeat="route in other_routes">
-              <ui-gmap-marker ng-init="options = marker.options;options.color='grey'" ng-repeat="waypoint in route.waypoints" coords="waypoint.coords" options="options" events="{}" idkey="getNextId()">
+              <ui-gmap-marker ng-init="options = {color:'grey'}" ng-repeat="waypoint in route.waypoints" coords="waypoint.coords" options="options" events="{}" idkey="getNextId()">
               </ui-gmap-marker>
               <ui-gmap-polyline ng-repeat="waypoint in route.waypoints" path="[waypoint.coords, route.waypoints[$index > 0 ? $index-1 : $index].coords]"></ui-gmap-polyline>
             </div>
