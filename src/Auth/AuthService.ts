@@ -58,7 +58,7 @@ module App.Auth {
         public login = (username: string, password: string): ng.IPromise<SolidArc.IResponse> => {
             this.clearAuthData();
             var defered = this.$q.defer();
-            this.$http.post("/api/index.php/login", {creds:{username: username, password: password}})
+            this.$http.post("/api/index.php/login", {creds:{USERNAME: username, PASSWORD: password}})
                 .then(
                     (response: ng.IHttpPromiseCallbackArg<IUser>) => {
                         response.data.USERID="-1";
