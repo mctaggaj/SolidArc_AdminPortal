@@ -54,11 +54,11 @@ module App.FarmToFork {
         .service(FarmToForkService.serviceId, FarmToForkService)
         .run(["$httpBackend", "$location", "localStorageService", function($httpBackend:angular.IHttpBackendService, $location: ng.ILocationService, localStorageService: ng.localStorage.ILocalStorageService) {
 
-            if ($location.search()["mock"]) {
-                localStorageService.set(Data.LS_UseMocks, $location.search()["mock"]);
+            if ($location.search()["mockF2F"]) {
+                localStorageService.set("mockF2F", $location.search()["mockF2F"]);
             }
             var master = true;
-            if (localStorageService.get(Data.LS_UseMocks) === "false" || localStorageService.get(Data.LS_UseMocks) === false) {
+            if (localStorageService.get("mockF2F") === "false" || localStorageService.get("mockF2F") === false) {
                 master = false;
             }
             if (master) {
