@@ -179,64 +179,132 @@ module App.Data {
 
 
     var unassignedParticipants:IParticipant [] = [{
-        id: getNextId()+"",
+        id:"",
+        USERID: getNextId()+"",
         LASTNAME: "Bryant",
         FIRSTNAME: "Seth",
-        email: "BryantSeth@gmai"
+        EMAIL: "BryantSeth@gmai",
+        USERNAME: "BryantSeth@gmai",
     },{
-        id: getNextId()+"",
+        id:"",
+        USERID: getNextId()+"",
         LASTNAME: "Beckham",
         FIRSTNAME: "Jimmy",
-        email: "BeckhamJimmy@gmail.com"
+        EMAIL: "BeckhamJimmy@gmail.com",
+        USERNAME: "BeckhamJimmy@gmail.com"
     },{
-        id: getNextId()+"",
+        id:"",
+        USERID: getNextId()+"",
         LASTNAME: "Rodgers",
         FIRSTNAME: "Kemp",
-        email: "RodgersKemp@gmail.com"
+        EMAIL: "RodgersKemp@gmail.com",
+        USERNAME: "RodgersKemp@gmail.com"
     },{
-        id: getNextId()+"",
+        id:"",
+        USERID: getNextId()+"",
         LASTNAME: "Riley",
         FIRSTNAME: "Clair",
-        email: "RileyClair@gmail.com"
+        EMAIL: "RileyClair@gmail.com",
+        USERNAME: "RileyClair@gmail.com"
     },{
-        id: getNextId()+"",
+        id:"",
+        USERID: getNextId()+"",
         LASTNAME: "Jordan",
         FIRSTNAME: "Michael",
-        email: "MichaelJordan@gmail.com"
+        EMAIL: "MichaelJordan@gmail.com",
+        USERNAME: "MichaelJordan@gmail.com"
     }
     ]
     var teams: ITeam[] = [
         {
-            id: getNextId()+"",
-            name: "Hallow-Treats",
-            captain: {id: getNextId()+"", LASTNAME: "Graham",  FIRSTNAME:"Chris", email: "Chris.Graham@gmail.com"},
-            participants: [
-                {id: getNextId()+"", LASTNAME: "Smith",  FIRSTNAME:"Greg", email: "Greg.Smith@gmail.com"},
-                {id: getNextId()+"", LASTNAME: "Hogg",  FIRSTNAME:"Paul", email: "Paul.Hogg@gmail.com"}
+            TEAMID: getNextId()+"",
+            TEAMNAME: "Hallow-Treats",
+            TEAMMEMBERS: [
+                {
+                    USERID: getNextId()+"",
+                    LASTNAME: "Graham",
+                    FIRSTNAME:"Chris",
+                    EMAIL: "Chris.Graham@gmail.com",
+                    USERNAME: "Chris.Graham@gmail.com",
+                    ISTEAMCAPTAIN: true
+                },
+                {
+                    USERID: getNextId()+"",
+                    LASTNAME: "Smith",
+                    FIRSTNAME:"Greg",
+                    EMAIL: "Greg.Smith@gmail.com",
+                    USERNAME: "Greg.Smith@gmail.com"},
+                {
+                    USERID: getNextId()+"",
+                    LASTNAME: "Hogg",
+                    FIRSTNAME:"Paul",
+                    EMAIL: "Paul.Hogg@gmail.com",
+                    USERNAME: "Paul.Hogg@gmail.com"}
             ]
         },
         {
-            id: getNextId()+"",
-            name: "Dream Team",
-            captain: {id: getNextId()+"", LASTNAME: "Walker",  FIRSTNAME:"Rachelle", email: "Rachelle.Smith@gmail.com"},
-            participants: []
+            TEAMID: getNextId()+"",
+            TEAMNAME: "Dream Team",
+            captain: {
+                USERID: getNextId()+"",
+                LASTNAME: "Walker",
+                FIRSTNAME:"Rachelle",
+                EMAIL: "Rachelle.Smith@gmail.com",
+                USERNAME: "Rachelle.Smith@gmail.com",
+                ISTEAMCAPTAIN: true},
+            TEAMMEMBERS: []
         },
         {
-            id: getNextId()+"",
-            name: "Red Jays",
-            captain: {id: getNextId()+"", LASTNAME: "Bryant",  FIRSTNAME:"Cathy", email: "Cathy.Bryant@gmail.com"},
-            participants: [
-                {id: getNextId()+"", LASTNAME: "Hill",  FIRSTNAME:"Leah", email: "Leah.Hill@gmail.com"},
-                {id: getNextId()+"", LASTNAME: "Phillips",  FIRSTNAME:"Julie", email: "Julie.Phillips@gmail.com"}
+            TEAMID:"",
+            USERID: getNextId()+"",
+            TEAMNAME: "Red Jays",
+            captain: {
+                id:"",
+                USERID: getNextId()+"",
+                LASTNAME: "Bryant",
+                FIRSTNAME:"Cathy",
+                EMAIL: "Cathy.Bryant@gmail.com",
+                USERNAME: "Cathy.Bryant@gmail.com",
+                ISTEAMCAPTAIN: true},
+            TEAMMEMBERS: [
+                {
+                    USERID: getNextId()+"",
+                    LASTNAME: "Hill",
+                    FIRSTNAME:"Leah",
+                    EMAIL: "Leah.Hill@gmail.com",
+                    USERNAME: "Leah.Hill@gmail.com",
+                    },
+                {
+                    USERID: getNextId()+"",
+                    LASTNAME: "Phillips",
+                    FIRSTNAME:"Julie",
+                    EMAIL: "Julie.Phillips@gmail.com",
+                    USERNAME: "Julie.Phillips@gmail.com"}
             ]
         },
         {
-            id: getNextId()+"",
-            name: "Team Yellow",
-            captain: {id: getNextId()+"", LASTNAME: "Rico",  FIRSTNAME:"Marry", email: "Marry.Rico@gmail.com"},
-            participants: [
-                {id: getNextId()+"", LASTNAME: "Mendoza",  FIRSTNAME:"Jacklyn", email: "Jacklyn.Mendoza@gmail.com"},
-                {id: getNextId()+"", LASTNAME: "Roach",  FIRSTNAME:"Brian", email: "Brian.Roach@gmail.com"}
+            TEAMID: getNextId()+"",
+            TEAMNAME: "Team Yellow",
+            TEAMMEMBERS: [
+                {
+                    USERID: getNextId()+"",
+                    LASTNAME: "Rico",
+                    FIRSTNAME:"Marry",
+                    EMAIL: "Marry.Rico@gmail.com",
+                    USERNAME: "Marry.Rico@gmail.com",
+                    ISTEAMCAPTAIN: true},
+                {
+                    USERID: getNextId()+"",
+                    LASTNAME: "Mendoza",
+                    FIRSTNAME:"Jacklyn",
+                    EMAIL: "Jacklyn.Mendoza@gmail.com",
+                    USERNAME: "Jacklyn.Mendoza@gmail.com"},
+                {
+                    USERID: getNextId()+"",
+                    LASTNAME: "Roach",
+                    FIRSTNAME:"Brian",
+                    EMAIL: "Brian.Roach@gmail.com",
+                    USERNAME: "Brian.Roach@gmail.com"}
             ]
         }
     ]
@@ -256,11 +324,12 @@ module App.Data {
             if(localStorageService.get(LS_UseMocks)==="false"||localStorageService.get(LS_UseMocks)===false)
             {
                 master = false;
-                return;
             }
 
             // Events
-            localStorageService.set(LS_UseMocks_Events,$location.search()["mockEvents"]);
+            if($location.search()["mockEvents"]) {
+                localStorageService.set(LS_UseMocks_Events, $location.search()["mockEvents"]);
+            }
             if(master&&!(localStorageService.get(LS_UseMocks_Events)==="false"||localStorageService.get(LS_UseMocks_Events)===false))
             {
                 // do not bother server, respond with given content
@@ -274,7 +343,9 @@ module App.Data {
 
 
             // Participants
-            localStorageService.set(LS_UseMocks_Participants,$location.search()["mockParticipants"]);
+            if($location.search()["mockParticipants"]) {
+                localStorageService.set(LS_UseMocks_Participants, $location.search()["mockParticipants"]);
+            }
             if(master&&!(localStorageService.get(LS_UseMocks_Participants)==="false"||localStorageService.get(LS_UseMocks_Participants)===false)) {
                 $httpBackend.whenPOST('/api/participants').respond(function (method:string, url:string, data:IParticipant, headers:any, params:any) {
                     data = <any>JSON.parse(<any>data).data;
@@ -286,9 +357,8 @@ module App.Data {
 
                     for (var i = 0; i < teams.length; i++) {
                         var team = teams[i]
-                        list.push(team.captain);
-                        for (var j = 0; j < team.participants.length; j++) {
-                            list.push(team.participants[j]);
+                        for (var j = 0; j < team.TEAMMEMBERS.length; j++) {
+                            list.push(team.TEAMMEMBERS[j]);
                         }
                     }
                     return [201, list];
@@ -305,7 +375,9 @@ module App.Data {
 
 
             // Teams
-            localStorageService.set(LS_UseMocks_Teams,$location.search()["mockTeams"]);
+            if($location.search()["mockTeams"]) {
+                localStorageService.set(LS_UseMocks_Teams, $location.search()["mockTeams"]);
+            }
             if(master&&!(localStorageService.get(LS_UseMocks_Teams)==="false"||localStorageService.get(LS_UseMocks_Teams)===false)) {
                 $httpBackend.whenGET(/\/api\/teams(.*)/).respond(function (method:string, url:string, data:any, headers:any, params:any) {
                     var regex = /\/api\/teams\?id=(.*)/;
@@ -313,7 +385,7 @@ module App.Data {
                     if (match) {
                         var id = match[1];
                         for (var i = 0; i < teams.length; i++) {
-                            if (id === teams[i].id) {
+                            if (id === teams[i].TEAMID) {
                                 return [200, teams[i]];
                             }
                         }
@@ -325,7 +397,7 @@ module App.Data {
                     var teamIndex = 0;
                     newVal = <any>JSON.parse(<any>newVal).data;
                     for (var i = 0; i < teams.length; i++) {
-                        if (newVal.id === teams[i].id) {
+                        if (newVal.TEAMID === teams[i].TEAMID) {
                             oldVal = teams[i];
                             teamIndex = i;
                             break;
@@ -333,15 +405,15 @@ module App.Data {
                     }
 
                     // Removes all participants from the team
-                    while (oldVal.participants && oldVal.participants.length) {
-                        unassignedParticipants.push(oldVal.participants[0]);
-                        oldVal.participants.splice(0, 1);
+                    while (oldVal.TEAMMEMBERS && oldVal.TEAMMEMBERS.length) {
+                        unassignedParticipants.push(oldVal.TEAMMEMBERS[0]);
+                        oldVal.TEAMMEMBERS.splice(0, 1);
                     }
 
                     // Adds participants to the team
-                    for (var i = 0; i < newVal.participants.length; i++) {
+                    for (var i = 0; i < newVal.TEAMMEMBERS.length; i++) {
                         for (var j = 0; j < unassignedParticipants.length; j++) {
-                            if (unassignedParticipants[j].id === newVal.participants[i].id) {
+                            if (unassignedParticipants[j].USERID === newVal.TEAMMEMBERS[i].USERID) {
                                 unassignedParticipants.slice(j, 1);
                                 break;
                             }
@@ -355,12 +427,13 @@ module App.Data {
 
                     data = <any>JSON.parse(<any>data).data;
                     for (var i = 0; i < unassignedParticipants.length; i++) {
-                        if (data.captain.id === unassignedParticipants[i].id) {
-                            data.captain = unassignedParticipants[i];
+                        if (data.TEAMMEMBERS[0].USERID === unassignedParticipants[i].USERID) {
+                            data.TEAMMEMBERS[0] = unassignedParticipants[i];
+                            data.TEAMMEMBERS[0].ISTEAMCAPTAIN = true;
                             break;
                         }
                     }
-                    var index = unassignedParticipants.indexOf(data.captain);
+                    var index = unassignedParticipants.indexOf(data.TEAMMEMBERS[0]);
                     if (index >= 0) {
                         unassignedParticipants.splice(index, 1);
                     }

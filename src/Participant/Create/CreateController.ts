@@ -45,16 +45,17 @@ module App.Participant.Create {
             }
 
             var info: IParticipant = {
-                id : getNextId()+"",
+                USERID : getNextId()+"",
                 LASTNAME: this.scope.info.last,
                 FIRSTNAME: this.scope.info.first,
-                email : this.scope.info.mail,
-                password: this.scope.info.password
+                EMAIL : this.scope.info.mail,
+                USERNAME : this.scope.info.mail,
+                PASSWORD: this.scope.info.password
             };
 
             this.dataService.createParticipant(info).then(
                 (participant: IParticipant) => {
-                    this.$state.go(Participant.state, {selectedId: participant.id});
+                    this.$state.go(Participant.state, {selectedId: participant.USERID});
                 }
             )
 

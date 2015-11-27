@@ -2,6 +2,7 @@
 
 module App.Auth {
 
+    import IUser = SolidArc.IUser;
     /**
      * Handles user authentication and current user state
      */
@@ -57,22 +58,21 @@ module App.Auth {
         public login = (username: string, password: string): ng.IPromise<SolidArc.IResponse> => {
             this.clearAuthData();
             var defered = this.$q.defer();
-            this.$http.post("/api/authentication", {username: username, password: password})
+            this.$http.post("/api/authentication", {creds:{username: username, password: password}})
                 .then(
-                (response: ng.IHttpPromiseCallbackArg<any>) => {
-                    // Success
-                    response.data.username = username 
-                    this.setAuthData(response.data)
-                    defered.resolve({
-                        msg: null
+                    (response: ng.IHttpPromiseCallbackArg<IUser>) => {
+                        // Success=
+                        this.setAuthData(response.data)
+                        defered.resolve({
+                            msg: null
+                        });
+                    },
+                    (response: ng.IHttpPromiseCallbackArg<any>) => {
+                        // Failure
+                        defered.reject({
+                            msg: response.data.msg
+                        });
                     });
-                },
-                (response: ng.IHttpPromiseCallbackArg<any>) => {
-                    // Failure
-                    defered.reject({
-                        msg: response.data.msg
-                    });
-                });
             return defered.promise;
         }
 
@@ -86,18 +86,17 @@ module App.Auth {
             var defered = this.$q.defer();
             this.$http.post("/api/users", {username: username, password: password, firstName: firstName, lastName: lastName})
                 .then(
-                (response: ng.IHttpPromiseCallbackArg<any>) => {
-                    response.data.username = username;
-                    this.setAuthData(response.data)
-                    defered.resolve({
-                        msg: null
+                    (response: ng.IHttpPromiseCallbackArg<IUser>) => {
+                        this.setAuthData(response.data)
+                        defered.resolve({
+                            msg: null
+                        });
+                    },
+                    (response: ng.IHttpPromiseCallbackArg<any>) => {
+                        defered.reject({
+                            msg: response.data.msg
+                        });;
                     });
-                },
-                (response: ng.IHttpPromiseCallbackArg<any>) => {
-                    defered.reject({
-                        msg: response.data.msg
-                    });;
-                });
             return defered.promise;
         }
 
@@ -115,7 +114,7 @@ module App.Auth {
          */
         public isLoggedIn = (): any => {
             var user = this.getAuthData();
-            var authed = (user&&user.token!==null&&user.userId!==null&&user.username!==null);
+            var authed = (user&&user.TOKEN!==null&&user.USERID!==null&&user.USERNAME!==null);
             return authed;
         }
 
@@ -129,7 +128,7 @@ module App.Auth {
         /**
          * @returns {string} the user id of the current user
          */
-        public getUserId = (): number => {
+        public getUserId = (): string => {
             return this.localStorageService.get(Auth.LS_UserId);
         }
 
@@ -145,15 +144,15 @@ module App.Auth {
          * @param token
          */
         private setToken = (token : any) => {
-            this.user.token = token;
+            this.user.TOKEN = token;
             this.localStorageService.set(Auth.LS_UserToken, token);
             if (token) {
-                this.$http.defaults.headers.common["X-Token"] = token;
+                this.$http.defaults.headers.common["TOKEN"] = token;
                 this.httpAuthService.loginConfirmed();
             }
             else {
                 // Clears the token
-                this.$http.defaults.headers.common["X-Token"] = undefined;
+                this.$http.defaults.headers.common["TOKEN"] = undefined;
                 this.httpAuthService.loginCancelled();
             }
         }
@@ -183,17 +182,17 @@ module App.Auth {
 
 
         private setUsername = (username: string) => {
-            this.user.username = username;
+            this.user.USERNAME = username;
             this.localStorageService.set(Auth.LS_Username, username);
         }
 
         public setEvent = (event: string) => {
-            this.user.event = event;
+            this.user.USERID = event;
             this.localStorageService.set(Auth.LS_Event, event);
         }
 
-        private setUserId = (userId: number) => {
-            this.user.userId = userId;
+        private setUserId = (userId: string) => {
+            this.user.USERID = userId;
             this.localStorageService.set(Auth.LS_UserId, userId);
         }
 
@@ -203,26 +202,26 @@ module App.Auth {
          * @param userId the user id of the user
          * @param userToken the session token
          */
-        private setAuthData = (data: any) => {
-            this.setUsername(data.username);
-            this.setEvent(data.event);
-            this.setUserId(data.userId);
-            this.setToken(data.token);
+        private setAuthData = (data: IUser) => {
+            this.setUsername(data.USERNAME);
+            this.setEvent(data.EVENTID);
+            this.setUserId(data.USERID);
+            this.setToken(data.TOKEN);
         }
 
         public getAuthData = (): SolidArc.IUser => {
             if (!this.user){
                 this.user = (<any>{})
-                this.user.token = this.getToken();
-                this.user.username = this.getUsername();
-                this.user.userId = this.getUserId();
-                this.user.event = this.getEvent();
+                this.user.TOKEN = this.getToken();
+                this.user.USERNAME = this.getUsername();
+                this.user.USERID = this.getUserId();
+                this.user.EVENTID = this.getEvent();
             }
             return this.user;
         }
 
         public hasSelectedEvent = () => {
-            if(this.getAuthData().event) {
+            if(this.getAuthData().EVENTID) {
                 return true;
             }
             return false;
@@ -234,19 +233,31 @@ module App.Auth {
      */
     angular.module(AuthService.moduleId, ["LocalStorageModule", "http-auth-interceptor", "ngMockE2E"])
         .service(AuthService.serviceId, AuthService)
-        .run(function($httpBackend:angular.IHttpBackendService) {
-            // do not bother server, respond with given content
-            $httpBackend.whenPOST('/api/authentication').respond(function (method:string, url:string, data:any, headers:any, params:any) {
-                data = JSON.parse(JSON.stringify(eval("(" +data+ ")")));
-                if (data["username"] === "superadmin1@mx.com" && data["password"] === "pass1234") {
-                    return [200, {"token": "abc123", "userId": "f2", "username": data.username}];
-                }
-                else {
-                    return [403, {msg: "Invalid Username/Password"}, {header: 'one'}];
-                }
-            });
-            $httpBackend.whenDELETE('/api/authentication').respond(function (method:string, url:string, data:any, headers:any, params:any) {
-                return [200, {msg: "Logged out"}];
-            });
-        });
+        .run(["$httpBackend", "$location", "localStorageService", function($httpBackend:angular.IHttpBackendService, $location: ng.ILocationService, localStorageService: ng.localStorage.ILocalStorageService) {
+
+            if ($location.search()["mock"]) {
+                localStorageService.set(Data.LS_UseMocks, $location.search()["mock"]);
+            }
+            var master = true;
+            if (localStorageService.get(Data.LS_UseMocks) === "false" || localStorageService.get(Data.LS_UseMocks) === false) {
+                master = false;
+            }
+            if (master) {
+                $httpBackend.whenPOST('/api/authentication').respond(function (method:string, url:string, data:any, headers:any, params:any) {
+                    data = JSON.parse(JSON.stringify(eval("(" + data + ")")));
+                    if (data.creds["USERNAME"] === "superadmin1@mx.com" && data.creds["PASSWORD"] === "pass1234") {
+                        return [200, {TOKEN: "abc123", USERID: "f2", USERNAME: data.username}];
+                    }
+                    else {
+                        return [403, {msg: "Invalid Username/Password"}, {header: 'one'}];
+                    }
+                });
+                $httpBackend.whenDELETE('/api/authentication').respond(function (method:string, url:string, data:any, headers:any, params:any) {
+                    return [200, {msg: "Logged out"}];
+                });
+            }
+            else {
+                $httpBackend.whenGET('/api/authentication').passThrough();
+            }
+        }]);
 }

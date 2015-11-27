@@ -27,20 +27,20 @@ module App.Team.Create {
                 var captain = JSON.parse(<any>this.$scope.teamCaptain);
                 for (var i = 0 ; i < this.$scope.participants.length ; i ++)
                 {
-                    if(captain.id === this.$scope.participants[i].id) {
+                    if(captain.id === this.$scope.participants[i].USERID) {
                         captain = this.$scope.participants[i];
+                        captain.ISTEAMCAPTAIN = true;
                         break;
                     }
                 }
                 var team = {
-                    id: getNextId()+"",
-                    name: name,
-                    participants: [],
-                    captain: captain
+                    TEAMID: getNextId()+"",
+                    TEAMNAME: name,
+                    TEAMMEMBERS: [captain]
                 }
 
                 this.dataService.createTeam(team).then((team: ITeam) => {
-                    $state.go("teams", {selectedId: team.id});
+                    $state.go("teams", {selectedId: team.TEAMID});
                 })
             }
 

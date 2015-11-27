@@ -35,11 +35,11 @@ module App.Team.Edit.Participants {
                     toList.push(item);
                 }
             }
-            this.$scope.assign = (participant: Participant.IParticipant) => moveItemBetweenLists(participant, this.$scope.unassignedParticipants, this.$scope.team.participants)
-            this.$scope.unassign = (participant: Participant.IParticipant) => moveItemBetweenLists(participant, this.$scope.team.participants, this.$scope.unassignedParticipants)
+            this.$scope.assign = (participant: Participant.IParticipant) => moveItemBetweenLists(participant, this.$scope.unassignedParticipants, this.$scope.team.TEAMMEMBERS)
+            this.$scope.unassign = (participant: Participant.IParticipant) => moveItemBetweenLists(participant, this.$scope.team.TEAMMEMBERS, this.$scope.unassignedParticipants)
             this.$scope.done = () => {
                 this.dataService.editTeam($scope.team).then((team: ITeam) => {
-                    $state.go(Team.state, {selectedId: team.id});
+                    $state.go(Team.state, {selectedId: team.TEAMID});
                 })
             }
 
