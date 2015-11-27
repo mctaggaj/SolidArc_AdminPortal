@@ -61,7 +61,9 @@ module App.Auth {
             this.$http.post("/api/authentication", {creds:{username: username, password: password}})
                 .then(
                     (response: ng.IHttpPromiseCallbackArg<IUser>) => {
-                        // Success=
+                        response.data.USERID="-1";
+                        response.data.USERNAME=username;
+                        response.data.EVENTID="1";
                         this.setAuthData(response.data)
                         defered.resolve({
                             msg: null
@@ -242,7 +244,10 @@ module App.Auth {
             if (localStorageService.get(Data.LS_UseMocks) === "false" || localStorageService.get(Data.LS_UseMocks) === false) {
                 master = false;
             }
-            if (master) {
+            if ($location.search()["mockLogin"]) {
+                localStorageService.set(Auth.LS_UseMocks_Auth, $location.search()["mockLogin"]);
+            }
+            if (master && !(localStorageService.get(Auth.LS_UseMocks_Auth)==="false")) {
                 $httpBackend.whenPOST('/api/authentication').respond(function (method:string, url:string, data:any, headers:any, params:any) {
                     data = JSON.parse(JSON.stringify(eval("(" + data + ")")));
                     if (data.creds["USERNAME"] === "superadmin1@mx.com" && data.creds["PASSWORD"] === "pass1234") {
@@ -252,12 +257,12 @@ module App.Auth {
                         return [403, {msg: "Invalid Username/Password"}, {header: 'one'}];
                     }
                 });
-                $httpBackend.whenDELETE('/api/authentication').respond(function (method:string, url:string, data:any, headers:any, params:any) {
-                    return [200, {msg: "Logged out"}];
-                });
             }
             else {
                 $httpBackend.whenGET('/api/authentication').passThrough();
             }
+            $httpBackend.whenDELETE('/api/authentication').respond(function (method:string, url:string, data:any, headers:any, params:any) {
+                return [200, {msg: "Logged out"}];
+            });
         }]);
 }
