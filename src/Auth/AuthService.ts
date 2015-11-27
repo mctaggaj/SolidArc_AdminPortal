@@ -189,7 +189,7 @@ module App.Auth {
         }
 
         public setEvent = (event: string) => {
-            this.user.USERID = event;
+            this.user.EVENTID = event;
             this.localStorageService.set(Auth.LS_Event, event);
         }
 
@@ -247,8 +247,7 @@ module App.Auth {
             if ($location.search()["mockLogin"]) {
                 localStorageService.set(Auth.LS_UseMocks_Auth, $location.search()["mockLogin"]);
             }
-            if (master && !(localStorageService.get(Auth.LS_UseMocks_Auth)==="false")) {
-                console.log("Mock")
+            if (master && (localStorageService.get(Auth.LS_UseMocks_Auth)==="false")) {
                 $httpBackend.whenPOST('/api/index.php/login').respond(function (method:string, url:string, data:any, headers:any, params:any) {
                     data = JSON.parse(JSON.stringify(eval("(" + data + ")")));
                     if (data.creds["USERNAME"] === "superadmin1@mx.com" && data.creds["PASSWORD"] === "pass1234") {
@@ -260,7 +259,6 @@ module App.Auth {
                 });
             }
             else {
-                console.log("no Mock")
                 $httpBackend.whenPOST('/api/index.php/login').passThrough();
             }
             $httpBackend.whenDELETE('/api/authentication').respond(function (method:string, url:string, data:any, headers:any, params:any) {
