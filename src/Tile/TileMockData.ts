@@ -479,6 +479,132 @@ module App.Tile {
             }
         },
         {
+            text: "Create Bus For Route",
+            tags: [
+                "all",
+                "buses"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "buses",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "View Buses",
+            tags: [
+                "all",
+                "buses"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "buses",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Edit Buses",
+            tags: [
+                "all",
+                "buses"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "buses",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Delete Buses",
+            tags: [
+                "all",
+                "buses"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "buses",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Waivers",
+            tags: [
+                ""
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "home",
+                stateParams: {
+                    filter: "waivers"
+                }
+            }
+        },  
+        {
+            text: "Create Waiver",
+            tags: [
+                "all",
+                "waivers"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "waivers",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "View Waiver",
+            tags: [
+                "all",
+                "waivers"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "waivers",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Edit Waiver",
+            tags: [
+                "all",
+                "waivers"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "waivers",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Delete Waiver",
+            tags: [
+                "all",
+                "waivers"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "waivers",
+                stateParams: {
+                }
+            }
+        },
+        {
             text: "All",
             tags: [
                 ""
