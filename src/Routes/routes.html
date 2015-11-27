@@ -13,8 +13,11 @@
             <button class="btn btn-secondary" ui-sref="createRoute">Create Route</button>
         </div>
     </div>
+
+    <h1>{{selected.route_name}}</h1>
+
     <div class="detail container-fluid">
-        <div class="row container-fluid detailContainer">
+        <div class="container-fluid detailContainer container-md">
           <ui-gmap-google-map center='map.center' zoom='map.zoom' events='map.events'>
             <!-- SELECTED ROUTE -->
             <ui-gmap-marker ng-repeat="waypoint in selected.waypoints"
