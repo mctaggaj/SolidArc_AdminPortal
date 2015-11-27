@@ -6,7 +6,7 @@
 
 <div class="top-push listDetailView" id="Routes">
     <div class="col-xs-2 list">
-        <div ng-repeat="route in list" class="row listRow" ng-class="{selected: route==selected}" ng-click="select(route)">
+        <div ng-repeat="route in list | orderBy:'+id'" class="row listRow" ng-class="{selected: route==selected}" ng-click="select(route)">
             <p>{{route.id}}</p>
         </div>
         <div align="center">

@@ -1,6 +1,6 @@
 <div class="top-push listDetailView" id="EditParticipants">
     <div class="col-xs-2 list">
-        <div ng-repeat="participant in unassignedParticipants" class="row listRow" ng-click="assign(participant)">
+        <div ng-repeat="participant in unassignedParticipants | orderBy:'+LASTNAME'" class="row listRow" ng-click="assign(participant)">
             <p>{{participant.LASTNAME}}, {{participant.FIRSTNAME}}<i class="fa fa-plus pull-right"></i></p>
         </div>
     </div>
