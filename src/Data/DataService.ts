@@ -271,18 +271,17 @@ module App.Data {
             TEAMMEMBERS: []
         },
         {
-            TEAMID:"",
-            USERID: getNextId()+"",
+            TEAMID: getNextId()+"",
             TEAMNAME: "Red Jays",
-            captain: {
-                id:"",
-                USERID: getNextId()+"",
-                LASTNAME: "Bryant",
-                FIRSTNAME:"Cathy",
-                EMAIL: "Cathy.Bryant@gmail.com",
-                USERNAME: "Cathy.Bryant@gmail.com",
-                ISTEAMCAPTAIN: true},
             TEAMMEMBERS: [
+                {
+                    USERID: getNextId()+"",
+                    LASTNAME: "Bryant",
+                    FIRSTNAME:"Cathy",
+                    EMAIL: "Cathy.Bryant@gmail.com",
+                    USERNAME: "Cathy.Bryant@gmail.com",
+                    ISTEAMCAPTAIN: true
+                },
                 {
                     USERID: getNextId()+"",
                     LASTNAME: "Hill",
