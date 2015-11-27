@@ -446,7 +446,8 @@ module App.Data {
                     for (var i = 0; i < newVal.TEAMMEMBERS.length; i++) {
                         for (var j = 0; j < unassignedParticipants.length; j++) {
                             if (unassignedParticipants[j].USERID === newVal.TEAMMEMBERS[i].USERID) {
-                                unassignedParticipants.slice(j, 1);
+                                unassignedParticipants.splice(j, 1);
+                                j--
                                 break;
                             }
                         }

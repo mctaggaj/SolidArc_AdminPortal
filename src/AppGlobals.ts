@@ -27,7 +27,7 @@ module App {
 
     var id = 1;
     export function getNextId() {
-        return id++
+        return ""+id++;
     }
 
     /**
