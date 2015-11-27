@@ -668,7 +668,7 @@ module App.Tile {
             textColor: "#333",
             background: "#fea101",
             action: {
-                state: "home",
+                state: "statistics",
                 stateParams: {
                     filter: "chat"
                 }
