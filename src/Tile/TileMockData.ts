@@ -3,95 +3,7 @@
 module App.Tile {
 
     export var mockData: ITile[] = [
-        {
-            text: "Events",
-            tags: [
-                ""
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "home",
-                stateParams: {
-                    filter: "events"
-                }
-            }
-        },
-        {
-            text: "Create Event",
-            tags: [
-                "all",
-                "create",
-                "events"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "View Event",
-            tags: [
-                "all",
-                "view",
-                "events"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "Edit Event",
-            tags: [
-                "all",
-                "edit",
-                "events"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "Delete Event",
-            tags: [
-                "all",
-                "delete",
-                "events"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "",
-                stateParams: {
-                    filter: "events"
-                }
-            }
-        },
-        {
-            text: "Select Event",
-            tags: [
-                "all",
-                "events"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "selectEvent",
-                stateParams: {
-                }
-            }
-        },
+
         {
             text: "Participants",
             tags: [
@@ -349,6 +261,166 @@ module App.Tile {
                 }
             }
         },
+
+        {
+            text: "Buses",
+            tags: [
+                ""
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "home",
+                stateParams: {
+                    filter: "buses"
+                }
+            }
+        },
+        {
+            text: "Create Bus For Route",
+            tags: [
+                "all",
+                "buses"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "buses",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "View Buses",
+            tags: [
+                "all",
+                "buses"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "buses",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Edit Buses",
+            tags: [
+                "all",
+                "buses"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "buses",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Delete Buses",
+            tags: [
+                "all",
+                "buses"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "buses",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Events",
+            tags: [
+                ""
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "home",
+                stateParams: {
+                    filter: "events"
+                }
+            }
+        },
+        {
+            text: "Create Event",
+            tags: [
+                "all",
+                "create",
+                "events"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "View Event",
+            tags: [
+                "all",
+                "view",
+                "events"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Edit Event",
+            tags: [
+                "all",
+                "edit",
+                "events"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Delete Event",
+            tags: [
+                "all",
+                "delete",
+                "events"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "",
+                stateParams: {
+                    filter: "events"
+                }
+            }
+        },
+        {
+            text: "Select Event",
+            tags: [
+                "all",
+                "events"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "selectEvent",
+                stateParams: {
+                }
+            }
+        },
         {
             text: "Administrators",
             tags: [
@@ -424,76 +496,6 @@ module App.Tile {
             }
         },
         {
-            text: "Buses",
-            tags: [
-                ""
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "home",
-                stateParams: {
-                    filter: "buses"
-                }
-            }
-        },
-        {
-            text: "Create Bus For Route",
-            tags: [
-                "all",
-                "buses"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "buses",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "View Buses",
-            tags: [
-                "all",
-                "buses"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "buses",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "Edit Buses",
-            tags: [
-                "all",
-                "buses"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "buses",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "Delete Buses",
-            tags: [
-                "all",
-                "buses"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "buses",
-                stateParams: {
-                }
-            }
-        },
-        {
             text: "Waivers",
             tags: [
                 ""
@@ -560,6 +562,20 @@ module App.Tile {
             action: {
                 state: "waivers",
                 stateParams: {
+                }
+            }
+        },
+        {
+            text: "Chat",
+            tags: [
+                ""
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "statistics",
+                stateParams: {
+                    filter: "chat"
                 }
             }
         },
@@ -657,20 +673,6 @@ module App.Tile {
             action: {
                 state: "statistics",
                 stateParams: {
-                }
-            }
-        },
-        {
-            text: "Chat",
-            tags: [
-                ""
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "statistics",
-                stateParams: {
-                    filter: "chat"
                 }
             }
         },
