@@ -3,7 +3,7 @@
         <div class="row">
             <input ng-model="searchText" placeholder="Search for..." class="listSearch"></input>
         </div>
-        <div ng-repeat="participant in list | filter:searchText" class="row listRow" ng-class="{selected: participant==selected}"  ng-click="select(participant)">
+        <div ng-repeat="participant in list | filter:searchText | orderBy:'+LASTNAME'" class="row listRow" ng-class="{selected: participant==selected}"  ng-click="select(participant)">
             <p>{{participant.LASTNAME}}, {{participant.FIRSTNAME}}</p>
         </div>
         <div align="center">
@@ -12,16 +12,22 @@
     </div>
     <div class="detail container-fluid container-sm">
         <h2>{{selected.LASTNAME}}, {{selected.FIRSTNAME}}</h2>
-        <div id="Mail" class="row container-fluid detailContainer">
-            <div class="detailLabel">Participant E-mail: </div>
+        <div id="Mail" class="row container-fluid detailContainer" ng-show="selected.EMAIL">
+            <div class="detailLabel">E-mail: </div>
             <div class="detailValue">
-                {{selected.email}}
+                {{selected.EMAIL}}
+            </div>
+        </div>
+        <div id="UserName" class="row container-fluid detailContainer" ng-show="selected.USERNAME">
+            <div class="detailLabel">Username: </div>
+            <div class="detailValue">
+                {{selected.USERNAME}}
             </div>
         </div>
         <div id="Password" class="row container-fluid detailContainer">
             <div class="detailLabel">Participant Password: </div>
             <div class="detailValue">
-                <button class="btn btn-sm btn-warning ">RESET</button>
+                <button class="btn btn-sm btn-warning">RESET</button>
             </div>
         </div>
         <div id="BottomButtons" class="row container-fluid detailContainer">

@@ -3,95 +3,7 @@
 module App.Tile {
 
     export var mockData: ITile[] = [
-        {
-            text: "Events",
-            tags: [
-                ""
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "home",
-                stateParams: {
-                    filter: "events"
-                }
-            }
-        },
-        {
-            text: "Create Event",
-            tags: [
-                "all",
-                "create",
-                "events"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "View Event",
-            tags: [
-                "all",
-                "view",
-                "events"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "Edit Event",
-            tags: [
-                "all",
-                "edit",
-                "events"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "Delete Event",
-            tags: [
-                "all",
-                "delete",
-                "events"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "",
-                stateParams: {
-                    filter: "events"
-                }
-            }
-        },
-        {
-            text: "Select Event",
-            tags: [
-                "all",
-                "events"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "selectEvent",
-                stateParams: {
-                }
-            }
-        },
+
         {
             text: "Participants",
             tags: [
@@ -144,7 +56,7 @@ module App.Tile {
                 "participants"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "participant",
                 stateParams: {
@@ -159,7 +71,7 @@ module App.Tile {
                 "participants"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "participant",
                 stateParams: {
@@ -218,7 +130,7 @@ module App.Tile {
                 "routes"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "routes",
                 stateParams: {
@@ -233,7 +145,7 @@ module App.Tile {
                 "routes"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "home",
                 stateParams: {
@@ -341,7 +253,7 @@ module App.Tile {
                 "routes"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "",
                 stateParams: {
@@ -349,8 +261,9 @@ module App.Tile {
                 }
             }
         },
+
         {
-            text: "Info",
+            text: "Buses",
             tags: [
                 ""
             ],
@@ -359,25 +272,68 @@ module App.Tile {
             action: {
                 state: "home",
                 stateParams: {
-                    filter: "info"
+                    filter: "buses"
                 }
             }
         },
         {
-            text: "Farm to Fork",
+            text: "Create Bus For Route",
             tags: [
-                "info"
+                "all",
+                "buses"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
-                state: "farmToFork",
+                state: "buses",
                 stateParams: {
                 }
             }
         },
         {
-            text: "Chat",
+            text: "View Buses",
+            tags: [
+                "all",
+                "buses"
+            ],
+            textColor: "#333",
+            background: "#bbbbbb",
+            action: {
+                state: "buses",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Edit Buses",
+            tags: [
+                "all",
+                "buses"
+            ],
+            textColor: "#333",
+            background: "#bbbbbb",
+            action: {
+                state: "buses",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Delete Buses",
+            tags: [
+                "all",
+                "buses"
+            ],
+            textColor: "#333",
+            background: "#bbbbbb",
+            action: {
+                state: "buses",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Events",
             tags: [
                 ""
             ],
@@ -386,7 +342,82 @@ module App.Tile {
             action: {
                 state: "home",
                 stateParams: {
-                    filter: "chat"
+                    filter: "events"
+                }
+            }
+        },
+        {
+            text: "Create Event",
+            tags: [
+                "all",
+                "create",
+                "events"
+            ],
+            textColor: "#333",
+            background: "#bbbbbb",
+            action: {
+                state: "",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "View Event",
+            tags: [
+                "all",
+                "view",
+                "events"
+            ],
+            textColor: "#333",
+            background: "#bbbbbb",
+            action: {
+                state: "",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Edit Event",
+            tags: [
+                "all",
+                "edit",
+                "events"
+            ],
+            textColor: "#333",
+            background: "#bbbbbb",
+            action: {
+                state: "",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Delete Event",
+            tags: [
+                "all",
+                "delete",
+                "events"
+            ],
+            textColor: "#333",
+            background: "#bbbbbb",
+            action: {
+                state: "",
+                stateParams: {
+                    filter: "events"
+                }
+            }
+        },
+        {
+            text: "Select Event",
+            tags: [
+                "all",
+                "events"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "selectEvent",
+                stateParams: {
                 }
             }
         },
@@ -442,7 +473,7 @@ module App.Tile {
                 "administrators"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "administrator",
                 stateParams: {
@@ -457,79 +488,9 @@ module App.Tile {
                 "administrators"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "administrator",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "Buses",
-            tags: [
-                ""
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "home",
-                stateParams: {
-                    filter: "buses"
-                }
-            }
-        },
-        {
-            text: "Create Bus For Route",
-            tags: [
-                "all",
-                "buses"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "buses",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "View Buses",
-            tags: [
-                "all",
-                "buses"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "buses",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "Edit Buses",
-            tags: [
-                "all",
-                "buses"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "buses",
-                stateParams: {
-                }
-            }
-        },
-        {
-            text: "Delete Buses",
-            tags: [
-                "all",
-                "buses"
-            ],
-            textColor: "#333",
-            background: "#fea101",
-            action: {
-                state: "buses",
                 stateParams: {
                 }
             }
@@ -555,7 +516,7 @@ module App.Tile {
                 "waivers"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "waivers",
                 stateParams: {
@@ -569,7 +530,7 @@ module App.Tile {
                 "waivers"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "waivers",
                 stateParams: {
@@ -583,7 +544,7 @@ module App.Tile {
                 "waivers"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "waivers",
                 stateParams: {
@@ -597,9 +558,121 @@ module App.Tile {
                 "waivers"
             ],
             textColor: "#333",
-            background: "#fea101",
+            background: "#bbbbbb",
             action: {
                 state: "waivers",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Chat",
+            tags: [
+                ""
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "statistics",
+                stateParams: {
+                    filter: "chat"
+                }
+            }
+        },
+        {
+            text: "Info",
+            tags: [
+                ""
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "home",
+                stateParams: {
+                    filter: "info"
+                }
+            }
+        },
+        {
+            text: "Farm to Fork",
+            tags: [
+                "all",
+                "info"
+            ],
+            textColor: "#333",
+            background: "#fea101",
+            action: {
+                state: "farmToFork",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Statistics",
+            tags: [
+                "info"
+            ],
+            textColor: "#333",
+            background: "#bbbbbb",
+            action: {
+                state: "home",
+                stateParams: {
+                    filter: "statistics"
+                }
+            }
+        },
+        {
+            text: "Event Statistics",
+            tags: [
+                "all",
+                "statistics"
+            ],
+            textColor: "#333",
+            background: "#bbbbbb",
+            action: {
+                state: "statistics",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Participant Statistics",
+            tags: [
+                "all",
+                "statistics"
+            ],
+            textColor: "#333",
+            background: "#bbbbbb",
+            action: {
+                state: "statistics",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Route Statistics",
+            tags: [
+                "all",
+                "statistics"
+            ],
+            textColor: "#333",
+            background: "#bbbbbb",
+            action: {
+                state: "statistics",
+                stateParams: {
+                }
+            }
+        },
+        {
+            text: "Team Statistics",
+            tags: [
+                "all",
+                "statistics"
+            ],
+            textColor: "#333",
+            background: "#bbbbbb",
+            action: {
+                state: "statistics",
                 stateParams: {
                 }
             }

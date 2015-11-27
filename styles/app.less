@@ -63,6 +63,7 @@ body {
   &:hover {
     background-color: @table-bg-hover;
     color: black;
+    cursor: pointer;
   }
   &.selected {
     background-color:@table-bg-active;
@@ -89,7 +90,7 @@ body {
       width: 20%;
       min-width: 150px;
       max-width: 200px;
-      float:left;
+      float: left;
       border-right: 1px solid darken(@body-bg, 10%);
       padding-right: 10px;
       font-weight: bold;
@@ -100,6 +101,16 @@ body {
       overflow: hidden;
       padding-left: 10px;
     }
+    .detailValueWButton {
+
+    min-width: 100px;
+    min-height: 100%;
+    overflow: hidden;
+    padding-left: 10px;
+      display: inline-block;
+      float: left;
+  }
+
     &.noLine {
       .detailLabel {
         border-right: 0px;
