@@ -581,7 +581,10 @@ module App.Tile {
             ],
             textColor: "#333",
             background: {
-                color: "#fea101"
+                color: "#fea101",
+                icons: [{
+                    name: "fa-file"
+                }]
             },
             action: {
                 state: "home",
@@ -661,7 +664,14 @@ module App.Tile {
             ],
             textColor: "#333",
             background: {
-                color: "#fea101"
+                color: "#fea101",
+                icons: [{
+                    name: "fa-commenting",
+                    style: {
+                        "position": "relative",
+                        "top": "-40px"
+                    }
+                }]
             },
             action: {
                 state: "statistics",
@@ -677,7 +687,10 @@ module App.Tile {
             ],
             textColor: "#333",
             background: {
-                color: "#fea101"
+                color: "#fea101",
+                icons: [{
+                    name: "fa-info-circle"
+                }]
             },
             action: {
                 state: "home",
