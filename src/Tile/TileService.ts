@@ -9,11 +9,23 @@ module App.Tile {
         stateParams: any;
     }
 
+    export interface ITileIconStyle {
+
+    }
+
+    export interface ITileIcon {
+        name: string;
+        style?: ITileIconStyle;
+    }
+
     export interface ITile {
         tags: string[];
         text: string;
         textColor: string;
-        background: string;
+        background: {
+            color: string;
+            icons?: ITileIcon[];
+        };
         action: ITileAction;
     }
 

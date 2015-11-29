@@ -24,7 +24,7 @@
   .tileShape {
     margin-bottom: 75%;
   }
-  .tileContent {
+  .tileContent, .tileBackground {
     .drop-shadow(@x: 3px, @y:3px, @spread:1px, @blur:5px, @alpha: 1);
     .border-radius();
     position: absolute;
@@ -47,6 +47,13 @@
       h2 {
         margin: 0;
       }
+    }
+  }
+  .tileBackground {
+    overflow:hidden;
+    .tileIcon {
+      color: rgba(0,0,0,0.2);
+      font-size:15em;
     }
   }
 }
