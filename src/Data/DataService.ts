@@ -452,7 +452,7 @@ module App.Data {
                     }
                     teams[teamIndex] = newVal;
 
-                    return [200, teams];
+                    return [200, teams[teamIndex]];
                 });
                 $httpBackend.whenPOST('/api/teams').respond(function (method:string, url:string, data:ITeam, headers:any, params:any) {
 
